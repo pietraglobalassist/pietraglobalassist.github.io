@@ -258,13 +258,44 @@ footer{
     </div>
 </section>
 
-<section id="formulario" style="max-width:900px;margin:80px auto;padding:40px;background:#ffffff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.15);">
-<h2 style="font-family:'Playfair Display',serif;">Solicitar cotización</h2>
-<form action="https://formspree.io/f/mqrryjjw" method="POST">
-<input type="text" name="nombre" placeholder="Nombre completo" required style="width:100%;padding:14px;margin-bottom:15px;">
-<input type="email" name="email" placeholder="E-mail" required style="width:100%;padding:14px;margin-bottom:15px;">
-<button type="submit" class="btn-orcamento">Enviar</button>
+<form 
+  action="https://formspree.io/f/mqrryjjw" 
+  method="POST"
+  onsubmit="setTimeout(() => { 
+    window.location.href = 'https://pietraglobalassist.github.io/obrigado.html'; 
+  }, 500);"
+>
+
+<input type="hidden" name="_next" value="https://pietraglobalassist.github.io/obrigado.html">
+
+<input type="text" name="nombre" placeholder="Nombre completo" required
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+<input type="email" name="email" placeholder="E-mail" required
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+<input type="tel" name="telefono" placeholder="WhatsApp"
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+<input type="text" name="ruta" placeholder="Ruta del viaje (ej: Madrid → São Paulo)"
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+<input type="date" name="fecha_ida"
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+<input type="date" name="fecha_vuelta"
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+<textarea name="mensaje" placeholder="Información adicional"
+  style="width:100%;padding:14px;height:120px;border-radius:8px;border:1px solid #ccc;margin-bottom:20px;"></textarea>
+
+<button type="submit"
+  style="background:#D4AF37;color:#0B1623;padding:16px 40px;border:none;border-radius:40px;font-size:16px;font-weight:700;cursor:pointer;">
+  Enviar solicitud
+</button>
+
 </form>
+
 </section>
 
 <section class="cta">
@@ -290,3 +321,4 @@ setLang(localStorage.getItem('lang')||'es');
 
 </body>
 </html>
+
