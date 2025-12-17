@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pietra Global Assist | Pasajes Aéreos</title>
+<title>Pietra Global Assist | Pasajes Aéreos Internacionales</title>
+
+<meta name="description" content="Pasajes aéreos nacionales e internacionales con asesoría personalizada. Atención humana, multilingüe y acompañamiento real antes, durante y después del viaje.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -86,14 +88,14 @@ header{
 
 .hero-box-premium{
     background:#ffffff;
-    padding:70px 60px;
+    padding:80px 60px;
     border-left:6px solid #D4AF37;
     box-shadow:0 25px 70px rgba(0,0,0,.18);
     text-align:center;
 }
 .hero-box-premium img{
-    height:110px;
-    margin-bottom:30px;
+    height:130px;
+    margin-bottom:35px;
 }
 .hero-box-premium h1{
     font-family:'Playfair Display', serif;
@@ -133,7 +135,8 @@ section{
     bottom:-10px;
     left:0;
 }
-.services{
+
+.services, .why{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:30px;
@@ -144,15 +147,8 @@ section{
     padding:30px;
     border-radius:8px;
 }
-.service h3{
-    color:#E6C766;
-    margin-bottom:10px;
-}
-.why{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
+.service h3{color:#E6C766;}
+
 .why div{
     background:#fff;
     padding:30px;
@@ -167,21 +163,6 @@ section{
     background:#ffffff;
     border-radius:20px;
     box-shadow:0 20px 60px rgba(0,0,0,.15);
-}
-
-.cta{
-    background:linear-gradient(135deg,#D4AF37,#E6C766);
-    padding:60px 20px;
-    text-align:center;
-}
-.cta a{
-    display:inline-block;
-    background:#0B1623;
-    color:#E6C766;
-    padding:16px 40px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:700;
 }
 
 footer{
@@ -208,6 +189,7 @@ footer{
         <a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
         <a href="#formulario" class="btn-orcamento" data-lang="en">Request a quote</a>
         <a href="#formulario" class="btn-orcamento" data-lang="it">Richiedi preventivo</a>
+
         <div class="lang-switch">
             <button onclick="setLang('es')">ES</button>
             <button onclick="setLang('pt')">PT</button>
@@ -232,31 +214,37 @@ footer{
 <h1 data-lang="en">I take care of your trip<br><span style="color:#D4AF37;">as if it were my own.</span></h1>
 <h1 data-lang="it">Mi prendo cura del tuo viaggio<br><span style="color:#D4AF37;">come se fosse il mio.</span></h1>
 
-<p data-lang="es">Agencia especializada en pasajes aéreos nacionales e internacionales.</p>
-<p data-lang="pt">Agência especializada em passagens aéreas nacionais e internacionais.</p>
-<p data-lang="en">Specialized agency for national and international air tickets.</p>
-<p data-lang="it">Agenzia specializzata in biglietti aerei nazionali e internazionali.</p>
+<p data-lang="es">Pasajes aéreos nacionales e internacionales con asesoría personalizada.</p>
+<p data-lang="pt">Passagens aéreas nacionais e internacionais com assessoria personalizada.</p>
+<p data-lang="en">National and international air tickets with personalized assistance.</p>
+<p data-lang="it">Biglietti aerei nazionali e internazionali con assistenza personalizzata.</p>
 
-<ul data-lang="es"><li>✔ Atención humana y directa</li><li>✔ Soporte completo</li><li>✔ Gestión activa con aerolíneas</li></ul>
-<ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão ativa</li></ul>
+<ul data-lang="es"><li>✔ Atención humana</li><li>✔ Soporte completo</li><li>✔ Gestión con aerolíneas</li></ul>
+<ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão com companhias aéreas</li></ul>
 <ul data-lang="en"><li>✔ Human support</li><li>✔ Full assistance</li><li>✔ Airline management</li></ul>
-<ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione attiva</li></ul>
+<ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione con compagnie aeree</li></ul>
 </div>
 
 <div>
-<h2 style="font-family:'Playfair Display',serif;font-size:36px;">Pasajes Aéreos<br>Nacionales e Internacionales</h2>
-<p style="font-size:18px;">Atención humana, clara y responsable.</p>
+<h2 data-lang="es">Pasajes Aéreos Internacionales</h2>
+<h2 data-lang="pt">Passagens Aéreas Internacionais</h2>
+<h2 data-lang="en">International Air Tickets</h2>
+<h2 data-lang="it">Biglietti Aerei Internazionali</h2>
 </div>
 </div>
 </header>
 
 <section>
-<h2 class="section-title">Nuestros Servicios</h2>
+<h2 class="section-title" data-lang="es">Nuestros Servicios</h2>
+<h2 class="section-title" data-lang="pt">Nossos Serviços</h2>
+<h2 class="section-title" data-lang="en">Our Services</h2>
+<h2 class="section-title" data-lang="it">I Nostri Servizi</h2>
+
 <div class="services">
-<div class="service"><h3>Asesoría Completa</h3><p>Análisis de rutas y aerolíneas.</p></div>
-<div class="service"><h3>Soporte 24h</h3><p>Asistencia real durante el viaje.</p></div>
-<div class="service"><h3>Contacto Directo</h3><p>Gestión con aerolíneas.</p></div>
-<div class="service"><h3>Multilingüe</h3><p>ES · PT · EN · IT</p></div>
+<div class="service"><h3>Asesoría</h3><p>Rutas y aerolíneas</p></div>
+<div class="service"><h3>Soporte</h3><p>Antes, durante y después</p></div>
+<div class="service"><h3>Contacto</h3><p>Gestión directa</p></div>
+<div class="service"><h3>Idiomas</h3><p>ES · PT · EN · IT</p></div>
 </div>
 </section>
 
