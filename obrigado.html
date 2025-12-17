@@ -74,6 +74,26 @@ header{
 .header-logo img{
   height:140px;
 }
+.logo-wrapper{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:22px 34px;
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.04); /* vidro fosco */
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 0 25px rgba(212,175,55,0.35),
+    inset 0 0 0 1px rgba(212,175,55,0.25);
+
+  margin-bottom:20px;
+}
+
+.logo-wrapper img{
+  height:150px; /* ajuste se quiser maior */
+}
 
 /* TITLES */
 header h1{
@@ -198,7 +218,9 @@ footer{
   <!-- LOGO -->
   <div class="header-logo">
     <img src="logo-sinfondo.png" alt="Pietra Global Assist">
-  </div>
+    <div class="logo-wrapper">
+  <img src="logo-sem-fundo.png" alt="Pietra Global Assist">
+</div>
 
   <h1 data-lang="es">Solicitud recibida ✨</h1>
   <h1 data-lang="pt">Solicitação recebida ✨</h1>
