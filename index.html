@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== ORIGINAL ===== */
 body{
     margin:0;
     font-family:'Inter', sans-serif;
@@ -27,42 +26,77 @@ header{
     justify-content:space-between;
     align-items:center;
 }
-.brand{
-    font-family:'Playfair Display', serif;
-    font-size:22px;
-    font-weight:700;
-    color:#E6C766;
+.top-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
-.hero{
+.btn-orcamento{
+    background:#D4AF37;
+    color:#0B1623;
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14px;
+}
+.lang-switch button{
+    background:transparent;
+    border:1px solid #D4AF37;
+    color:#E6C766;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:13px;
+    cursor:pointer;
+}
+[data-lang]{display:none;}
+
+.hero-premium{
+    position:relative;
     max-width:1100px;
-    margin:60px auto;
+    margin:80px auto 0;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:40px;
     align-items:center;
+    z-index:1;
 }
-.hero-box{
-    background:#fff;
-    padding:40px;
-    box-shadow:0 20px 60px rgba(0,0,0,.15);
+.hero-premium::before{
+    content:'';
+    position:absolute;
+    inset:-80px -40px;
+    background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/contain no-repeat;
+    opacity:0.06;
+    filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
+    z-index:-1;
+}
+.plane{
+    position:absolute;
+    bottom:-60px;
+    left:-120px;
+    width:80px;
+    opacity:0.65;
+    animation:flyDiagonal 40s linear infinite;
+}
+@keyframes flyDiagonal{
+    0%{transform:translate(0,0) rotate(20deg);}
+    100%{transform:translate(120vw,-90vh) rotate(20deg);}
+}
+.hero-box-premium{
+    background:#ffffff;
+    padding:60px;
     border-left:6px solid #D4AF37;
+    box-shadow:0 25px 70px rgba(0,0,0,.18);
 }
-.hero-box h1{
+.hero-box-premium h1{
     font-family:'Playfair Display', serif;
-    font-size:34px;
-    margin-bottom:20px;
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:22px;
 }
-.hero-box p{
-    font-size:17px;
-    line-height:1.6;
-}
-.hero-box strong{
-    color:#0F2A3D;
-}
-.hero-phrase{
-    font-family:'Playfair Display', serif;
-    font-size:32px;
-    color:#E6C766;
+.hero-box-premium p{
+    font-size:18px;
+    line-height:1.7;
 }
 section{
     max-width:1100px;
@@ -132,119 +166,14 @@ section{
 }
 footer{
     background:#0B1623;
-    color:#fff;
+    color:#E6C766;
     text-align:center;
     padding:40px 20px;
 }
-footer p{
-    margin:6px 0;
-    color:#E6C766;
-}
 @media(max-width:900px){
-    .hero{
-        grid-template-columns:1fr;
-    }
-}
-
-/* ===== INCREMENTOS ===== */
-.logo img{
-    height:55px;
-}
-.top-actions{
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-.btn-orcamento{
-    background:#D4AF37;
-    color:#0B1623;
-    padding:10px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:700;
-    font-size:14px;
-}
-.lang-switch button{
-    background:transparent;
-    border:1px solid #D4AF37;
-    color:#E6C766;
-    padding:6px 10px;
-    border-radius:20px;
-    font-size:13px;
-    cursor:pointer;
-}
-[data-lang]{display:none;}
-    /* ===== HERO PREMIUM ANIMADO ===== */
-.hero-premium{
-    position:relative;
-    max-width:1100px;
-    margin:80px auto 0;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-    z-index:1;
-}
-
-/* MAPA DO MUNDO TRANSLÚCIDO */
-.hero-premium::before{
-    content:'';
-    position:absolute;
-    inset:-80px -40px;
-    background:
-      url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')
-      center/contain no-repeat;
-    opacity:0.06;
-    filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
-    z-index:-1;
-}
-
-/* AVIÃO ANIMADO */
-.plane{
-    position:absolute;
-    bottom:-60px;
-    left:-120px;
-    width:80px;
-    opacity:0.65;
-    animation:flyDiagonal 28s linear infinite;
-}
-
-@keyframes flyDiagonal{
-    0%{
-        transform:translate(0,0) rotate(20deg);
-    }
-    100%{
-        transform:translate(120vw,-90vh) rotate(20deg);
-    }
-}
-
-
-/* HERO BOX AJUSTADO */
-.hero-box-premium{
-    background:#ffffff;
-    padding:60px;
-    border-left:6px solid #D4AF37;
-    box-shadow:0 25px 70px rgba(0,0,0,.18);
-}
-.hero-box-premium h1{
-    font-family:'Playfair Display', serif;
-    font-size:42px;
-    line-height:1.15;
-    margin-bottom:22px;
-}
-.hero-box-premium p{
-    font-size:18px;
-    line-height:1.7;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-    .hero-premium{
-        grid-template-columns:1fr;
-    }
+    .hero-premium{grid-template-columns:1fr;}
     .plane{display:none;}
 }
-
 </style>
 </head>
 
@@ -252,9 +181,7 @@ footer p{
 
 <header>
     <div class="nav">
-        <!-- ORIGINAL substituído apenas visualmente -->
-
-        <!-- NOVO -->
+        <div></div>
         <div class="top-actions">
             <a href="#formulario" class="btn-orcamento" data-lang="es">Solicitar cotización</a>
             <a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
@@ -270,116 +197,54 @@ footer p{
         </div>
     </div>
 
-    <!-- HERO ORIGINAL -->
-   <div class="hero-premium">
+    <div class="hero-premium">
 
-    <!-- AVIÃO -->
-   <div class="plane">
-<svg viewBox="0 0 512 512" fill="#D4AF37" xmlns="http://www.w3.org/2000/svg">
-<path d="M476.864 3.072c-3.072-2.048-6.656-3.072-10.24-3.072-4.096 0-8.192 1.536-11.264 4.608L302.08 157.888 70.656 112.64c-8.704-1.536-17.408 2.048-22.528 9.216L8.192 173.568c-6.656 8.192-4.608 20.48 4.096 25.6l178.176 96.768L302.08 471.04c3.072 3.072 7.168 4.608 11.264 4.608 3.584 0 7.168-1.024 10.24-3.072 6.656-4.608 9.216-13.312 6.144-21.504L260.096 295.936l69.632-69.632 155.136-69.632c8.192-3.072 13.312-11.776 12.288-20.48-.512-6.656-4.096-12.8-10.288-15.36z"/>
-</svg>
-</div>
+        <div class="plane">
+            <svg viewBox="0 0 512 512" fill="#D4AF37" xmlns="http://www.w3.org/2000/svg">
+                <path d="M476.864 3.072L302.08 157.888 70.656 112.64 8.192 173.568l178.176 96.768L302.08 471.04l-41.984-175.104 225.28-141.312z"/>
+            </svg>
+        </div>
 
+        <div class="hero-box-premium">
+            <img src="logo.png" alt="Pietra Global Assist" style="height:70px;margin-bottom:25px;">
 
-    <!-- CAIXA PRINCIPAL -->
-       <div class="hero-box-premium">
-    <img src="logo.png"
-     alt="Pietra Global Assist"
-     style="height:70px;margin-bottom:25px;">
+            <h1 data-lang="es">Cuido de tu viaje<br><span style="color:#D4AF37;">como si fuera mío.</span></h1>
+            <h1 data-lang="pt">Cuido da sua viagem<br><span style="color:#D4AF37;">como se fosse minha.</span></h1>
+            <h1 data-lang="en">I take care of your trip<br><span style="color:#D4AF37;">as if it were my own.</span></h1>
+            <h1 data-lang="it">Mi prendo cura del tuo viaggio<br><span style="color:#D4AF37;">come se fosse il mio.</span></h1>
 
-<h1 data-lang="es">
-Cuido de tu viaje<br>
-<span style="color:#D4AF37;">como si fuera mío.</span>
-</h1>
+            <p data-lang="es">Agencia especializada en pasajes aéreos nacionales e internacionales, con asesoría personalizada.</p>
+            <p data-lang="pt">Agência especializada em passagens aéreas nacionais e internacionais, com assessoria personalizada.</p>
+            <p data-lang="en">A specialized agency for national and international air tickets, with personalized assistance.</p>
+            <p data-lang="it">Agenzia specializzata in biglietti aerei nazionali e internazionali, con assistenza personalizzata.</p>
 
-<h1 data-lang="pt">
-Cuido da sua viagem<br>
-<span style="color:#D4AF37;">como se fosse minha.</span>
-</h1>
-
-<h1 data-lang="en">
-I take care of your trip<br>
-<span style="color:#D4AF37;">as if it were my own.</span>
-</h1>
-
-<h1 data-lang="it">
-Mi prendo cura del tuo viaggio<br>
-<span style="color:#D4AF37;">come se fosse il mio.</span>
-</h1>
-
-<p style="margin-top:18px;font-size:19px;line-height:1.7;">
-Agencia especializada en pasajes aéreos nacionales e internacionales,
-con asesoría personalizada y acompañamiento real.
-</p>
-
-<ul style="
-margin-top:25px;
-padding-left:20px;
-font-size:16px;
-line-height:1.8;
-">
-<li>✔ Atención humana y directa</li>
-<li>✔ Soporte antes, durante y después del viaje</li>
-<li>✔ Gestión activa con aerolíneas</li>
-</ul>
-
-<div style="margin-top:35px;">
-<a href="#formulario" class="btn-orcamento" data-lang="es">Solicitar cotización</a>
-<a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
-<a href="#formulario" class="btn-orcamento" data-lang="en">Request a quote</a>
-<a href="#formulario" class="btn-orcamento" data-lang="it">Richiedi preventivo</a>
-</div>
-
-
-    <!-- LADO DIREITO -->
-    <div style="color:#ffffff;">
-        <h2 style="font-family:'Playfair Display',serif;font-size:36px;margin-bottom:20px;">
-            Pasajes Aéreos<br>
-            Nacionales e Internacionales
-        </h2>
-
-        <p style="font-size:18px;line-height:1.6;max-width:420px;">
-            Atención humana, clara y responsable.<br>
-            Para quienes valoran tranquilidad al viajar.
-        </p>
-    </div>
-
-</div>
-
+            <ul>
+                <li>✔ Atención humana y directa</li>
+                <li>✔ Soporte antes, durante y después del viaje</li>
+                <li>✔ Gestión activa con aerolíneas</li>
+            </ul>
+        </div>
 
         <div>
-            <h2 style="font-family:Playfair Display,serif;font-size:34px;">
+            <h2 style="font-family:'Playfair Display',serif;font-size:36px;">
                 Pasajes Aéreos<br>Nacionales e Internacionales
             </h2>
             <p style="font-size:18px;line-height:1.6;">
-                Tu viaje, simplificado.<br>
-                Atención humana, clara y responsable.
+                Atención humana, clara y responsable.<br>
+                Para quienes valoran tranquilidad al viajar.
             </p>
         </div>
+
     </div>
 </header>
-
-<!-- ===== RESTANTE DO SEU CÓDIGO ORIGINAL (INTACTO) ===== -->
 
 <section>
     <h2 class="section-title">Nuestros Servicios</h2>
     <div class="services">
-        <div class="service">
-            <h3>Asesoría Completa</h3>
-            <p>Análisis personalizado de rutas, escalas y aerolíneas.</p>
-        </div>
-        <div class="service">
-            <h3>Soporte 24h</h3>
-            <p>Asistencia real durante todo el viaje ante cualquier imprevisto.</p>
-        </div>
-        <div class="service">
-            <h3>Contacto Directo</h3>
-            <p>Gestión directa con aerolíneas.</p>
-        </div>
-        <div class="service">
-            <h3>Atención Multilingüe</h3>
-            <p>Portugués, español, inglés e italiano.</p>
-        </div>
+        <div class="service"><h3>Asesoría Completa</h3><p>Análisis personalizado de rutas, escalas y aerolíneas.</p></div>
+        <div class="service"><h3>Soporte 24h</h3><p>Asistencia real durante todo el viaje.</p></div>
+        <div class="service"><h3>Contacto Directo</h3><p>Gestión directa con aerolíneas.</p></div>
+        <div class="service"><h3>Atención Multilingüe</h3><p>Portugués, español, inglés e italiano.</p></div>
     </div>
 </section>
 
@@ -394,67 +259,34 @@ line-height:1.8;
 </section>
 
 <section id="formulario" style="max-width:900px;margin:80px auto;padding:40px;background:#ffffff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.15);">
-
-  <h2 style="font-family:'Playfair Display',serif;font-size:30px;margin-bottom:20px;">
-    Solicitar cotización
-  </h2>
-
-  <p style="font-size:16px;margin-bottom:30px;">
-    Completa el formulario y me pondré en contacto contigo lo antes posible.
-  </p>
-
- <form 
-  action="https://formspree.io/f/mqrryjjw" 
-  method="POST"
-  onsubmit="setTimeout(() => { window.location.href = 'https://pietraglobalassist.github.io/obrigado.html'; }, 500);"
->
-<input type="hidden" name="_next" value="https://pietraglobalassist.github.io/obrigado.html">
-
-<!-- FORM ORIGINAL -->
-<input type="text" name="nombre" placeholder="Nombre completo" required style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-<input type="email" name="email" placeholder="E-mail" required style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-<input type="tel" name="telefono" placeholder="WhatsApp" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-<input type="text" name="ruta" placeholder="Ruta del viaje (ej: Madrid → São Paulo)" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-<input type="date" name="fecha_ida" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-<input type="date" name="fecha_vuelta" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-<textarea name="mensaje" placeholder="Información adicional" style="width:100%;padding:14px;height:120px;border-radius:8px;border:1px solid #ccc;margin-bottom:20px;"></textarea>
-
-<button type="submit" style="background:#D4AF37;color:#0B1623;padding:16px 40px;border:none;border-radius:40px;font-size:16px;font-weight:700;cursor:pointer;">
-Enviar solicitud
-</button>
-
+<h2 style="font-family:'Playfair Display',serif;">Solicitar cotización</h2>
+<form action="https://formspree.io/f/mqrryjjw" method="POST">
+<input type="text" name="nombre" placeholder="Nombre completo" required style="width:100%;padding:14px;margin-bottom:15px;">
+<input type="email" name="email" placeholder="E-mail" required style="width:100%;padding:14px;margin-bottom:15px;">
+<button type="submit" class="btn-orcamento">Enviar</button>
 </form>
 </section>
 
 <section class="cta">
-    <h2>Viaja sin preocupaciones</h2>
-    <p>Estoy aquí para ayudarte.</p><br>
-    <a href="https://wa.me/34744768034" target="_blank">Solicitar cotización</a>
+<h2>Viaja sin preocupaciones</h2>
+<a href="https://wa.me/34744768034" target="_blank">Solicitar cotización</a>
 </section>
 
 <footer>
-    <p>📲 +34 744 768 034</p>
-    <p>📧 pietraglobalassist@gmail.com</p>
-    <p>📸 @pietraglobalassist</p>
-    <p style="margin-top:20px;font-size:14px;">
-        Atención humana, profesional y responsable.<br>
-        Para quienes valoran tranquilidad al viajar.
-    </p>
+<p>📲 +34 744 768 034</p>
+<p>📧 pietraglobalassist@gmail.com</p>
+<p>📸 @pietraglobalassist</p>
 </footer>
 
 <script>
 function setLang(lang){
   localStorage.setItem('lang', lang);
   document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+    el.style.display = el.getAttribute('data-lang')===lang?'block':'none';
   });
 }
-setLang(localStorage.getItem('lang') || 'es');
+setLang(localStorage.getItem('lang')||'es');
 </script>
-
 
 </body>
 </html>
-
-
-
