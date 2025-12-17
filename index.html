@@ -18,7 +18,15 @@ header{background:linear-gradient(135deg,#0B1623,#0F2A3D);padding:40px 20px 140p
 .lang-switch button{background:transparent;border:1px solid #D4AF37;color:#E6C766;padding:6px 10px;border-radius:20px;cursor:pointer;}
 [data-lang]{display:none;}
 
-.hero{max-width:1100px;margin:90px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:40px;position:relative;}
+.hero{
+    max-width:1200px;
+    margin:90px auto 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+    position:relative;
+}
 .hero::before{
 content:'';
 position:absolute;
@@ -31,13 +39,16 @@ filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
 @keyframes fly{0%{transform:translate(0,0) rotate(20deg);}100%{transform:translate(120vw,-90vh) rotate(20deg);}}
 
 .hero-box{
-background:#fff;
-padding:80px 60px;
-border-left:6px solid #D4AF37;
-box-shadow:0 25px 70px rgba(0,0,0,.18);
-text-align:center;
-color:#0B1623;
+    background:#fff;
+    padding:60px 80px;
+    max-width:950px;
+    width:100%;
+    border-left:6px solid #D4AF37;
+    box-shadow:0 25px 70px rgba(0,0,0,.18);
+    text-align:center;
+  color:#0B1623;
 }
+  
 .hero-box img{height:180px;margin-bottom:35px;}
 .hero-box h1{font-family:'Playfair Display',serif;font-size:42px;margin-bottom:18px;}
 .hero-box p{font-size:18px;line-height:1.7;color:#0B1623;}
@@ -65,6 +76,21 @@ section{max-width:1100px;margin:90px auto;padding:0 20px;}
 footer{background:#0B1623;color:#E6C766;text-align:center;padding:40px 20px;}
 
 @media(max-width:900px){.hero{grid-template-columns:1fr}.plane{display:none}}
+  .hero-subtext{
+  text-align:center;
+  color:#ffffff;
+  margin-top:35px;
+}
+.hero-subtext h2{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:10px;
+}
+.hero-subtext p{
+  font-size:18px;
+  opacity:0.9;
+}
+
 </style>
 </head>
 
@@ -111,17 +137,20 @@ footer{background:#0B1623;color:#E6C766;text-align:center;padding:40px 20px;}
 <ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione con compagnie aeree</li></ul>
 </div>
 
-<div>
-<h2 data-lang="es">Pasajes Aéreos Internacionales</h2>
-<h2 data-lang="pt">Passagens Aéreas Internacionais</h2>
-<h2 data-lang="en">International Air Tickets</h2>
-<h2 data-lang="it">Biglietti Aerei Internazionali</h2>
+<div class="hero-subtext">
 
-<p data-lang="es">Atención humana, clara y responsable.</p>
-<p data-lang="pt">Atendimento humano, claro e responsável.</p>
-<p data-lang="en">Human, clear and responsible assistance.</p>
-<p data-lang="it">Assistenza umana, chiara e responsabile.</p>
+  <h2 data-lang="es">Pasajes Aéreos Nacionales e Internacionales</h2>
+  <h2 data-lang="pt">Passagens Aéreas Nacionais e Internacionais</h2>
+  <h2 data-lang="en">National & International Air Tickets</h2>
+  <h2 data-lang="it">Biglietti Aerei Nazionali e Internazionali</h2>
+
+  <p data-lang="es">Atención humana, clara y responsable.</p>
+  <p data-lang="pt">Atendimento humano, claro e responsável.</p>
+  <p data-lang="en">Human, clear and responsible assistance.</p>
+  <p data-lang="it">Assistenza umana, chiara e responsabile.</p>
+
 </div>
+
 </div>
 </header>
 
@@ -199,3 +228,4 @@ setLang(localStorage.getItem('lang')||'es');
 
 </body>
 </html>
+
