@@ -16,7 +16,7 @@ body{
 }
 header{
     background:linear-gradient(135deg,#0B1623,#0F2A3D);
-    padding:40px 20px;
+    padding:40px 20px 120px;
     color:#fff;
 }
 .nav{
@@ -65,7 +65,8 @@ header{
     content:'';
     position:absolute;
     inset:-80px -40px;
-    background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/contain no-repeat;
+    background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')
+      center/contain no-repeat;
     opacity:0.06;
     filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
     z-index:-1;
@@ -74,19 +75,25 @@ header{
     position:absolute;
     bottom:-60px;
     left:-120px;
-    width:80px;
+    width:90px;
     opacity:0.65;
-    animation:flyDiagonal 40s linear infinite;
+    animation:flyDiagonal 42s linear infinite;
 }
 @keyframes flyDiagonal{
     0%{transform:translate(0,0) rotate(20deg);}
     100%{transform:translate(120vw,-90vh) rotate(20deg);}
 }
+
 .hero-box-premium{
     background:#ffffff;
-    padding:60px;
+    padding:70px 60px;
     border-left:6px solid #D4AF37;
     box-shadow:0 25px 70px rgba(0,0,0,.18);
+    text-align:center;
+}
+.hero-box-premium img{
+    height:110px;
+    margin-bottom:30px;
 }
 .hero-box-premium h1{
     font-family:'Playfair Display', serif;
@@ -98,6 +105,14 @@ header{
     font-size:18px;
     line-height:1.7;
 }
+.hero-box-premium ul{
+    list-style:none;
+    padding:0;
+    margin-top:25px;
+    font-size:16px;
+    line-height:1.8;
+}
+
 section{
     max-width:1100px;
     margin:80px auto;
@@ -144,16 +159,20 @@ section{
     border-top:4px solid #D4AF37;
     box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
+
+#formulario{
+    max-width:900px;
+    margin:100px auto;
+    padding:50px;
+    background:#ffffff;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+}
+
 .cta{
     background:linear-gradient(135deg,#D4AF37,#E6C766);
     padding:60px 20px;
     text-align:center;
-    color:#0B1623;
-}
-.cta h2{
-    font-family:'Playfair Display', serif;
-    font-size:32px;
-    margin-bottom:20px;
 }
 .cta a{
     display:inline-block;
@@ -164,12 +183,14 @@ section{
     text-decoration:none;
     font-weight:700;
 }
+
 footer{
     background:#0B1623;
     color:#E6C766;
     text-align:center;
     padding:40px 20px;
 }
+
 @media(max-width:900px){
     .hero-premium{grid-template-columns:1fr;}
     .plane{display:none;}
@@ -180,125 +201,81 @@ footer{
 <body>
 
 <header>
-    <div class="nav">
-        <div></div>
-        <div class="top-actions">
-            <a href="#formulario" class="btn-orcamento" data-lang="es">Solicitar cotización</a>
-            <a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
-            <a href="#formulario" class="btn-orcamento" data-lang="en">Request a quote</a>
-            <a href="#formulario" class="btn-orcamento" data-lang="it">Richiedi preventivo</a>
-
-            <div class="lang-switch">
-                <button onclick="setLang('es')">ES</button>
-                <button onclick="setLang('pt')">PT</button>
-                <button onclick="setLang('en')">EN</button>
-                <button onclick="setLang('it')">IT</button>
-            </div>
+<div class="nav">
+    <div></div>
+    <div class="top-actions">
+        <a href="#formulario" class="btn-orcamento" data-lang="es">Solicitar cotización</a>
+        <a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
+        <a href="#formulario" class="btn-orcamento" data-lang="en">Request a quote</a>
+        <a href="#formulario" class="btn-orcamento" data-lang="it">Richiedi preventivo</a>
+        <div class="lang-switch">
+            <button onclick="setLang('es')">ES</button>
+            <button onclick="setLang('pt')">PT</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('it')">IT</button>
         </div>
     </div>
+</div>
 
-    <div class="hero-premium">
+<div class="hero-premium">
+<div class="plane">
+<svg viewBox="0 0 512 512" fill="#D4AF37" xmlns="http://www.w3.org/2000/svg">
+<path d="M476.864 3.072L302.08 157.888 70.656 112.64 8.192 173.568l178.176 96.768L302.08 471.04l-41.984-175.104 225.28-141.312z"/>
+</svg>
+</div>
 
-        <div class="plane">
-            <svg viewBox="0 0 512 512" fill="#D4AF37" xmlns="http://www.w3.org/2000/svg">
-                <path d="M476.864 3.072L302.08 157.888 70.656 112.64 8.192 173.568l178.176 96.768L302.08 471.04l-41.984-175.104 225.28-141.312z"/>
-            </svg>
-        </div>
+<div class="hero-box-premium">
+<img src="logo.png" alt="Pietra Global Assist">
 
-        <div class="hero-box-premium">
-            <img src="logo.png" alt="Pietra Global Assist" style="height:100px;margin-bottom:25px;align:center">
+<h1 data-lang="es">Cuido de tu viaje<br><span style="color:#D4AF37;">como si fuera mío.</span></h1>
+<h1 data-lang="pt">Cuido da sua viagem<br><span style="color:#D4AF37;">como se fosse minha.</span></h1>
+<h1 data-lang="en">I take care of your trip<br><span style="color:#D4AF37;">as if it were my own.</span></h1>
+<h1 data-lang="it">Mi prendo cura del tuo viaggio<br><span style="color:#D4AF37;">come se fosse il mio.</span></h1>
 
-            <h1 data-lang="es">Cuido de tu viaje<br><span style="color:#D4AF37;">como si fuera mío.</span></h1>
-            <h1 data-lang="pt">Cuido da sua viagem<br><span style="color:#D4AF37;">como se fosse minha.</span></h1>
-            <h1 data-lang="en">I take care of your trip<br><span style="color:#D4AF37;">as if it were my own.</span></h1>
-            <h1 data-lang="it">Mi prendo cura del tuo viaggio<br><span style="color:#D4AF37;">come se fosse il mio.</span></h1>
+<p data-lang="es">Agencia especializada en pasajes aéreos nacionales e internacionales.</p>
+<p data-lang="pt">Agência especializada em passagens aéreas nacionais e internacionais.</p>
+<p data-lang="en">Specialized agency for national and international air tickets.</p>
+<p data-lang="it">Agenzia specializzata in biglietti aerei nazionali e internazionali.</p>
 
-            <p data-lang="es">Agencia especializada en pasajes aéreos nacionales e internacionales, con asesoría personalizada.</p>
-            <p data-lang="pt">Agência especializada em passagens aéreas nacionais e internacionais, com assessoria personalizada.</p>
-            <p data-lang="en">A specialized agency for national and international air tickets, with personalized assistance.</p>
-            <p data-lang="it">Agenzia specializzata in biglietti aerei nazionali e internazionali, con assistenza personalizzata.</p>
+<ul data-lang="es"><li>✔ Atención humana y directa</li><li>✔ Soporte completo</li><li>✔ Gestión activa con aerolíneas</li></ul>
+<ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão ativa</li></ul>
+<ul data-lang="en"><li>✔ Human support</li><li>✔ Full assistance</li><li>✔ Airline management</li></ul>
+<ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione attiva</li></ul>
+</div>
 
-            <ul>
-                <li>✔ Atención humana y directa</li>
-                <li>✔ Soporte antes, durante y después del viaje</li>
-                <li>✔ Gestión activa con aerolíneas</li>
-            </ul>
-        </div>
-
-        <div>
-            <h2 style="font-family:'Playfair Display',serif;font-size:36px;">
-                Pasajes Aéreos<br>Nacionales e Internacionales
-            </h2>
-            <p style="font-size:18px;line-height:1.6;">
-                Atención humana, clara y responsable.<br>
-                Para quienes valoran tranquilidad al viajar.
-            </p>
-        </div>
-
-    </div>
+<div>
+<h2 style="font-family:'Playfair Display',serif;font-size:36px;">Pasajes Aéreos<br>Nacionales e Internacionales</h2>
+<p style="font-size:18px;">Atención humana, clara y responsable.</p>
+</div>
+</div>
 </header>
 
 <section>
-    <h2 class="section-title">Nuestros Servicios</h2>
-    <div class="services">
-        <div class="service"><h3>Asesoría Completa</h3><p>Análisis personalizado de rutas, escalas y aerolíneas.</p></div>
-        <div class="service"><h3>Soporte 24h</h3><p>Asistencia real durante todo el viaje.</p></div>
-        <div class="service"><h3>Contacto Directo</h3><p>Gestión directa con aerolíneas.</p></div>
-        <div class="service"><h3>Atención Multilingüe</h3><p>Portugués, español, inglés e italiano.</p></div>
-    </div>
+<h2 class="section-title">Nuestros Servicios</h2>
+<div class="services">
+<div class="service"><h3>Asesoría Completa</h3><p>Análisis de rutas y aerolíneas.</p></div>
+<div class="service"><h3>Soporte 24h</h3><p>Asistencia real durante el viaje.</p></div>
+<div class="service"><h3>Contacto Directo</h3><p>Gestión con aerolíneas.</p></div>
+<div class="service"><h3>Multilingüe</h3><p>ES · PT · EN · IT</p></div>
+</div>
 </section>
 
-<section>
-    <h2 class="section-title">¿Por qué elegirme?</h2>
-    <div class="why">
-        <div>Atención humana y personalizada</div>
-        <div>Comunicación clara y cercana</div>
-        <div>Experiencia en viajes internacionales</div>
-        <div>Acompañamiento real durante todo el viaje</div>
-    </div>
-</section>
-
-<form action="https://formspree.io/f/mqrryjjw" 
-  method="POST"
-  onsubmit="setTimeout(() => { 
-    window.location.href = 'https://pietraglobalassist.github.io/obrigado.html'; 
-  }, 500);"
->
+<section id="formulario">
+<form action="https://formspree.io/f/mqrryjjw" method="POST"
+onsubmit="setTimeout(()=>{window.location.href='https://pietraglobalassist.github.io/obrigado.html';},500);">
 
 <input type="hidden" name="_next" value="https://pietraglobalassist.github.io/obrigado.html">
 
-<input type="text" name="nombre" placeholder="Nombre completo" required
-  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+<input type="text" name="nombre" placeholder="Nombre completo" required style="width:100%;padding:14px;margin-bottom:15px;">
+<input type="email" name="email" placeholder="E-mail" required style="width:100%;padding:14px;margin-bottom:15px;">
+<input type="tel" name="telefono" placeholder="WhatsApp" style="width:100%;padding:14px;margin-bottom:15px;">
+<input type="text" name="ruta" placeholder="Ruta del viaje" style="width:100%;padding:14px;margin-bottom:15px;">
+<input type="date" name="fecha_ida" style="width:100%;padding:14px;margin-bottom:15px;">
+<input type="date" name="fecha_vuelta" style="width:100%;padding:14px;margin-bottom:15px;">
+<textarea name="mensaje" placeholder="Información adicional" style="width:100%;padding:14px;height:120px;margin-bottom:20px;"></textarea>
 
-<input type="email" name="email" placeholder="E-mail" required
-  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-
-<input type="tel" name="telefono" placeholder="WhatsApp"
-  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-
-<input type="text" name="ruta" placeholder="Ruta del viaje (ej: Madrid → São Paulo)"
-  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-
-<input type="date" name="fecha_ida"
-  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-
-<input type="date" name="fecha_vuelta"
-  style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-
-<textarea name="mensaje" placeholder="Información adicional"
-  style="width:100%;padding:14px;height:120px;border-radius:8px;border:1px solid #ccc;margin-bottom:20px;"></textarea>
-
-<button type="submit"
-  style="background:#D4AF37;color:#0B1623;padding:16px 40px;border:none;border-radius:40px;font-size:16px;font-weight:700;cursor:pointer;">
-  Enviar solicitud
-</button>
-
-
+<button type="submit" class="btn-orcamento">Enviar solicitud</button>
 </form>
-
-<section class="cta">
-<h2>Viaja sin preocupaciones</h2>
-<a href="https://wa.me/34744768034" target="_blank">Solicitar cotización</a>
 </section>
 
 <footer>
@@ -309,15 +286,13 @@ footer{
 
 <script>
 function setLang(lang){
-  localStorage.setItem('lang', lang);
-  document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang')===lang?'block':'none';
-  });
+localStorage.setItem('lang',lang);
+document.querySelectorAll('[data-lang]').forEach(el=>{
+el.style.display=el.getAttribute('data-lang')===lang?'block':'none';
+});
 }
 setLang(localStorage.getItem('lang')||'es');
 </script>
 
 </body>
 </html>
-
-
