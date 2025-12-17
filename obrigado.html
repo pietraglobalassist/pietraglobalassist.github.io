@@ -3,53 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gracias | Pietra Global Assist</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:#0B1623;
+  color:#0B1623;
 }
+
 .container{
   max-width:1100px;
   margin:auto;
   background:#F7F9FC;
   min-height:100vh;
 }
+
+/* HEADER */
 header{
   background:linear-gradient(135deg,#0B1623,#0F2A3D);
-  color:#fff;
-  padding:60px 20px;
+  padding:70px 20px 120px;
   text-align:center;
+  color:#fff;
 }
+
+/* LOGO */
+.header-logo{
+  display:flex;
+  justify-content:center;
+  margin-bottom:35px;
+}
+.header-logo img{
+  height:140px;
+  max-width:90%;
+}
+
+/* TITLES */
 header h1{
-  font-family:'Playfair Display',serif;
-  color:#E6C766;
+  font-family:'Libre Franklin',sans-serif;
+  font-size:36px;
+  font-weight:800;
+  color:#D4AF37;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
-.flags{
-  text-align:right;
-  padding:15px;
+
+header p{
+  font-size:18px;
+  max-width:720px;
+  margin:25px auto 0;
+  opacity:0.95;
 }
-.flags button{
-  background:none;
-  border:none;
-  font-size:22px;
-  cursor:pointer;
+
+/* CONTENT */
+.section{
+  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
 }
-section{
+
+.section h2{
+  font-family:'Libre Franklin',sans-serif;
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:20px;
+  color:#0B1623;
+}
+
+.section p{
+  font-size:17px;
+  line-height:1.7;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:#ffffff;
+  border-top:4px solid #D4AF37;
+  padding:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.card h3{
+  font-family:'Libre Franklin',sans-serif;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,#D4AF37,#E6C766);
   padding:70px 20px;
   text-align:center;
 }
+
+.cta h2{
+  font-family:'Libre Franklin',sans-serif;
+  font-size:30px;
+  margin-bottom:20px;
+}
+
+.cta a{
+  background:#0B1623;
+  color:#E6C766;
+  padding:16px 45px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* FOOTER */
 footer{
   background:#0B1623;
   color:#E6C766;
   text-align:center;
-  padding:30px;
+  padding:35px 20px;
+  font-size:14px;
 }
+
+/* LANG */
 [data-lang]{display:none;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .header-logo img{
+    height:110px;
+  }
+  header h1{
+    font-size:30px;
+  }
+}
 </style>
 </head>
 
@@ -57,41 +150,115 @@ footer{
 
 <div class="container">
 
-<div class="flags">
-  <button onclick="setLang('es')">🇪🇸</button>
-  <button onclick="setLang('pt')">🇧🇷</button>
-  <button onclick="setLang('en')">🇬🇧</button>
-  <button onclick="setLang('it')">🇮🇹</button>
-</div>
-
 <header>
-  <h1 data-lang="es">¡Gracias por tu solicitud!</h1>
-  <h1 data-lang="pt">Obrigada pela sua solicitação!</h1>
-  <h1 data-lang="en">Thank you for your request!</h1>
-  <h1 data-lang="it">Grazie per la tua richiesta!</h1>
+
+  <!-- LOGO -->
+  <div class="header-logo">
+    <img src="logo-sinfondo.png" alt="Pietra Global Assist">
+  </div>
+
+  <h1 data-lang="es">Solicitud recibida ✨</h1>
+  <h1 data-lang="pt">Solicitação recebida ✨</h1>
+  <h1 data-lang="en">Request received ✨</h1>
+  <h1 data-lang="it">Richiesta ricevuta ✨</h1>
+
+  <p data-lang="es">
+    He recibido tu información correctamente.  
+    Me pondré en contacto contigo muy pronto para ayudarte con tu viaje.
+  </p>
+
+  <p data-lang="pt">
+    Recebi suas informações com sucesso.  
+    Entrarei em contato muito em breve para te ajudar com sua viagem.
+  </p>
+
+  <p data-lang="en">
+    Your information has been received successfully.  
+    I will contact you shortly to assist you with your trip.
+  </p>
+
+  <p data-lang="it">
+    Ho ricevuto correttamente le tue informazioni.  
+    Ti contatterò a breve per aiutarti con il tuo viaggio.
+  </p>
+
 </header>
 
-<section>
-  <p data-lang="es">Me pondré en contacto contigo muy pronto.</p>
-  <p data-lang="pt">Entrarei em contato com você em breve.</p>
-  <p data-lang="en">I will contact you shortly.</p>
-  <p data-lang="it">Ti contatterò a breve.</p>
+<section class="section">
 
-  <br>
+  <h2 data-lang="es">¿Qué sucede ahora?</h2>
+  <h2 data-lang="pt">O que acontece agora?</h2>
+  <h2 data-lang="en">What happens next?</h2>
+  <h2 data-lang="it">Cosa succede ora?</h2>
+
+  <p data-lang="es">
+    Analizaré tu solicitud con atención y te contactaré personalmente
+    para ofrecerte la mejor opción de vuelo.
+  </p>
+
+  <p data-lang="pt">
+    Analisarei sua solicitação com atenção e entrarei em contato
+    para oferecer a melhor opção de voo.
+  </p>
+
+  <p data-lang="en">
+    I will carefully review your request and contact you personally
+    with the best flight options.
+  </p>
+
+  <p data-lang="it">
+    Analizzerò attentamente la tua richiesta e ti contatterò
+    per offrirti la migliore opzione di volo.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🌍 Internacional</h3>
+      <p data-lang="es">Europa, América y más</p>
+      <p data-lang="pt">Europa, América e mais</p>
+      <p data-lang="en">Europe, America and more</p>
+      <p data-lang="it">Europa, America e altro</p>
+    </div>
+
+    <div class="card">
+      <h3>💼 Profesional</h3>
+      <p data-lang="es">Viajes laborales y relocations</p>
+      <p data-lang="pt">Viagens profissionais e relocations</p>
+      <p data-lang="en">Business trips and relocations</p>
+      <p data-lang="it">Viaggi di lavoro e relocation</p>
+    </div>
+
+    <div class="card">
+      <h3>❤️ Personal</h3>
+      <p data-lang="es">Vacaciones y visitas familiares</p>
+      <p data-lang="pt">Férias e visitas familiares</p>
+      <p data-lang="en">Holidays and family visits</p>
+      <p data-lang="it">Vacanze e visite familiari</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="cta">
+  <h2 data-lang="es">¿Quieres hablar directamente conmigo?</h2>
+  <h2 data-lang="pt">Quer falar diretamente comigo?</h2>
+  <h2 data-lang="en">Would you like to talk directly with me?</h2>
+  <h2 data-lang="it">Vuoi parlare direttamente con me?</h2>
+
   <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
 </section>
 
 <footer>
-  Pietra Global Assist · Global Travel Support
+  Pietra Global Assist · Atención humana, profesional y responsable
 </footer>
 
 </div>
 
 <script>
 function setLang(lang){
-  localStorage.setItem('lang', lang);
+  localStorage.setItem('lang',lang);
   document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang')===lang ? 'block':'none';
+    el.style.display = el.getAttribute('data-lang')===lang ? 'block' : 'none';
   });
 }
 setLang(localStorage.getItem('lang') || 'es');
