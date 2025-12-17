@@ -174,6 +174,72 @@ footer p{
     cursor:pointer;
 }
 [data-lang]{display:none;}
+    /* ===== HERO PREMIUM ANIMADO ===== */
+.hero-premium{
+    position:relative;
+    max-width:1100px;
+    margin:80px auto 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+    z-index:1;
+}
+
+/* MAPA DO MUNDO TRANSLÚCIDO */
+.hero-premium::before{
+    content:'';
+    position:absolute;
+    inset:-80px -40px;
+    background:
+      url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')
+      center/contain no-repeat;
+    opacity:0.06;
+    filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
+    z-index:-1;
+}
+
+/* AVIÃO ANIMADO */
+.plane{
+    position:absolute;
+    top:20%;
+    left:-80px;
+    font-size:42px;
+    animation:fly 14s linear infinite;
+    opacity:0.7;
+}
+@keyframes fly{
+    0%{transform:translateX(-100px) translateY(0) rotate(5deg);}
+    50%{transform:translateX(55vw) translateY(-40px) rotate(8deg);}
+    100%{transform:translateX(120vw) translateY(0) rotate(5deg);}
+}
+
+/* HERO BOX AJUSTADO */
+.hero-box-premium{
+    background:#ffffff;
+    padding:60px;
+    border-left:6px solid #D4AF37;
+    box-shadow:0 25px 70px rgba(0,0,0,.18);
+}
+.hero-box-premium h1{
+    font-family:'Playfair Display', serif;
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:22px;
+}
+.hero-box-premium p{
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .hero-premium{
+        grid-template-columns:1fr;
+    }
+    .plane{display:none;}
+}
+
 </style>
 </head>
 
@@ -203,24 +269,95 @@ footer p{
     </div>
 
     <!-- HERO ORIGINAL -->
-    <div class="hero">
-        <div class="hero-box">
-            <h1 data-lang="es">Bienvenidos</h1>
-            <h1 data-lang="pt">Bem-vindo</h1>
-            <h1 data-lang="en">Welcome</h1>
-            <h1 data-lang="it">Benvenuto</h1>
+   <div class="hero-premium">
 
-            <p class="hero-phrase" data-lang="es">Cuido de tu viaje como si fuera mío.</p>
-            <p class="hero-phrase" data-lang="pt">Cuido da sua viagem como se fosse minha.</p>
-            <p class="hero-phrase" data-lang="en">I take care of your trip as if it were my own.</p>
-            <p class="hero-phrase" data-lang="it">Mi prendo cura del tuo viaggio come se fosse il mio.</p>
+    <!-- AVIÃO -->
+    <div class="plane">✈️</div>
 
-            <p>
-                Asesoría personalizada para viajes seguros y tranquilos.<br><br>
-                En Pietra Global Assist no compras solo un pasaje:
-                <strong>cuentas con una profesional que te acompaña antes, durante y después del viaje.</strong>
-            </p>
+    <!-- CAIXA PRINCIPAL -->
+    <div class="hero-box-premium">
+
+        <img src="logo.png" alt="Pietra Global Assist"
+             style="height:70px;margin-bottom:30px;">
+
+        <!-- FRASE PRINCIPAL -->
+        <h1 data-lang="es">
+            Cuido de tu viaje<br>
+            <span style="color:#D4AF37;">como si fuera mío.</span>
+        </h1>
+
+        <h1 data-lang="pt">
+            Cuido da sua viagem<br>
+            <span style="color:#D4AF37;">como se fosse minha.</span>
+        </h1>
+
+        <h1 data-lang="en">
+            I take care of your trip<br>
+            <span style="color:#D4AF37;">as if it were my own.</span>
+        </h1>
+
+        <h1 data-lang="it">
+            Mi prendo cura del tuo viaggio<br>
+            <span style="color:#D4AF37;">come se fosse il mio.</span>
+        </h1>
+
+        <!-- TEXTO DE APOIO -->
+        <p data-lang="es">
+            Cuentas con una profesional que te acompaña
+            antes, durante y después del viaje.
+        </p>
+
+        <p data-lang="pt">
+            Você conta com uma profissional que te acompanha
+            antes, durante e depois da viagem.
+        </p>
+
+        <p data-lang="en">
+            You count on a professional who supports you
+            before, during and after your trip.
+        </p>
+
+        <p data-lang="it">
+            Hai una professionista che ti accompagna
+            prima, durante e dopo il viaggio.
+        </p>
+
+        <!-- BOTÕES -->
+        <div style="margin-top:35px;display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="#formulario"
+               class="btn-orcamento"
+               data-lang="es">Solicitar cotización</a>
+
+            <a href="#formulario"
+               class="btn-orcamento"
+               data-lang="pt">Solicitar orçamento</a>
+
+            <a href="#formulario"
+               class="btn-orcamento"
+               data-lang="en">Request a quote</a>
+
+            <a href="#formulario"
+               class="btn-orcamento"
+               data-lang="it">Richiedi preventivo</a>
         </div>
+
+    </div>
+
+    <!-- LADO DIREITO -->
+    <div style="color:#ffffff;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:36px;margin-bottom:20px;">
+            Pasajes Aéreos<br>
+            Nacionales e Internacionales
+        </h2>
+
+        <p style="font-size:18px;line-height:1.6;max-width:420px;">
+            Atención humana, clara y responsable.<br>
+            Para quienes valoran tranquilidad al viajar.
+        </p>
+    </div>
+
+</div>
+
 
         <div>
             <h2 style="font-family:Playfair Display,serif;font-size:34px;">
@@ -327,5 +464,7 @@ function setLang(lang){
 setLang(localStorage.getItem('lang') || 'es');
 </script>
 
+
 </body>
 </html>
+
