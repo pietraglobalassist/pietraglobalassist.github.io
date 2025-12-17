@@ -8,6 +8,8 @@
 <meta name="description" content="Pasajes aéreos nacionales e internacionales con asesoría personalizada. Atención humana, multilingüe y acompañamiento real.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
 
 <style>
 body{margin:0;font-family:'Inter',sans-serif;background:#F7F9FC;color:#0B1623;}
@@ -24,11 +26,20 @@ header{background:linear-gradient(135deg,#0B1623,#0F2A3D);padding:40px 20px 140p
 @keyframes fly{0%{transform:translate(0,0) rotate(20deg);}100%{transform:translate(120vw,-90vh) rotate(20deg);}}
 
 .hero-title{text-align:center;color:#E6C766;}
-.hero-title h2{font-family:'Playfair Display',serif;font-size:34px;margin-bottom:10px;}
+.hero-title h2{
+  font-family:'Cormorant Garamond', serif;
+  font-size:36px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  color:#D4AF37;
+  margin-bottom:12px;
+}
+
 .hero-title p{font-size:18px;opacity:.9;}
 
 .hero-box{background:#fff;padding:40px 80px;max-width:1000px;width:100%;border-left:6px solid #D4AF37;box-shadow:0 25px 70px rgba(0,0,0,.18);text-align:center;color:#0B1623;}
 .hero-box img{height:200px;margin-bottom:25px;}
+.hero-box img{filter: drop-shadow(0 10px 25px rgba(212,175,55,0.25));}
 .hero-box h1{font-family:'Playfair Display',serif;font-size:42px;margin-bottom:18px;}
 .hero-box p{font-size:18px;line-height:1.7;}
 .hero-box ul{list-style:none;padding:0;margin-top:25px;font-size:16px;line-height:1.8;}
@@ -241,3 +252,4 @@ setLang(localStorage.getItem('lang')||'es');
 
 </body>
 </html>
+
