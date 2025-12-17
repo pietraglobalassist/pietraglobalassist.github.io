@@ -202,17 +202,22 @@ footer p{
 /* AVIÃO ANIMADO */
 .plane{
     position:absolute;
-    top:20%;
-    left:-80px;
-    font-size:42px;
-    animation:fly 14s linear infinite;
-    opacity:0.7;
+    bottom:-60px;
+    left:-120px;
+    width:80px;
+    opacity:0.65;
+    animation:flyDiagonal 28s linear infinite;
 }
-@keyframes fly{
-    0%{transform:translateX(-100px) translateY(0) rotate(5deg);}
-    50%{transform:translateX(55vw) translateY(-40px) rotate(8deg);}
-    100%{transform:translateX(120vw) translateY(0) rotate(5deg);}
+
+@keyframes flyDiagonal{
+    0%{
+        transform:translate(0,0) rotate(20deg);
+    }
+    100%{
+        transform:translate(120vw,-90vh) rotate(20deg);
+    }
 }
+
 
 /* HERO BOX AJUSTADO */
 .hero-box-premium{
@@ -272,7 +277,12 @@ footer p{
    <div class="hero-premium">
 
     <!-- AVIÃO -->
-    <div class="plane">✈️</div>
+   <div class="plane">
+<svg viewBox="0 0 512 512" fill="#D4AF37" xmlns="http://www.w3.org/2000/svg">
+<path d="M476.864 3.072c-3.072-2.048-6.656-3.072-10.24-3.072-4.096 0-8.192 1.536-11.264 4.608L302.08 157.888 70.656 112.64c-8.704-1.536-17.408 2.048-22.528 9.216L8.192 173.568c-6.656 8.192-4.608 20.48 4.096 25.6l178.176 96.768L302.08 471.04c3.072 3.072 7.168 4.608 11.264 4.608 3.584 0 7.168-1.024 10.24-3.072 6.656-4.608 9.216-13.312 6.144-21.504L260.096 295.936l69.632-69.632 155.136-69.632c8.192-3.072 13.312-11.776 12.288-20.48-.512-6.656-4.096-12.8-10.288-15.36z"/>
+</svg>
+</div>
+
 
     <!-- CAIXA PRINCIPAL -->
     <div class="hero-box-premium">
@@ -467,4 +477,5 @@ setLang(localStorage.getItem('lang') || 'es');
 
 </body>
 </html>
+
 
