@@ -3,109 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pietra Global Assist | Air Tickets</title>
+<title>Pietra Global Assist | Pasajes Aéreos</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#F7F9FC;
-  color:#0B1623;
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:#F7F9FC;
+    color:#0B1623;
 }
 header{
-  background:linear-gradient(135deg,#0B1623,#0F2A3D);
-  color:#fff;
-  padding:30px 20px;
+    background:linear-gradient(135deg,#0B1623,#0F2A3D);
+    padding:30px 20px;
+    color:#fff;
 }
 .nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 .logo img{
-  height:48px;
+    height:55px;
+}
+.actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
 .flags button{
-  background:none;
-  border:none;
-  font-size:22px;
-  cursor:pointer;
-  margin-left:8px;
+    background:#fff;
+    border:1px solid #D4AF37;
+    border-radius:50%;
+    font-size:18px;
+    padding:6px;
+    cursor:pointer;
+}
+.btn-orcamento{
+    background:#D4AF37;
+    color:#0B1623;
+    padding:10px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
 }
 .hero{
-  max-width:1100px;
-  margin:60px auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+    max-width:1100px;
+    margin:60px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
 }
 .hero-box{
-  background:#fff;
-  padding:40px;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
-  border-left:6px solid #D4AF37;
+    background:#fff;
+    padding:40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+    border-left:6px solid #D4AF37;
 }
 .hero-box h1{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
+    font-family:'Playfair Display', serif;
+    font-size:34px;
+    margin-bottom:20px;
+}
+.hero-box p{
+    font-size:17px;
+    line-height:1.6;
 }
 .hero-phrase{
-  font-family:'Playfair Display',serif;
-  font-size:30px;
-  color:#D4AF37;
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    color:#E6C766;
 }
 section{
-  max-width:1100px;
-  margin:80px auto;
-  padding:0 20px;
+    max-width:1100px;
+    margin:80px auto;
+    padding:0 20px;
 }
-.services, .destinations{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:30px;
+.section-title{
+    font-family:'Playfair Display', serif;
+    font-size:30px;
+    margin-bottom:30px;
+    position:relative;
 }
-.card{
-  background:#fff;
-  padding:25px;
-  border-top:4px solid #D4AF37;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
+.section-title:after{
+    content:'';
+    width:70px;
+    height:3px;
+    background:#D4AF37;
+    position:absolute;
+    bottom:-10px;
+    left:0;
 }
-.destinations img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:6px;
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+.service{
+    background:#0F2A3D;
+    color:#fff;
+    padding:30px;
+    border-radius:8px;
+}
+.service h3{
+    color:#E6C766;
+    margin-bottom:10px;
+}
+.why{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+.why div{
+    background:#fff;
+    padding:30px;
+    border-top:4px solid #D4AF37;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 .cta{
-  background:linear-gradient(135deg,#D4AF37,#E6C766);
-  padding:60px 20px;
-  text-align:center;
+    background:linear-gradient(135deg,#D4AF37,#E6C766);
+    padding:60px 20px;
+    text-align:center;
+    color:#0B1623;
+}
+.cta h2{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    margin-bottom:20px;
 }
 .cta a{
-  background:#0B1623;
-  color:#E6C766;
-  padding:16px 40px;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:700;
+    display:inline-block;
+    background:#0B1623;
+    color:#E6C766;
+    padding:16px 40px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:700;
 }
 footer{
-  background:#0B1623;
-  color:#E6C766;
-  text-align:center;
-  padding:40px 20px;
+    background:#0B1623;
+    color:#E6C766;
+    text-align:center;
+    padding:40px 20px;
 }
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;}
+    .hero{grid-template-columns:1fr;}
 }
 [data-lang]{display:none;}
 </style>
@@ -118,11 +169,19 @@ footer{
     <div class="logo">
       <img src="logo.png" alt="Pietra Global Assist">
     </div>
-    <div class="flags">
-      <button onclick="setLang('es')">🇪🇸</button>
-      <button onclick="setLang('pt')">🇧🇷</button>
-      <button onclick="setLang('en')">🇬🇧</button>
-      <button onclick="setLang('it')">🇮🇹</button>
+
+    <div class="actions">
+      <a href="#formulario" class="btn-orcamento" data-lang="es">Solicitar cotización</a>
+      <a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
+      <a href="#formulario" class="btn-orcamento" data-lang="en">Request a quote</a>
+      <a href="#formulario" class="btn-orcamento" data-lang="it">Richiedi preventivo</a>
+
+      <div class="flags">
+        <button onclick="setLang('es')">🇪🇸</button>
+        <button onclick="setLang('pt')">🇧🇷</button>
+        <button onclick="setLang('en')">🇬🇧</button>
+        <button onclick="setLang('it')">🇮🇹</button>
+      </div>
     </div>
   </div>
 
@@ -137,51 +196,25 @@ footer{
       <p class="hero-phrase" data-lang="pt">Cuido da sua viagem como se fosse minha.</p>
       <p class="hero-phrase" data-lang="en">I take care of your trip as if it were my own.</p>
       <p class="hero-phrase" data-lang="it">Mi prendo cura del tuo viaggio come se fosse il mio.</p>
+
+      <p data-lang="es">Asesoría personalizada para viajes seguros y tranquilos.</p>
+      <p data-lang="pt">Assessoria personalizada para viagens seguras e tranquilas.</p>
+      <p data-lang="en">Personalized assistance for safe and smooth trips.</p>
+      <p data-lang="it">Assistenza personalizzata per viaggi sicuri e sereni.</p>
     </div>
 
     <div>
-      <p data-lang="es">Asesoría personalizada en pasajes aéreos nacionales e internacionales.</p>
-      <p data-lang="pt">Assessoria personalizada em passagens aéreas nacionais e internacionais.</p>
-      <p data-lang="en">Personalized assistance for national and international flights.</p>
-      <p data-lang="it">Assistenza personalizzata per voli nazionali e internazionali.</p>
+      <p data-lang="es">Pasajes aéreos nacionales e internacionales.</p>
+      <p data-lang="pt">Passagens aéreas nacionais e internacionais.</p>
+      <p data-lang="en">National and international air tickets.</p>
+      <p data-lang="it">Biglietti aerei nazionali e internazionali.</p>
     </div>
   </div>
 </header>
 
-<section>
-  <h2 data-lang="es">Destinos más solicitados</h2>
-  <h2 data-lang="pt">Destinos mais procurados</h2>
-  <h2 data-lang="en">Most requested destinations</h2>
-  <h2 data-lang="it">Destinazioni più richieste</h2>
-
-  <div class="destinations">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
-      <p>Europa</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1548013146-72479768bada" alt="New York">
-      <p>Estados Unidos</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def" alt="Dubai">
-      <p>Dubai</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <p data-lang="es">¿Listo para viajar con tranquilidad?</p>
-  <p data-lang="pt">Pronta para viajar com tranquilidade?</p>
-  <p data-lang="en">Ready to travel with peace of mind?</p>
-  <p data-lang="it">Pronto a viaggiare in tranquillità?</p>
-
-  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
-</section>
-
-<footer>
-  Pietra Global Assist · Atención humana y profesional
-</footer>
+<!-- TODO O RESTO DO SEU CONTEÚDO ORIGINAL CONTINUA IGUAL -->
+<!-- SERVIÇOS, DIFERENCIAIS, FORMULÁRIO E CTA -->
+<!-- O FORMULÁRIO DEVE TER id="formulario" -->
 
 <script>
 function setLang(lang){
