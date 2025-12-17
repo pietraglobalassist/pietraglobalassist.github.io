@@ -66,32 +66,28 @@ header{
 }
 
 /* LOGO */
-.header-logo{
-  display:flex;
-  justify-content:center;
-  margin-bottom:40px;
-}
-
 .logo-wrapper{
   display:inline-flex;
   justify-content:center;
   align-items:center;
-  padding:26px 46px;
-  border-radius:20px;
 
-  background:rgba(255,255,255,0.05);
-  backdrop-filter: blur(8px);
+  padding:28px 54px;
+  border-radius:22px;
 
+  /* FUNDO CLARO QUENTE (chave da solução) */
+  background:linear-gradient(
+    135deg,
+    rgba(255,255,255,0.92),
+    rgba(250,247,240,0.95)
+  );
+
+  /* BORDA DOURADA REAL */
+  border:1px solid rgba(212,175,55,0.65);
+
+  /* SOMBRA CONTROLADA */
   box-shadow:
-    0 0 30px rgba(212,175,55,0.45),
-    inset 0 0 0 1px rgba(212,175,55,0.35);
-}
-
-.logo-wrapper img{
-  height:150px;
-}
-
-
+    0 18px 45px rgba(0,0,0,0.45),
+    0 0 35px rgba(212,175,55,0.45);}
 /* TITLES */
 header h1{
   font-family:'Libre Franklin',sans-serif;
