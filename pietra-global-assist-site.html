@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pietra Global Assist | Pasajes Aéreos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Inter', sans-serif;
+    background:#F7F9FC;
+    color:#0B1623;
+}
+header{
+    background:linear-gradient(135deg,#0B1623,#0F2A3D);
+    padding:40px 20px;
+    color:#fff;
+}
+.nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.brand{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+    font-weight:700;
+    color:#E6C766;
+}
+.hero{
+    max-width:1100px;
+    margin:60px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+.hero-box{
+    background:#fff;
+    padding:40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+    border-left:6px solid #D4AF37;
+}
+.hero-box h1{
+    font-family:'Playfair Display', serif;
+    font-size:34px;
+    margin-bottom:20px;
+}
+.hero-box p{
+    font-size:17px;
+    line-height:1.6;
+}
+.hero-box strong{
+    color:#0F2A3D;
+}
+.hero-phrase{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    color:#E6C766;
+}
+section{
+    max-width:1100px;
+    margin:80px auto;
+    padding:0 20px;
+}
+.section-title{
+    font-family:'Playfair Display', serif;
+    font-size:30px;
+    margin-bottom:30px;
+    position:relative;
+}
+.section-title:after{
+    content:'';
+    width:70px;
+    height:3px;
+    background:#D4AF37;
+    position:absolute;
+    bottom:-10px;
+    left:0;
+}
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+.service{
+    background:#0F2A3D;
+    color:#fff;
+    padding:30px;
+    border-radius:8px;
+}
+.service h3{
+    color:#E6C766;
+    margin-bottom:10px;
+}
+.why{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+.why div{
+    background:#fff;
+    padding:30px;
+    border-top:4px solid #D4AF37;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+.cta{
+    background:linear-gradient(135deg,#D4AF37,#E6C766);
+    padding:60px 20px;
+    text-align:center;
+    color:#0B1623;
+}
+.cta h2{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    margin-bottom:20px;
+}
+.cta a{
+    display:inline-block;
+    background:#0B1623;
+    color:#E6C766;
+    padding:16px 40px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:700;
+}
+footer{
+    background:#0B1623;
+    color:#fff;
+    text-align:center;
+    padding:40px 20px;
+}
+footer p{
+    margin:6px 0;
+    color:#E6C766;
+}
+@media(max-width:900px){
+    .hero{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="brand">✦ Pietra Global Assist</div>
+        <div>Pasajes Aéreos</div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-box">
+            <h1>Bienvenidos</h1>
+            <p class="hero-phrase">Cuido de tu viaje<br>como si fuera mío.</p>
+            <p>
+                Asesoría personalizada para viajes seguros y tranquilos.<br><br>
+                En Pietra Global Assist no compras solo un pasaje:
+                <strong>cuentas con una profesional que te acompaña antes, durante y después del viaje.</strong>
+            </p>
+        </div>
+
+        <div>
+            <h2 style="font-family:Playfair Display,serif;font-size:34px;">
+                Pasajes Aéreos<br>Nacionales e Internacionales
+            </h2>
+            <p style="font-size:18px;line-height:1.6;">
+                Tu viaje, simplificado.<br>
+                Atención humana, clara y responsable.
+            </p>
+        </div>
+    </div>
+</header>
+
+<section>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Asesoría Completa</h3>
+            <p>Análisis personalizado de rutas, escalas y aerolíneas.</p>
+        </div>
+        <div class="service">
+            <h3>Soporte 24h</h3>
+            <p>Asistencia real durante todo el viaje ante cualquier imprevisto.</p>
+        </div>
+        <div class="service">
+            <h3>Contacto Directo</h3>
+            <p>Gestión directa con aerolíneas.</p>
+        </div>
+        <div class="service">
+            <h3>Atención Multilingüe</h3>
+            <p>Portugués, español, inglés e italiano.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">¿Por qué elegirme?</h2>
+    <div class="why">
+        <div>Atención humana y personalizada</div>
+        <div>Comunicación clara y cercana</div>
+        <div>Experiencia en viajes internacionales</div>
+        <div>Acompañamiento real durante todo el viaje</div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Viaja sin preocupaciones</h2>
+    <p>Estoy aquí para ayudarte.</p><br>
+    <a href="https://wa.me/34744768034" target="_blank">Solicitar cotización</a>
+</section>
+
+<footer>
+    <p>📲 +34 744 768 034</p>
+    <p>📧 pietraglobalassist@gmail.com</p>
+    <p>📸 @pietraglobalassist</p>
+    <p style="margin-top:20px;font-size:14px;">
+        Atención humana, profesional y responsable.<br>
+        Para quienes valoran tranquilidad al viajar.
+    </p>
+</footer>
+
+</body>
+</html>
