@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pietra Global Assist | Pasajes Aéreos Internacionales</title>
 
+<title>Pietra Global Assist | Pasajes Aéreos Internacionales</title>
 <meta name="description" content="Pasajes aéreos nacionales e internacionales con asesoría personalizada. Atención humana, multilingüe y acompañamiento real.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -18,40 +18,19 @@ header{background:linear-gradient(135deg,#0B1623,#0F2A3D);padding:40px 20px 140p
 .lang-switch button{background:transparent;border:1px solid #D4AF37;color:#E6C766;padding:6px 10px;border-radius:20px;cursor:pointer;}
 [data-lang]{display:none;}
 
-.hero{
-    max-width:1200px;
-    margin:90px auto 0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:40px;
-    position:relative;
-}
-.hero::before{
-content:'';
-position:absolute;
-inset:-80px -40px;
-background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/contain no-repeat;
-opacity:.06;
-filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
-}
+.hero{max-width:1200px;margin:90px auto 0;display:flex;flex-direction:column;align-items:center;gap:30px;position:relative;}
+.hero::before{content:'';position:absolute;inset:-80px -40px;background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/contain no-repeat;opacity:.06;filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);}
 .plane{position:absolute;bottom:-60px;left:-120px;width:90px;opacity:.65;animation:fly 42s linear infinite;}
 @keyframes fly{0%{transform:translate(0,0) rotate(20deg);}100%{transform:translate(120vw,-90vh) rotate(20deg);}}
 
-.hero-box{
-    background:#fff;
-    padding:60px 80px;
-    max-width:950px;
-    width:100%;
-    border-left:6px solid #D4AF37;
-    box-shadow:0 25px 70px rgba(0,0,0,.18);
-    text-align:center;
-  color:#0B1623;
-}
-  
-.hero-box img{height:180px;margin-bottom:35px;}
+.hero-title{text-align:center;color:#E6C766;}
+.hero-title h2{font-family:'Playfair Display',serif;font-size:34px;margin-bottom:10px;}
+.hero-title p{font-size:18px;opacity:.9;}
+
+.hero-box{background:#fff;padding:40px 80px;max-width:1000px;width:100%;border-left:6px solid #D4AF37;box-shadow:0 25px 70px rgba(0,0,0,.18);text-align:center;color:#0B1623;}
+.hero-box img{height:200px;margin-bottom:25px;}
 .hero-box h1{font-family:'Playfair Display',serif;font-size:42px;margin-bottom:18px;}
-.hero-box p{font-size:18px;line-height:1.7;color:#0B1623;}
+.hero-box p{font-size:18px;line-height:1.7;}
 .hero-box ul{list-style:none;padding:0;margin-top:25px;font-size:16px;line-height:1.8;}
 
 section{max-width:1100px;margin:90px auto;padding:0 20px;}
@@ -75,22 +54,11 @@ section{max-width:1100px;margin:90px auto;padding:0 20px;}
 
 footer{background:#0B1623;color:#E6C766;text-align:center;padding:40px 20px;}
 
-@media(max-width:900px){.hero{grid-template-columns:1fr}.plane{display:none}}
-  .hero-subtext{
-  text-align:center;
-  color:#ffffff;
-  margin-top:35px;
+@media(max-width:900px){
+.hero-box{padding:35px 30px;}
+.hero-box img{height:160px;}
+.plane{display:none;}
 }
-.hero-subtext h2{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  margin-bottom:10px;
-}
-.hero-subtext p{
-  font-size:18px;
-  opacity:0.9;
-}
-
 </style>
 </head>
 
@@ -118,10 +86,20 @@ footer{background:#0B1623;color:#E6C766;text-align:center;padding:40px 20px;}
 <svg viewBox="0 0 512 512" fill="#D4AF37"><path d="M476.864 3.072L302.08 157.888 70.656 112.64 8.192 173.568l178.176 96.768L302.08 471.04l-41.984-175.104 225.28-141.312z"/></svg>
 </div>
 
+<div class="hero-title">
+<h2 data-lang="es">Pasajes Aéreos Nacionales e Internacionales</h2>
+<h2 data-lang="pt">Passagens Aéreas Nacionais e Internacionais</h2>
+<h2 data-lang="en">National & International Air Tickets</h2>
+<h2 data-lang="it">Biglietti Aerei Nazionali e Internazionali</h2>
+
+<p data-lang="es">Atención humana, clara y responsable.</p>
+<p data-lang="pt">Atendimento humano, claro e responsável.</p>
+<p data-lang="en">Human, clear and responsible assistance.</p>
+<p data-lang="it">Assistenza umana, chiara e responsabile.</p>
+</div>
+
 <div class="hero-box">
-<img src="logo.png" 
-     alt="Pietra Global Assist"
-     style="height:120px;margin-bottom:20px;">
+<img src="logo.png" alt="Pietra Global Assist">
 
 <h1 data-lang="es">Cuido de tu viaje<br><span style="color:#D4AF37;">como si fuera mío.</span></h1>
 <h1 data-lang="pt">Cuido da sua viagem<br><span style="color:#D4AF37;">como se fosse minha.</span></h1>
@@ -138,21 +116,6 @@ footer{background:#0B1623;color:#E6C766;text-align:center;padding:40px 20px;}
 <ul data-lang="en"><li>✔ Human support</li><li>✔ Full assistance</li><li>✔ Airline management</li></ul>
 <ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione con compagnie aeree</li></ul>
 </div>
-
-<div class="hero-subtext">
-
-  <h2 data-lang="es">Pasajes Aéreos Nacionales e Internacionales</h2>
-  <h2 data-lang="pt">Passagens Aéreas Nacionais e Internacionais</h2>
-  <h2 data-lang="en">National & International Air Tickets</h2>
-  <h2 data-lang="it">Biglietti Aerei Nazionali e Internazionali</h2>
-
-  <p data-lang="es">Atención humana, clara y responsable.</p>
-  <p data-lang="pt">Atendimento humano, claro e responsável.</p>
-  <p data-lang="en">Human, clear and responsible assistance.</p>
-  <p data-lang="it">Assistenza umana, chiara e responsabile.</p>
-
-</div>
-
 </div>
 </header>
 
@@ -163,15 +126,19 @@ footer{background:#0B1623;color:#E6C766;text-align:center;padding:40px 20px;}
 <h2 class="title" data-lang="it">I Nostri Servizi</h2>
 
 <div class="grid">
-<div class="card"><h3>Asesoría</h3><p>Rutas y aerolíneas</p></div>
-<div class="card"><h3>Soporte</h3><p>Antes, durante y después</p></div>
-<div class="card"><h3>Contacto</h3><p>Gestión directa</p></div>
+<div class="card"><h3>Asesoría</h3><p data-lang="es">Rutas y aerolíneas</p><p data-lang="pt">Rotas e companhias</p><p data-lang="en">Routes and airlines</p><p data-lang="it">Rotte e compagnie</p></div>
+<div class="card"><h3>Soporte</h3><p data-lang="es">Antes, durante y después</p><p data-lang="pt">Antes, durante e depois</p><p data-lang="en">Before, during and after</p><p data-lang="it">Prima, durante e dopo</p></div>
+<div class="card"><h3>Contacto</h3><p data-lang="es">Gestión directa</p><p data-lang="pt">Gestão direta</p><p data-lang="en">Direct management</p><p data-lang="it">Gestione diretta</p></div>
 <div class="card"><h3>Idiomas</h3><p>ES · PT · EN · IT</p></div>
 </div>
 </section>
 
 <section>
 <h2 class="title" data-lang="es">Destinos más buscados</h2>
+<h2 class="title" data-lang="pt">Destinos mais procurados</h2>
+<h2 class="title" data-lang="en">Most searched destinations</h2>
+<h2 class="title" data-lang="it">Destinazioni più richieste</h2>
+
 <div class="grid destinos">
 <div><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34"><h4>París</h4></div>
 <div><img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b"><h4>Londres</h4></div>
@@ -181,35 +148,79 @@ footer{background:#0B1623;color:#E6C766;text-align:center;padding:40px 20px;}
 </section>
 
 <section>
-<h2 class="title">¿Por qué elegirme?</h2>
+<h2 class="title" data-lang="es">¿Por qué elegirme?</h2>
+<h2 class="title" data-lang="pt">Por que me escolher?</h2>
+<h2 class="title" data-lang="en">Why choose me?</h2>
+<h2 class="title" data-lang="it">Perché scegliere me?</h2>
+
 <div class="grid why">
-<div>Atención humana y personalizada</div>
-<div>Comunicación clara y cercana</div>
-<div>Experiencia en viajes internacionales</div>
-<div>Acompañamiento real durante todo el viaje</div>
+<div data-lang="es">Atención humana y personalizada</div>
+<div data-lang="pt">Atendimento humano e personalizado</div>
+<div data-lang="en">Human and personalized service</div>
+<div data-lang="it">Servizio umano e personalizzato</div>
+
+<div data-lang="es">Comunicación clara y cercana</div>
+<div data-lang="pt">Comunicação clara e próxima</div>
+<div data-lang="en">Clear and close communication</div>
+<div data-lang="it">Comunicazione chiara e vicina</div>
+
+<div data-lang="es">Experiencia en viajes internacionales</div>
+<div data-lang="pt">Experiência em viagens internacionais</div>
+<div data-lang="en">Experience in international travel</div>
+<div data-lang="it">Esperienza in viaggi internazionali</div>
+
+<div data-lang="es">Acompañamiento real durante todo el viaje</div>
+<div data-lang="pt">Acompanhamento real durante toda a viagem</div>
+<div data-lang="en">Real support throughout the journey</div>
+<div data-lang="it">Supporto reale durante tutto il viaggio</div>
 </div>
 </section>
 
 <section id="formulario">
-<form action="https://formspree.io/f/mqrryjjw" method="POST"
-onsubmit="setTimeout(()=>{window.location.href='https://pietraglobalassist.github.io/obrigado.html';},500);">
-
+<form action="https://formspree.io/f/mqrryjjw" method="POST" onsubmit="setTimeout(()=>{window.location.href='https://pietraglobalassist.github.io/obrigado.html';},500);">
 <input type="hidden" name="_next" value="https://pietraglobalassist.github.io/obrigado.html">
-<input type="text" name="nombre" placeholder="Nombre completo" required>
+
+<input type="text" name="nombre" data-lang="es" placeholder="Nombre completo" required>
+<input type="text" name="nombre" data-lang="pt" placeholder="Nome completo" required>
+<input type="text" name="nombre" data-lang="en" placeholder="Full name" required>
+<input type="text" name="nombre" data-lang="it" placeholder="Nome completo" required>
+
 <input type="email" name="email" placeholder="E-mail" required>
-<input type="tel" name="telefono" placeholder="WhatsApp">
-<input type="text" name="ruta" placeholder="Ruta del viaje">
+<input type="tel" name="telefono" data-lang="es" placeholder="WhatsApp">
+<input type="tel" name="telefono" data-lang="pt" placeholder="WhatsApp">
+<input type="tel" name="telefono" data-lang="en" placeholder="WhatsApp">
+<input type="tel" name="telefono" data-lang="it" placeholder="WhatsApp">
+
+<input type="text" name="ruta" data-lang="es" placeholder="Ruta del viaje">
+<input type="text" name="ruta" data-lang="pt" placeholder="Rota da viagem">
+<input type="text" name="ruta" data-lang="en" placeholder="Travel route">
+<input type="text" name="ruta" data-lang="it" placeholder="Rotta del viaggio">
+
 <input type="date" name="fecha_ida">
 <input type="date" name="fecha_vuelta">
-<textarea name="mensaje" placeholder="Información adicional"></textarea>
 
-<button type="submit" class="btn">Enviar solicitud</button>
+<textarea name="mensaje" data-lang="es" placeholder="Información adicional"></textarea>
+<textarea name="mensaje" data-lang="pt" placeholder="Informações adicionais"></textarea>
+<textarea name="mensaje" data-lang="en" placeholder="Additional information"></textarea>
+<textarea name="mensaje" data-lang="it" placeholder="Informazioni aggiuntive"></textarea>
+
+<button type="submit" class="btn" data-lang="es">Enviar solicitud</button>
+<button type="submit" class="btn" data-lang="pt">Enviar solicitação</button>
+<button type="submit" class="btn" data-lang="en">Send request</button>
+<button type="submit" class="btn" data-lang="it">Invia richiesta</button>
 </form>
 </section>
 
 <section class="cta">
-<h2>¿Prefieres hablar ahora?</h2>
-<a href="https://wa.me/34744768034" target="_blank">Hablar por WhatsApp</a>
+<h2 data-lang="es">¿Prefieres hablar ahora?</h2>
+<h2 data-lang="pt">Prefere falar agora?</h2>
+<h2 data-lang="en">Would you like to talk now?</h2>
+<h2 data-lang="it">Preferisci parlare ora?</h2>
+
+<a href="https://wa.me/34744768034" target="_blank" data-lang="es">Hablar por WhatsApp</a>
+<a href="https://wa.me/34744768034" target="_blank" data-lang="pt">Falar pelo WhatsApp</a>
+<a href="https://wa.me/34744768034" target="_blank" data-lang="en">Chat on WhatsApp</a>
+<a href="https://wa.me/34744768034" target="_blank" data-lang="it">Chatta su WhatsApp</a>
 </section>
 
 <footer>
@@ -230,5 +241,3 @@ setLang(localStorage.getItem('lang')||'es');
 
 </body>
 </html>
-
-
