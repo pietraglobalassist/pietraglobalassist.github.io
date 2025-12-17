@@ -8,15 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ===== ORIGINAL ===== */
 body{
     margin:0;
-    font-family:'Inter',sans-serif;
+    font-family:'Inter', sans-serif;
     background:#F7F9FC;
     color:#0B1623;
 }
 header{
     background:linear-gradient(135deg,#0B1623,#0F2A3D);
-    padding:30px 20px;
+    padding:40px 20px;
     color:#fff;
 }
 .nav{
@@ -26,34 +27,11 @@ header{
     justify-content:space-between;
     align-items:center;
 }
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-.logo img{
-    height:55px;
-}
-.actions{
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-.flags button{
-    background:#fff;
-    border:1px solid #D4AF37;
-    border-radius:50%;
-    font-size:18px;
-    padding:6px;
-    cursor:pointer;
-}
-.btn-orcamento{
-    background:#D4AF37;
-    color:#0B1623;
-    padding:10px 20px;
-    border-radius:30px;
-    text-decoration:none;
+.brand{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
     font-weight:700;
+    color:#E6C766;
 }
 .hero{
     max-width:1100px;
@@ -163,7 +141,37 @@ footer p{
     color:#E6C766;
 }
 @media(max-width:900px){
-    .hero{grid-template-columns:1fr;}
+    .hero{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ===== INCREMENTOS ===== */
+.logo img{
+    height:55px;
+}
+.top-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+.btn-orcamento{
+    background:#D4AF37;
+    color:#0B1623;
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14px;
+}
+.lang-switch button{
+    background:transparent;
+    border:1px solid #D4AF37;
+    color:#E6C766;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:13px;
+    cursor:pointer;
 }
 [data-lang]{display:none;}
 </style>
@@ -172,118 +180,148 @@ footer p{
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">
-      <img src="logo.png" alt="Pietra Global Assist">
+    <div class="nav">
+        <!-- ORIGINAL substituído apenas visualmente -->
+        <div class="logo">
+            <img src="logo.png" alt="Pietra Global Assist">
+        </div>
+
+        <!-- NOVO -->
+        <div class="top-actions">
+            <a href="#formulario" class="btn-orcamento" data-lang="es">Solicitar cotización</a>
+            <a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
+            <a href="#formulario" class="btn-orcamento" data-lang="en">Request a quote</a>
+            <a href="#formulario" class="btn-orcamento" data-lang="it">Richiedi preventivo</a>
+
+            <div class="lang-switch">
+                <button onclick="setLang('es')">ES</button>
+                <button onclick="setLang('pt')">PT</button>
+                <button onclick="setLang('en')">EN</button>
+                <button onclick="setLang('it')">IT</button>
+            </div>
+        </div>
     </div>
 
-    <div class="actions">
-      <a href="#formulario" class="btn-orcamento" data-lang="es">Solicitar cotización</a>
-      <a href="#formulario" class="btn-orcamento" data-lang="pt">Solicitar orçamento</a>
-      <a href="#formulario" class="btn-orcamento" data-lang="en">Request a quote</a>
-      <a href="#formulario" class="btn-orcamento" data-lang="it">Richiedi preventivo</a>
+    <!-- HERO ORIGINAL -->
+    <div class="hero">
+        <div class="hero-box">
+            <h1 data-lang="es">Bienvenidos</h1>
+            <h1 data-lang="pt">Bem-vindo</h1>
+            <h1 data-lang="en">Welcome</h1>
+            <h1 data-lang="it">Benvenuto</h1>
 
-      <div class="flags">
-        <button onclick="setLang('es')">🇪🇸</button>
-        <button onclick="setLang('pt')">🇧🇷</button>
-        <button onclick="setLang('en')">🇬🇧</button>
-        <button onclick="setLang('it')">🇮🇹</button>
-      </div>
+            <p class="hero-phrase" data-lang="es">Cuido de tu viaje como si fuera mío.</p>
+            <p class="hero-phrase" data-lang="pt">Cuido da sua viagem como se fosse minha.</p>
+            <p class="hero-phrase" data-lang="en">I take care of your trip as if it were my own.</p>
+            <p class="hero-phrase" data-lang="it">Mi prendo cura del tuo viaggio come se fosse il mio.</p>
+
+            <p>
+                Asesoría personalizada para viajes seguros y tranquilos.<br><br>
+                En Pietra Global Assist no compras solo un pasaje:
+                <strong>cuentas con una profesional que te acompaña antes, durante y después del viaje.</strong>
+            </p>
+        </div>
+
+        <div>
+            <h2 style="font-family:Playfair Display,serif;font-size:34px;">
+                Pasajes Aéreos<br>Nacionales e Internacionales
+            </h2>
+            <p style="font-size:18px;line-height:1.6;">
+                Tu viaje, simplificado.<br>
+                Atención humana, clara y responsable.
+            </p>
+        </div>
     </div>
-  </div>
-
-  <div class="hero">
-    <div class="hero-box">
-      <h1 data-lang="es">Bienvenidos</h1>
-      <h1 data-lang="pt">Bem-vindo</h1>
-      <h1 data-lang="en">Welcome</h1>
-      <h1 data-lang="it">Benvenuto</h1>
-
-      <p class="hero-phrase" data-lang="es">Cuido de tu viaje como si fuera mío.</p>
-      <p class="hero-phrase" data-lang="pt">Cuido da sua viagem como se fosse minha.</p>
-      <p class="hero-phrase" data-lang="en">I take care of your trip as if it were my own.</p>
-      <p class="hero-phrase" data-lang="it">Mi prendo cura del tuo viaggio come se fosse il mio.</p>
-
-      <p data-lang="es">
-        Asesoría personalizada para viajes seguros y tranquilos.<br><br>
-        En Pietra Global Assist no compras solo un pasaje:
-        <strong>cuentas con una profesional que te acompaña antes, durante y después del viaje.</strong>
-      </p>
-
-      <p data-lang="pt">
-        Assessoria personalizada para viagens seguras e tranquilas.<br><br>
-        Na Pietra Global Assist você não compra apenas uma passagem:
-        <strong>você conta com uma profissional que te acompanha antes, durante e depois da viagem.</strong>
-      </p>
-
-      <p data-lang="en">
-        Personalized assistance for safe and smooth trips.<br><br>
-        With Pietra Global Assist, you don’t just buy a ticket:
-        <strong>you have a professional supporting you before, during and after your trip.</strong>
-      </p>
-
-      <p data-lang="it">
-        Assistenza personalizzata per viaggi sicuri e sereni.<br><br>
-        Con Pietra Global Assist non acquisti solo un biglietto:
-        <strong>hai una professionista che ti accompagna prima, durante e dopo il viaggio.</strong>
-      </p>
-    </div>
-
-    <div>
-      <h2 style="font-family:Playfair Display,serif;font-size:34px;" data-lang="es">
-        Pasajes Aéreos<br>Nacionales e Internacionales
-      </h2>
-      <h2 style="font-family:Playfair Display,serif;font-size:34px;" data-lang="pt">
-        Passagens Aéreas<br>Nacionais e Internacionais
-      </h2>
-      <h2 style="font-family:Playfair Display,serif;font-size:34px;" data-lang="en">
-        National & International<br>Air Tickets
-      </h2>
-      <h2 style="font-family:Playfair Display,serif;font-size:34px;" data-lang="it">
-        Biglietti Aerei<br>Nazionali e Internazionali
-      </h2>
-
-      <p style="font-size:18px;line-height:1.6;" data-lang="es">
-        Tu viaje, simplificado.<br>Atención humana, clara y responsable.
-      </p>
-      <p style="font-size:18px;line-height:1.6;" data-lang="pt">
-        Sua viagem, simplificada.<br>Atendimento humano, claro e responsável.
-      </p>
-      <p style="font-size:18px;line-height:1.6;" data-lang="en">
-        Your trip, simplified.<br>Human, clear and responsible service.
-      </p>
-      <p style="font-size:18px;line-height:1.6;" data-lang="it">
-        Il tuo viaggio, semplificato.<br>Assistenza umana, chiara e responsabile.
-      </p>
-    </div>
-  </div>
 </header>
 
-<!-- SEU CONTEÚDO ORIGINAL CONTINUA ABAIXO, SEM ALTERAÇÕES -->
+<!-- ===== RESTANTE DO SEU CÓDIGO ORIGINAL (INTACTO) ===== -->
 
 <section>
-  <h2 class="section-title">Nuestros Servicios</h2>
-  <!-- serviços mantidos -->
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Asesoría Completa</h3>
+            <p>Análisis personalizado de rutas, escalas y aerolíneas.</p>
+        </div>
+        <div class="service">
+            <h3>Soporte 24h</h3>
+            <p>Asistencia real durante todo el viaje ante cualquier imprevisto.</p>
+        </div>
+        <div class="service">
+            <h3>Contacto Directo</h3>
+            <p>Gestión directa con aerolíneas.</p>
+        </div>
+        <div class="service">
+            <h3>Atención Multilingüe</h3>
+            <p>Portugués, español, inglés e italiano.</p>
+        </div>
+    </div>
 </section>
 
 <section>
-  <h2 class="section-title">¿Por qué elegirme?</h2>
-  <!-- diferenciais mantidos -->
+    <h2 class="section-title">¿Por qué elegirme?</h2>
+    <div class="why">
+        <div>Atención humana y personalizada</div>
+        <div>Comunicación clara y cercana</div>
+        <div>Experiencia en viajes internacionales</div>
+        <div>Acompañamiento real durante todo el viaje</div>
+    </div>
 </section>
 
-<section id="formulario">
-  <!-- formulário mantido exatamente como você já tinha -->
+<section id="formulario" style="max-width:900px;margin:80px auto;padding:40px;background:#ffffff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.15);">
+
+  <h2 style="font-family:'Playfair Display',serif;font-size:30px;margin-bottom:20px;">
+    Solicitar cotización
+  </h2>
+
+  <p style="font-size:16px;margin-bottom:30px;">
+    Completa el formulario y me pondré en contacto contigo lo antes posible.
+  </p>
+
+ <form 
+  action="https://formspree.io/f/mqrryjjw" 
+  method="POST"
+  onsubmit="setTimeout(() => { window.location.href = 'https://pietraglobalassist.github.io/obrigado.html'; }, 500);"
+>
+<input type="hidden" name="_next" value="https://pietraglobalassist.github.io/obrigado.html">
+
+<!-- FORM ORIGINAL -->
+<input type="text" name="nombre" placeholder="Nombre completo" required style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+<input type="email" name="email" placeholder="E-mail" required style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+<input type="tel" name="telefono" placeholder="WhatsApp" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+<input type="text" name="ruta" placeholder="Ruta del viaje (ej: Madrid → São Paulo)" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+<input type="date" name="fecha_ida" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+<input type="date" name="fecha_vuelta" style="width:100%;padding:14px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+<textarea name="mensaje" placeholder="Información adicional" style="width:100%;padding:14px;height:120px;border-radius:8px;border:1px solid #ccc;margin-bottom:20px;"></textarea>
+
+<button type="submit" style="background:#D4AF37;color:#0B1623;padding:16px 40px;border:none;border-radius:40px;font-size:16px;font-weight:700;cursor:pointer;">
+Enviar solicitud
+</button>
+
+</form>
+</section>
+
+<section class="cta">
+    <h2>Viaja sin preocupaciones</h2>
+    <p>Estoy aquí para ayudarte.</p><br>
+    <a href="https://wa.me/34744768034" target="_blank">Solicitar cotización</a>
 </section>
 
 <footer>
-  <!-- footer mantido -->
+    <p>📲 +34 744 768 034</p>
+    <p>📧 pietraglobalassist@gmail.com</p>
+    <p>📸 @pietraglobalassist</p>
+    <p style="margin-top:20px;font-size:14px;">
+        Atención humana, profesional y responsable.<br>
+        Para quienes valoran tranquilidad al viajar.
+    </p>
 </footer>
 
 <script>
 function setLang(lang){
   localStorage.setItem('lang', lang);
   document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang')===lang ? 'block':'none';
+    el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
   });
 }
 setLang(localStorage.getItem('lang') || 'es');
@@ -291,5 +329,3 @@ setLang(localStorage.getItem('lang') || 'es');
 
 </body>
 </html>
-
-
