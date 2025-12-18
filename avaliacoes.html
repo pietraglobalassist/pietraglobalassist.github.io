@@ -6,8 +6,6 @@
 
 <title>Avaliações | Pietra Global Assist</title>
 
-<meta name="description" content="Avaliações reais de clientes sobre o atendimento da Pietra Global Assist. Experiência, confiança e atenção humana.">
-
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -15,6 +13,7 @@ body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:#0B1623;
+  color:#0B1623;
 }
 
 .container{
@@ -27,14 +26,14 @@ body{
 /* HEADER */
 header{
   background:linear-gradient(135deg,#0B1623,#0F2A3D);
-  padding:40px 20px 120px;
+  padding:40px 20px 90px;
   color:#fff;
 }
 
 /* NAV */
 .nav{
   max-width:1100px;
-  margin:0 auto 50px;
+  margin:0 auto 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -55,7 +54,6 @@ header{
   padding:6px 12px;
   border-radius:20px;
   cursor:pointer;
-  font-weight:600;
   margin-left:6px;
 }
 
@@ -63,17 +61,16 @@ header{
 .logo-wrapper{
   display:flex;
   justify-content:center;
-  margin-bottom:40px;
+  margin-bottom:30px;
 }
 .logo-box{
-  padding:26px 50px;
+  padding:26px 56px;
   border-radius:22px;
   background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(250,247,240,.95));
-  border:1px solid rgba(212,175,55,.6);
-  box-shadow:0 20px 45px rgba(0,0,0,.45),0 0 35px rgba(212,175,55,.45);
+  box-shadow:0 18px 45px rgba(0,0,0,.45),0 0 35px rgba(212,175,55,.4);
 }
 .logo-box img{
-  height:130px;
+  height:150px;
 }
 
 /* TITLES */
@@ -82,60 +79,55 @@ header h1{
   font-size:36px;
   font-weight:800;
   color:#D4AF37;
+  text-align:center;
   letter-spacing:1px;
   text-transform:uppercase;
-  text-align:center;
 }
-
 header p{
-  font-size:18px;
-  max-width:760px;
-  margin:25px auto 0;
   text-align:center;
-  opacity:.95;
+  font-size:18px;
+  max-width:720px;
+  margin:20px auto 0;
 }
 
-/* MAIN */
+/* SECTION */
 .section{
-  max-width:1100px;
-  margin:100px auto;
-  padding:0 20px;
+  padding:90px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+.section h2{
+  font-family:'Libre Franklin',sans-serif;
+  font-size:30px;
+  margin-bottom:40px;
+  text-align:center;
 }
 
-/* REVIEWS GRID */
+/* REVIEWS */
 .reviews{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:35px;
+  gap:30px;
 }
-
-.review-card{
-  background:#ffffff;
-  padding:35px;
+.review{
+  background:#fff;
   border-top:4px solid #D4AF37;
   box-shadow:0 15px 40px rgba(0,0,0,.12);
-  border-radius:16px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+  padding:30px;
 }
-
 .stars{
   color:#D4AF37;
-  font-size:20px;
-  margin-bottom:15px;
+  font-size:18px;
+  margin-bottom:10px;
 }
-
-.review-text{
-  font-size:16px;
-  line-height:1.7;
-  margin-bottom:25px;
-}
-
-.review-name{
-  font-weight:700;
+.review p{
   font-size:15px;
-  color:#0B1623;
+  line-height:1.7;
+}
+.review strong{
+  display:block;
+  margin-top:15px;
+  font-weight:700;
 }
 
 /* CTA */
@@ -144,13 +136,11 @@ header p{
   padding:70px 20px;
   text-align:center;
 }
-
 .cta h2{
   font-family:'Libre Franklin',sans-serif;
   font-size:30px;
   margin-bottom:20px;
 }
-
 .cta a{
   background:#0B1623;
   color:#E6C766;
@@ -165,7 +155,7 @@ footer{
   background:#0B1623;
   color:#E6C766;
   text-align:center;
-  padding:40px 20px;
+  padding:35px 20px;
   font-size:14px;
 }
 
@@ -196,105 +186,73 @@ footer{
     </div>
   </div>
 
-  <h1 data-lang="es">Opiniones de clientes</h1>
-  <h1 data-lang="pt">Avaliações de clientes</h1>
-  <h1 data-lang="en">Client reviews</h1>
-  <h1 data-lang="it">Recensioni dei clienti</h1>
+  <h1 data-lang="es">Opiniones reales ✨</h1>
+  <h1 data-lang="pt">Avaliações reais ✨</h1>
+  <h1 data-lang="en">Real reviews ✨</h1>
+  <h1 data-lang="it">Recensioni reali ✨</h1>
 
-  <p data-lang="es">Experiencias reales de quienes confiaron en mi trabajo</p>
-  <p data-lang="pt">Experiências reais de quem confiou no meu trabalho</p>
-  <p data-lang="en">Real experiences from clients who trusted my work</p>
-  <p data-lang="it">Esperienze reali di chi ha scelto il mio servizio</p>
+  <p data-lang="es">Experiencias de clientes que confiaron en mi trabajo.</p>
+  <p data-lang="pt">Experiências de clientes que confiaram no meu trabalho.</p>
+  <p data-lang="en">Experiences from clients who trusted my work.</p>
+  <p data-lang="it">Esperienze di clienti che hanno scelto il mio servizio.</p>
 
 </header>
 
-<main class="section">
+<section class="section">
 
-<div class="reviews">
+  <div class="reviews">
 
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <div class="review-text" data-lang="es">
-      Pietra fue extremadamente atenta desde el primer contacto. Me ayudó con todo el proceso y estuvo disponible incluso durante el viaje.
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="es">Servicio impecable. Me sentí acompañada en todo momento.</p>
+      <p data-lang="pt">Serviço impecável. Me senti acompanhada o tempo todo.</p>
+      <p data-lang="en">Impeccable service. I felt supported the entire time.</p>
+      <p data-lang="it">Servizio impeccabile. Sempre presente.</p>
+      <strong>Jineide Costa</strong>
     </div>
-    <div class="review-text" data-lang="pt">
-      A Pietra foi extremamente atenciosa desde o primeiro contato. Me ajudou em todo o processo e esteve disponível até durante a viagem.
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="es">Todo claro, rápido y sin estrés. Recomiendo mucho.</p>
+      <p data-lang="pt">Tudo claro, rápido e sem stress. Recomendo muito.</p>
+      <p data-lang="en">Everything was clear, fast and stress-free.</p>
+      <p data-lang="it">Tutto chiaro e veloce. Consigliatissima.</p>
+      <strong>Mateus Garcia</strong>
     </div>
-    <div class="review-text" data-lang="en">
-      Pietra was extremely attentive from the first contact. She helped me through the entire process and was available even during the trip.
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="es">Atención humana de verdad. Excelente experiencia.</p>
+      <p data-lang="pt">Atendimento humano de verdade. Experiência excelente.</p>
+      <p data-lang="en">Truly human service. Excellent experience.</p>
+      <p data-lang="it">Assistenza umana autentica. Ottima esperienza.</p>
+      <strong>Ana Carolina</strong>
     </div>
-    <div class="review-text" data-lang="it">
-      Pietra è stata estremamente attenta fin dal primo contatto. Mi ha aiutato in tutto il processo ed è stata disponibile anche durante il viaggio.
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="es">Confianza total desde el primer contacto.</p>
+      <p data-lang="pt">Confiança total desde o primeiro contato.</p>
+      <p data-lang="en">Total trust from the first contact.</p>
+      <p data-lang="it">Fiducia totale fin dal primo contatto.</p>
+      <strong>Priscila Vieira</strong>
     </div>
-    <div class="review-name">— Jineide Costa</div>
+
   </div>
 
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <div class="review-text" data-lang="es">
-      Servicio impecable. Organización clara, rápida y muy profesional. Recomiendo totalmente.
-    </div>
-    <div class="review-text" data-lang="pt">
-      Serviço impecável. Organização clara, rápida e muito profissional. Recomendo totalmente.
-    </div>
-    <div class="review-text" data-lang="en">
-      Impeccable service. Clear, fast and very professional organization. Highly recommended.
-    </div>
-    <div class="review-text" data-lang="it">
-      Servizio impeccabile. Organizzazione chiara, veloce e molto professionale. Consigliatissima.
-    </div>
-    <div class="review-name">— Mateus Garcia</div>
-  </div>
-
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <div class="review-text" data-lang="es">
-      Me sentí segura en todo momento. Pietra realmente se preocupa por sus clientes.
-    </div>
-    <div class="review-text" data-lang="pt">
-      Me senti segura o tempo todo. A Pietra realmente se preocupa com os clientes.
-    </div>
-    <div class="review-text" data-lang="en">
-      I felt safe the entire time. Pietra genuinely cares about her clients.
-    </div>
-    <div class="review-text" data-lang="it">
-      Mi sono sentita al sicuro in ogni momento. Pietra si prende davvero cura dei suoi clienti.
-    </div>
-    <div class="review-name">— Ana Carolina</div>
-  </div>
-
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <div class="review-text" data-lang="es">
-      Atención humana de verdad. Siempre disponible y muy clara en cada paso.
-    </div>
-    <div class="review-text" data-lang="pt">
-      Atendimento humano de verdade. Sempre disponível e muito clara em cada etapa.
-    </div>
-    <div class="review-text" data-lang="en">
-      Truly human service. Always available and very clear at every step.
-    </div>
-    <div class="review-text" data-lang="it">
-      Un servizio davvero umano. Sempre disponibile e molto chiara in ogni fase.
-    </div>
-    <div class="review-name">— Priscila Vieira</div>
-  </div>
-
-</div>
-
-</main>
+</section>
 
 <section class="cta">
   <h2 data-lang="es">¿Quieres vivir esta experiencia?</h2>
   <h2 data-lang="pt">Quer viver essa experiência?</h2>
-  <h2 data-lang="en">Want to experience this service?</h2>
+  <h2 data-lang="en">Want to experience this?</h2>
   <h2 data-lang="it">Vuoi vivere questa esperienza?</h2>
 
-  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
+  <a href="index.html#formulario">Solicitar presupuesto</a>
 </section>
 
 <footer>
-Pietra Global Assist · Atención humana, profesional y responsable
+  Pietra Global Assist · Atención humana y profesional
 </footer>
 
 </div>
