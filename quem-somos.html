@@ -6,19 +6,18 @@
 
 <title>Quién soy | Pietra Global Assist</title>
 
-<meta name="description" content="Conoce a Pietra Global Assist: más de 2 años de experiencia en pasajes aéreos internacionales, atención humana y acompañamiento completo.">
-
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:#0B1623;
+  color:#0B1623;
 }
 
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   background:#F7F9FC;
   min-height:100vh;
@@ -29,25 +28,28 @@ header{
   background:linear-gradient(135deg,#0B1623,#0F2A3D);
   padding:40px 20px 120px;
   color:#fff;
+  position:relative;
 }
 
 /* NAV */
 .nav{
   max-width:1100px;
-  margin:0 auto 50px;
+  margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
+
 .home-btn{
   color:#E6C766;
   text-decoration:none;
   font-weight:700;
   font-size:14px;
   border:1px solid #D4AF37;
-  padding:6px 16px;
+  padding:6px 14px;
   border-radius:20px;
 }
+
 .lang-switch button{
   background:transparent;
   border:1px solid #D4AF37;
@@ -55,96 +57,123 @@ header{
   padding:6px 12px;
   border-radius:20px;
   cursor:pointer;
-  font-weight:600;
   margin-left:6px;
 }
 
-/* LOGO */
-.logo-wrapper{
-  display:flex;
-  justify-content:center;
-  margin-bottom:40px;
-}
-.logo-box{
-  padding:28px 54px;
-  border-radius:22px;
-  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(250,247,240,.95));
-  border:1px solid rgba(212,175,55,.6);
-  box-shadow:0 20px 45px rgba(0,0,0,.45),0 0 35px rgba(212,175,55,.45);
-}
-.logo-box img{
-  height:140px;
+/* HERO */
+.hero{
+  max-width:1000px;
+  margin:80px auto 0;
+  text-align:center;
+  position:relative;
 }
 
-/* TITLES */
-header h1{
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:-80px -40px;
+  background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/contain no-repeat;
+  opacity:.05;
+}
+
+.logo-box{
+  display:inline-flex;
+  padding:28px 60px;
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(250,247,240,.95));
+  border:1px solid rgba(212,175,55,.6);
+  box-shadow:0 25px 60px rgba(0,0,0,.45),0 0 35px rgba(212,175,55,.35);
+  margin-bottom:40px;
+}
+
+.logo-box img{
+  height:150px;
+}
+
+.hero h1{
   font-family:'Libre Franklin',sans-serif;
-  font-size:36px;
+  font-size:34px;
   font-weight:800;
   color:#D4AF37;
   letter-spacing:1px;
   text-transform:uppercase;
-  text-align:center;
 }
 
-header p{
+.hero p{
   font-size:18px;
-  max-width:760px;
-  margin:25px auto 0;
-  text-align:center;
+  max-width:720px;
+  margin:20px auto 0;
   opacity:.95;
 }
 
-/* MAIN */
+/* SECTION */
 .section{
   max-width:1000px;
   margin:100px auto;
   padding:0 20px;
-}
-
-/* PROFILE */
-.profile{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
   text-align:center;
-  margin-bottom:80px;
 }
 
-.profile img{
-  width:220px;
-  height:220px;
+.section h2{
+  font-family:'Libre Franklin',sans-serif;
+  font-size:30px;
+  margin-bottom:30px;
+}
+
+/* FOTO */
+.profile-photo{
+  width:190px;
+  height:190px;
   border-radius:50%;
   object-fit:cover;
   border:4px solid #D4AF37;
-  box-shadow:0 25px 55px rgba(0,0,0,.25);
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
   margin-bottom:35px;
 }
 
-.profile p{
-  font-size:18px;
-  line-height:1.8;
+/* TEXTO */
+.text-box{
   max-width:820px;
+  margin:auto;
+  font-size:17px;
+  line-height:1.8;
 }
 
-/* CARDS */
-.cards{
+/* INFO GRID */
+.info-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:30px;
+  margin-top:60px;
 }
 
-.card{
+.info{
   background:#ffffff;
-  padding:35px;
+  padding:30px;
   border-top:4px solid #D4AF37;
-  box-shadow:0 15px 40px rgba(0,0,0,.12);
-  border-radius:14px;
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
 }
 
-.card h3{
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,#D4AF37,#E6C766);
+  padding:80px 20px;
+  text-align:center;
+}
+
+.cta h2{
   font-family:'Libre Franklin',sans-serif;
-  margin-bottom:10px;
+  font-size:30px;
+  margin-bottom:25px;
+}
+
+.cta a{
+  background:#0B1623;
+  color:#E6C766;
+  padding:16px 45px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
 }
 
 /* FOOTER */
@@ -166,7 +195,6 @@ footer{
 <div class="container">
 
 <header>
-
   <div class="nav">
     <a href="index.html" class="home-btn">← Home</a>
     <div class="lang-switch">
@@ -177,94 +205,73 @@ footer{
     </div>
   </div>
 
-  <div class="logo-wrapper">
+  <div class="hero">
     <div class="logo-box">
       <img src="logo-sinfondo.png" alt="Pietra Global Assist">
     </div>
+
+    <h1 data-lang="es">Quién soy</h1>
+    <h1 data-lang="pt">Quem sou</h1>
+    <h1 data-lang="en">About me</h1>
+    <h1 data-lang="it">Chi sono</h1>
+
+    <p data-lang="es">Atención humana, experiencia internacional y acompañamiento real.</p>
+    <p data-lang="pt">Atendimento humano, experiência internacional e acompanhamento real.</p>
+    <p data-lang="en">Human assistance, international experience and real support.</p>
+    <p data-lang="it">Assistenza umana, esperienza internazionale e supporto reale.</p>
   </div>
-
-  <h1 data-lang="es">Quién soy</h1>
-  <h1 data-lang="pt">Quem sou</h1>
-  <h1 data-lang="en">About me</h1>
-  <h1 data-lang="it">Chi sono</h1>
-
-  <p data-lang="es">Atención humana, profesional y personalizada</p>
-  <p data-lang="pt">Atendimento humano, profissional e personalizado</p>
-  <p data-lang="en">Human, professional and personalized service</p>
-  <p data-lang="it">Assistenza umana, professionale e personalizzata</p>
-
 </header>
 
-<main class="section">
+<section class="section">
 
-<div class="profile">
-  <img src="pietra.jpg" alt="Pietra Global Assist">
+  <img src="minha-foto.jpg" class="profile-photo" alt="Pietra">
 
-  <p data-lang="es">
-  Soy Pietra Nicole Franzim, especialista en pasajes aéreos nacionales e internacionales, con más de <strong>2 años de experiencia</strong> en el sector.
-  Actualmente vivo en <strong>España</strong>, pero organizo viajes para clientes de <strong>todo el mundo</strong>.
-  </p>
+  <div class="text-box">
+    <p data-lang="es">
+      Soy Pietra Nicole Franzim, agente especializada en pasajes aéreos y planificación de viajes.
+      Cuento con más de <strong>2 años de experiencia</strong> en el sector y actualmente
+      vivo en <strong>España</strong>, organizando viajes para personas en todo el mundo.
+    </p>
 
-  <p data-lang="pt">
-  Sou Pietra Nicole Franzim, especialista em passagens aéreas nacionais e internacionais, com mais de <strong>2 anos de experiência</strong> na área.
-  Atualmente vivo na <strong>Espanha</strong>, mas organizo viagens para <strong>todo o mundo</strong>.
-  </p>
+    <p data-lang="pt">
+      Sou Pietra Nicole Franzim, agente especializada em passagens aéreas e planejamento de viagens.
+      Tenho mais de <strong>2 anos de experiência</strong> na área e atualmente vivo na
+      <strong>Espanha</strong>, organizando viagens para o mundo todo.
+    </p>
 
-  <p data-lang="en">
-  I am Pietra Nicole Franzim, a specialist in national and international air tickets, with over <strong>2 years of experience</strong>.
-  I currently live in <strong>Spain</strong>, but I organize trips for clients <strong>worldwide</strong>.
-  </p>
+    <p data-lang="en">
+      I’m Pietra Nicole Franzim, a travel agent specialized in air tickets and trip planning.
+      I have over <strong>2 years of experience</strong> and currently live in
+      <strong>Spain</strong>, organizing trips worldwide.
+    </p>
 
-  <p data-lang="it">
-  Sono Pietra Nicole Franzim, specializzata in biglietti aerei nazionali e internazionali, con oltre <strong>2 anni di esperienza</strong>.
-  Vivo attualmente in <strong>Spagna</strong>, ma organizzo viaggi per clienti in <strong>tutto il mondo</strong>.
-  </p>
-</div>
-
-<div class="cards">
-
-  <div class="card">
-    <h3 data-lang="es">Atención humana</h3>
-    <h3 data-lang="pt">Atendimento humano</h3>
-    <h3 data-lang="en">Human support</h3>
-    <h3 data-lang="it">Assistenza umana</h3>
-
-    <p data-lang="es">Contacto directo y acompañamiento real.</p>
-    <p data-lang="pt">Contato direto e acompanhamento real.</p>
-    <p data-lang="en">Direct contact and real support.</p>
-    <p data-lang="it">Contatto diretto e supporto reale.</p>
+    <p data-lang="it">
+      Sono Pietra Nicole Franzim, agente specializzata in biglietti aerei e organizzazione viaggi.
+      Ho oltre <strong>2 anni di esperienza</strong> e vivo attualmente in
+      <strong>Spagna</strong>, organizzando viaggi in tutto il mondo.
+    </p>
   </div>
 
-  <div class="card">
-    <h3 data-lang="es">Viajes internacionales</h3>
-    <h3 data-lang="pt">Viagens internacionais</h3>
-    <h3 data-lang="en">International travel</h3>
-    <h3 data-lang="it">Viaggi internazionali</h3>
-
-    <p data-lang="es">Rutas complejas y multidestino.</p>
-    <p data-lang="pt">Rotas complexas e multidestino.</p>
-    <p data-lang="en">Complex and multi-destination routes.</p>
-    <p data-lang="it">Rotte complesse e multidestinazione.</p>
+  <div class="info-grid">
+    <div class="info">✦ Atención personalizada</div>
+    <div class="info">✦ Experiencia internacional</div>
+    <div class="info">✦ Comunicación clara y humana</div>
+    <div class="info">✦ Acompañamiento real</div>
   </div>
 
-  <div class="card">
-    <h3 data-lang="es">Soporte completo</h3>
-    <h3 data-lang="pt">Suporte completo</h3>
-    <h3 data-lang="en">Full assistance</h3>
-    <h3 data-lang="it">Supporto completo</h3>
+</section>
 
-    <p data-lang="es">Antes, durante y después del viaje.</p>
-    <p data-lang="pt">Antes, durante e depois da viagem.</p>
-    <p data-lang="en">Before, during and after your trip.</p>
-    <p data-lang="it">Prima, durante e dopo il viaggio.</p>
-  </div>
+<section class="cta">
+  <h2 data-lang="es">¿Hablamos?</h2>
+  <h2 data-lang="pt">Vamos conversar?</h2>
+  <h2 data-lang="en">Shall we talk?</h2>
+  <h2 data-lang="it">Parliamo?</h2>
 
-</div>
-
-</main>
+  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
+</section>
 
 <footer>
-Pietra Global Assist · Atención humana, profesional y responsable
+  Pietra Global Assist · Atención humana y profesional
 </footer>
 
 </div>
