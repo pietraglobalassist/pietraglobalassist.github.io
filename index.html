@@ -10,7 +10,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&family=Libre+Franklin:wght@600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="Pasajes aéreos nacionales e internacionales con asesoría personalizada. Atención humana, multilingüe y acompañamiento real.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Libre+Franklin:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -27,7 +29,7 @@ body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,var(--blue),var(--blue2));
-  color:#0B1623;
+  color:#fff;
 }
 
 /* MAPA MUNDI GLOBAL */
@@ -53,9 +55,10 @@ body::before{
   border:1px solid var(--gold);
   background:rgba(11,22,35,0.6);
   color:var(--gold);
-  font-size:20px;
+  font-size:22px;
   cursor:pointer;
   z-index:3000;
+  backdrop-filter:blur(6px);
 }
 
 .side-menu{
@@ -64,13 +67,13 @@ body::before{
   left:-320px;
   width:300px;
   height:100vh;
-  background:linear-gradient(180deg,var(--blue),var(--blue2));
+  background:linear-gradient(180deg,#0B1623,#0F2A3D);
   padding:30px;
   transition:.35s ease;
   z-index:4000;
-  box-shadow:8px 0 40px rgba(0,0,0,.5);
 }
-.side-menu.open{left:0}
+
+.side-menu.open{left:0;}
 
 .menu-header{
   display:flex;
@@ -78,8 +81,10 @@ body::before{
   align-items:center;
   color:var(--gold-soft);
   font-weight:700;
+  font-size:18px;
   margin-bottom:35px;
 }
+
 .menu-header button{
   background:none;
   border:none;
@@ -88,14 +93,19 @@ body::before{
   cursor:pointer;
 }
 
+.menu-links{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
 .menu-links a{
-  display:block;
-  margin-bottom:18px;
   color:var(--gold-soft);
   text-decoration:none;
   font-weight:600;
   transition:.3s;
 }
+
 .menu-links a:hover{
   color:#fff;
   transform:translateX(6px);
@@ -113,8 +123,8 @@ body::before{
 /* LANG */
 .lang-switch{
   position:fixed;
-  top:25px;
-  right:25px;
+  top:22px;
+  right:22px;
   z-index:3000;
 }
 .lang-switch button{
@@ -123,157 +133,64 @@ body::before{
   color:var(--gold-soft);
   padding:6px 10px;
   border-radius:18px;
-  cursor:pointer;
   margin-left:6px;
+  cursor:pointer;
 }
 
-/* HEADER */
+[data-lang]{display:none}
+
+/* HERO */
 header{
-  padding:120px 20px 140px;
-  color:#fff;
-}
-
-.hero{
-  max-width:1200px;
-  margin:auto;
+  padding:120px 20px 160px;
   text-align:center;
 }
 
 .hero-title h2{
   font-family:'Libre Franklin',sans-serif;
   font-size:34px;
+  letter-spacing:1px;
   text-transform:uppercase;
   color:var(--gold);
 }
-.hero-title p{font-size:18px;opacity:.9}
+.hero-title p{
+  font-size:18px;
+  opacity:.9;
+}
 
 .hero-box{
-  background:#fff;
-  margin:60px auto 0;
-  padding:50px 80px;
+  background:linear-gradient(135deg,#ffffff,#f6f4ee);
   max-width:1000px;
-  border-left:6px solid var(--gold);
-  box-shadow:0 25px 70px rgba(0,0,0,.18);
+  margin:60px auto 0;
+  padding:60px 80px;
+  border-radius:28px;
   color:#0B1623;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
 }
 
 .hero-box img{
-  height:120px;
-  margin-bottom:25px;
+  height:160px;
+  margin-bottom:30px;
+  filter:drop-shadow(0 10px 25px rgba(212,175,55,.35));
 }
 
 .hero-box h1{
   font-family:'Playfair Display',serif;
   font-size:42px;
-  margin-bottom:20px;
 }
+.hero-box h1 span{color:var(--gold)}
 
 .hero-box p{
   font-size:18px;
-  line-height:1.7;
+  max-width:700px;
+  margin:20px auto;
 }
 
 .hero-box ul{
   list-style:none;
   padding:0;
   margin-top:25px;
-}
-.hero-box li{margin-bottom:10px}
-
-/* SECTIONS */
-section{
-  max-width:1100px;
-  margin:90px auto;
-  padding:0 20px;
-}
-
-.title{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  margin-bottom:35px;
-  position:relative;
-}
-.title:after{
-  content:'';
-  width:70px;
-  height:3px;
-  background:var(--gold);
-  position:absolute;
-  bottom:-10px;
-  left:0;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:30px;
-}
-
-.card{
-  background:var(--blue2);
-  color:#fff;
-  padding:30px;
-  border-radius:12px;
-}
-.card h3{color:var(--gold-soft)}
-
-.why div{
-  background:#fff;
-  padding:30px;
-  border-top:4px solid var(--gold);
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-.destinos img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-/* FORM */
-#formulario{
-  background:#fff;
-  padding:50px;
-  border-radius:20px;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
-}
-#formulario input,#formulario textarea{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-
-/* CTA */
-.cta{
-  background:linear-gradient(135deg,var(--gold),var(--gold-soft));
-  padding:80px 20px;
-  text-align:center;
-}
-.cta a{
-  background:#0B1623;
-  color:var(--gold-soft);
-  padding:16px 40px;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:700;
-}
-
-/* FOOTER */
-footer{
-  background:#0B1623;
-  color:var(--gold-soft);
-  text-align:center;
-  padding:40px 20px;
-}
-
-/* LANG */
-[data-lang]{display:none}
-
-@media(max-width:900px){
-  .hero-box{padding:40px 30px}
+  font-size:16px;
+  line-height:1.8;
 }
 </style>
 </head>
@@ -285,17 +202,15 @@ footer{
 <div id="sideMenu" class="side-menu">
   <div class="menu-header">
     <span>Menu</span>
-    <button onclick="closeMenu()">✕</button>
+    <button onclick="closeMenu()">×</button>
   </div>
   <nav class="menu-links">
-    <a href="index.html">Home</a>
     <a href="quem-somos.html">Quem somos</a>
     <a href="avaliacoes.html">Avaliações</a>
     <a href="destinos.html">Destinos</a>
     <a href="servicos-extras.html">Serviços extras</a>
   </nav>
 </div>
-
 <div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div>
 
 <div class="lang-switch">
@@ -306,46 +221,181 @@ footer{
 </div>
 
 <header>
-  <div class="hero">
+  <div class="hero-title">
+    <h2 data-lang="es">Pasajes Aéreos Nacionales e Internacionales</h2>
+    <h2 data-lang="pt">Passagens Aéreas Nacionais e Internacionais</h2>
+    <h2 data-lang="en">National & International Air Tickets</h2>
+    <h2 data-lang="it">Biglietti Aerei Nazionali e Internazionali</h2>
 
-    <div class="hero-title">
-      <h2 data-lang="es">Pasajes Aéreos Nacionales e Internacionales</h2>
-      <h2 data-lang="pt">Passagens Aéreas Nacionais e Internacionais</h2>
-      <h2 data-lang="en">National & International Air Tickets</h2>
-      <h2 data-lang="it">Biglietti Aerei Nazionali e Internazionali</h2>
+    <p data-lang="es">Atención humana, clara y responsable.</p>
+    <p data-lang="pt">Atendimento humano, claro e responsável.</p>
+    <p data-lang="en">Human, clear and responsible assistance.</p>
+    <p data-lang="it">Assistenza umana, chiara e responsabile.</p>
+  </div>
 
-      <p data-lang="es">Atención humana, clara y responsable.</p>
-      <p data-lang="pt">Atendimento humano, claro e responsável.</p>
-      <p data-lang="en">Human, clear and responsible assistance.</p>
-      <p data-lang="it">Assistenza umana, chiara e responsabile.</p>
-    </div>
+  <div class="hero-box">
+    <img src="logo-sinfondo.png" alt="Pietra Global Assist">
 
-    <div class="hero-box">
-      <img src="logo-sinfondo.png" alt="Pietra Global Assist">
+    <h1 data-lang="es">Cuido de tu viaje <span>como si fuera mío.</span></h1>
+    <h1 data-lang="pt">Cuido da sua viagem <span>como se fosse minha.</span></h1>
+    <h1 data-lang="en">I take care of your trip <span>as if it were my own.</span></h1>
+    <h1 data-lang="it">Mi prendo cura del tuo viaggio <span>come se fosse il mio.</span></h1>
 
-      <h1 data-lang="es">Cuido de tu viaje <span style="color:var(--gold)">como si fuera mío</span></h1>
-      <h1 data-lang="pt">Cuido da sua viagem <span style="color:var(--gold)">como se fosse minha</span></h1>
-      <h1 data-lang="en">I take care of your trip <span style="color:var(--gold)">as if it were my own</span></h1>
-      <h1 data-lang="it">Mi prendo cura del tuo viaggio <span style="color:var(--gold)">come se fosse il mio</span></h1>
+    <p data-lang="es">Asesoría personalizada para viajes seguros.</p>
+    <p data-lang="pt">Assessoria personalizada para viagens seguras.</p>
+    <p data-lang="en">Personalized assistance for safe trips.</p>
+    <p data-lang="it">Assistenza personalizzata per viaggi sicuri.</p>
 
-      <p data-lang="es">Asesoría personalizada para viajes seguros y tranquilos.</p>
-      <p data-lang="pt">Assessoria personalizada para viagens seguras e tranquilas.</p>
-      <p data-lang="en">Personalized assistance for safe and smooth trips.</p>
-      <p data-lang="it">Assistenza personalizzata per viaggi sicuri e tranquilli.</p>
-
-      <ul data-lang="es"><li>✔ Atención humana</li><li>✔ Soporte completo</li><li>✔ Gestión con aerolíneas</li></ul>
-      <ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão com companhias aéreas</li></ul>
-      <ul data-lang="en"><li>✔ Human support</li><li>✔ Full assistance</li><li>✔ Airline management</li></ul>
-      <ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione compagnie aeree</li></ul>
-    </div>
-
+    <ul data-lang="es"><li>✔ Atención humana</li><li>✔ Soporte completo</li><li>✔ Gestión aérea</li></ul>
+    <ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão aérea</li></ul>
+    <ul data-lang="en"><li>✔ Human support</li><li>✔ Full assistance</li><li>✔ Airline management</li></ul>
+    <ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione aerea</li></ul>
   </div>
 </header>
+<section>
+  <h2 class="title" data-lang="es">Nuestros Servicios</h2>
+  <h2 class="title" data-lang="pt">Nossos Serviços</h2>
+  <h2 class="title" data-lang="en">Our Services</h2>
+  <h2 class="title" data-lang="it">I Nostri Servizi</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Asesoría</h3>
+      <p data-lang="es">Rutas y aerolíneas</p>
+      <p data-lang="pt">Rotas e companhias</p>
+      <p data-lang="en">Routes and airlines</p>
+      <p data-lang="it">Rotte e compagnie</p>
+    </div>
+
+    <div class="card">
+      <h3>Soporte</h3>
+      <p data-lang="es">Antes, durante y después</p>
+      <p data-lang="pt">Antes, durante e depois</p>
+      <p data-lang="en">Before, during and after</p>
+      <p data-lang="it">Prima, durante e dopo</p>
+    </div>
+
+    <div class="card">
+      <h3>Contacto</h3>
+      <p data-lang="es">Gestión directa</p>
+      <p data-lang="pt">Gestão direta</p>
+      <p data-lang="en">Direct management</p>
+      <p data-lang="it">Gestione diretta</p>
+    </div>
+
+    <div class="card">
+      <h3>Idiomas</h3>
+      <p>ES · PT · EN · IT</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="title" data-lang="es">Destinos más buscados</h2>
+  <h2 class="title" data-lang="pt">Destinos mais procurados</h2>
+  <h2 class="title" data-lang="en">Most searched destinations</h2>
+  <h2 class="title" data-lang="it">Destinazioni più richieste</h2>
+
+  <div class="grid destinos">
+    <div>
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+      <h4>París</h4>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b">
+      <h4>Londres</h4>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29">
+      <h4>Barcelona</h4>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+      <h4>Dubái</h4>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="title" data-lang="es">¿Por qué elegirme?</h2>
+  <h2 class="title" data-lang="pt">Por que me escolher?</h2>
+  <h2 class="title" data-lang="en">Why choose me?</h2>
+  <h2 class="title" data-lang="it">Perché scegliere me?</h2>
+
+  <div class="grid why">
+    <div data-lang="es">Atención humana y personalizada</div>
+    <div data-lang="pt">Atendimento humano e personalizado</div>
+    <div data-lang="en">Human and personalized service</div>
+    <div data-lang="it">Servizio umano e personalizzato</div>
+
+    <div data-lang="es">Comunicación clara y cercana</div>
+    <div data-lang="pt">Comunicação clara e próxima</div>
+    <div data-lang="en">Clear and close communication</div>
+    <div data-lang="it">Comunicazione chiara e vicina</div>
+
+    <div data-lang="es">Experiencia en viajes internacionales</div>
+    <div data-lang="pt">Experiência em viagens internacionais</div>
+    <div data-lang="en">Experience in international travel</div>
+    <div data-lang="it">Esperienza in viaggi internazionali</div>
+
+    <div data-lang="es">Acompañamiento real durante todo el viaje</div>
+    <div data-lang="pt">Acompanhamento real durante toda a viagem</div>
+    <div data-lang="en">Real support throughout the journey</div>
+    <div data-lang="it">Supporto reale durante tutto il viaggio</div>
+  </div>
+</section>
+
+<section id="formulario">
+  <form action="https://formspree.io/f/mqrryjjw" method="POST"
+    onsubmit="setTimeout(()=>{window.location.href='https://pietraglobalassist.github.io/obrigado.html';},500);">
+
+    <input type="hidden" name="_next" value="https://pietraglobalassist.github.io/obrigado.html">
+
+    <input type="text" name="nombre" data-lang="es" placeholder="Nombre completo" required>
+    <input type="text" name="nombre" data-lang="pt" placeholder="Nome completo" required>
+    <input type="text" name="nombre" data-lang="en" placeholder="Full name" required>
+    <input type="text" name="nombre" data-lang="it" placeholder="Nome completo" required>
+
+    <input type="email" name="email" placeholder="E-mail" required>
+
+    <input type="tel" name="telefono" placeholder="WhatsApp">
+
+    <input type="text" name="ruta" data-lang="es" placeholder="Ruta del viaje">
+    <input type="text" name="ruta" data-lang="pt" placeholder="Rota da viagem">
+    <input type="text" name="ruta" data-lang="en" placeholder="Travel route">
+    <input type="text" name="ruta" data-lang="it" placeholder="Rotta del viaggio">
+
+    <input type="date" name="fecha_ida">
+    <input type="date" name="fecha_vuelta">
+
+    <textarea name="mensaje" data-lang="es" placeholder="Información adicional"></textarea>
+    <textarea name="mensaje" data-lang="pt" placeholder="Informações adicionais"></textarea>
+    <textarea name="mensaje" data-lang="en" placeholder="Additional information"></textarea>
+    <textarea name="mensaje" data-lang="it" placeholder="Informazioni aggiuntive"></textarea>
+
+    <button type="submit" class="btn" data-lang="es">Enviar solicitud</button>
+    <button type="submit" class="btn" data-lang="pt">Enviar solicitação</button>
+    <button type="submit" class="btn" data-lang="en">Send request</button>
+    <button type="submit" class="btn" data-lang="it">Invia richiesta</button>
+  </form>
+</section>
+
+<section class="cta">
+  <h2 data-lang="es">¿Prefieres hablar ahora?</h2>
+  <h2 data-lang="pt">Prefere falar agora?</h2>
+  <h2 data-lang="en">Would you like to talk now?</h2>
+  <h2 data-lang="it">Preferisci parlare ora?</h2>
+
+  <a href="https://wa.me/34744768034" target="_blank" data-lang="es">Hablar por WhatsApp</a>
+  <a href="https://wa.me/34744768034" target="_blank" data-lang="pt">Falar pelo WhatsApp</a>
+  <a href="https://wa.me/34744768034" target="_blank" data-lang="en">Chat on WhatsApp</a>
+  <a href="https://wa.me/34744768034" target="_blank" data-lang="it">Chatta su WhatsApp</a>
+</section>
 
 <footer>
-<p>📲 +34 744 768 034</p>
-<p>📧 pietraglobalassist@gmail.com</p>
-<p>📸 @pietraglobalassist</p>
+  <p>📲 +34 744 768 034</p>
+  <p>📧 pietraglobalassist@gmail.com</p>
+  <p>📸 @pietraglobalassist</p>
 </footer>
 
 <script>
@@ -355,15 +405,15 @@ function setLang(lang){
     el.style.display = el.getAttribute('data-lang')===lang?'block':'none';
   });
 }
-setLang(localStorage.getItem('lang')||'es');
+setLang(localStorage.getItem('lang') || 'es');
 
 function openMenu(){
-  sideMenu.classList.add('open');
-  menuOverlay.classList.add('show');
+  document.getElementById('sideMenu').classList.add('open');
+  document.getElementById('menuOverlay').classList.add('show');
 }
 function closeMenu(){
-  sideMenu.classList.remove('open');
-  menuOverlay.classList.remove('show');
+  document.getElementById('sideMenu').classList.remove('open');
+  document.getElementById('menuOverlay').classList.remove('show');
 }
 </script>
 
