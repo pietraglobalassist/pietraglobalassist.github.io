@@ -6,10 +6,9 @@
 
 <title>Pietra Global Assist | Pasajes Aéreos Internacionales</title>
 
+<link rel="icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<meta name="description" content="Pasajes aéreos nacionales e internacionales con asesoría personalizada. Atención humana, multilingüe y acompañamiento real.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&family=Libre+Franklin:wght@600;700;800&display=swap" rel="stylesheet">
 
@@ -22,16 +21,16 @@
   --white:#F7F9FC;
 }
 
-/* RESET */
+*{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:'Inter',sans-serif;
   background:linear-gradient(135deg,var(--blue),var(--blue2));
-  color:#fff;
-  position:relative;
+  color:#0B1623;
 }
 
-/* MAPA GLOBAL */
+/* MAPA MUNDI GLOBAL */
 body::before{
   content:'';
   position:fixed;
@@ -66,20 +65,40 @@ body::before{
   width:300px;
   height:100vh;
   background:linear-gradient(180deg,var(--blue),var(--blue2));
-  box-shadow:8px 0 40px rgba(0,0,0,.5);
   padding:30px;
   transition:.35s ease;
   z-index:4000;
+  box-shadow:8px 0 40px rgba(0,0,0,.5);
+}
+.side-menu.open{left:0}
+
+.menu-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--gold-soft);
+  font-weight:700;
+  margin-bottom:35px;
+}
+.menu-header button{
+  background:none;
+  border:none;
+  color:var(--gold);
+  font-size:22px;
+  cursor:pointer;
 }
 
-.side-menu.open{left:0;}
-
-.side-menu a{
+.menu-links a{
   display:block;
   margin-bottom:18px;
   color:var(--gold-soft);
   text-decoration:none;
   font-weight:600;
+  transition:.3s;
+}
+.menu-links a:hover{
+  color:#fff;
+  transform:translateX(6px);
 }
 
 .menu-overlay{
@@ -89,14 +108,13 @@ body::before{
   display:none;
   z-index:3500;
 }
-
-.menu-overlay.show{display:block;}
+.menu-overlay.show{display:block}
 
 /* LANG */
 .lang-switch{
   position:fixed;
-  top:22px;
-  right:22px;
+  top:25px;
+  right:25px;
   z-index:3000;
 }
 .lang-switch button{
@@ -109,9 +127,15 @@ body::before{
   margin-left:6px;
 }
 
-/* HERO */
+/* HEADER */
 header{
-  padding:120px 20px 160px;
+  padding:120px 20px 140px;
+  color:#fff;
+}
+
+.hero{
+  max-width:1200px;
+  margin:auto;
   text-align:center;
 }
 
@@ -121,15 +145,16 @@ header{
   text-transform:uppercase;
   color:var(--gold);
 }
+.hero-title p{font-size:18px;opacity:.9}
 
 .hero-box{
   background:#fff;
-  color:#0B1623;
-  margin:50px auto 0;
+  margin:60px auto 0;
   padding:50px 80px;
   max-width:1000px;
   border-left:6px solid var(--gold);
   box-shadow:0 25px 70px rgba(0,0,0,.18);
+  color:#0B1623;
 }
 
 .hero-box img{
@@ -140,33 +165,34 @@ header{
 .hero-box h1{
   font-family:'Playfair Display',serif;
   font-size:42px;
+  margin-bottom:20px;
 }
 
-.hero-box span{color:var(--gold);}
-
-.hero-box p{font-size:18px;}
+.hero-box p{
+  font-size:18px;
+  line-height:1.7;
+}
 
 .hero-box ul{
   list-style:none;
   padding:0;
   margin-top:25px;
 }
+.hero-box li{margin-bottom:10px}
 
 /* SECTIONS */
 section{
   max-width:1100px;
   margin:90px auto;
   padding:0 20px;
-  color:#0B1623;
 }
 
 .title{
   font-family:'Playfair Display',serif;
   font-size:32px;
-  margin-bottom:30px;
+  margin-bottom:35px;
   position:relative;
 }
-
 .title:after{
   content:'';
   width:70px;
@@ -187,10 +213,16 @@ section{
   background:var(--blue2);
   color:#fff;
   padding:30px;
-  border-radius:10px;
+  border-radius:12px;
 }
+.card h3{color:var(--gold-soft)}
 
-.card h3{color:var(--gold-soft);}
+.why div{
+  background:#fff;
+  padding:30px;
+  border-top:4px solid var(--gold);
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
 
 .destinos img{
   width:100%;
@@ -206,21 +238,20 @@ section{
   border-radius:20px;
   box-shadow:0 20px 60px rgba(0,0,0,.15);
 }
-
 #formulario input,#formulario textarea{
   width:100%;
   padding:14px;
   margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #ccc;
 }
 
 /* CTA */
 .cta{
   background:linear-gradient(135deg,var(--gold),var(--gold-soft));
-  padding:70px 20px;
+  padding:80px 20px;
   text-align:center;
-  color:#0B1623;
 }
-
 .cta a{
   background:#0B1623;
   color:var(--gold-soft);
@@ -232,14 +263,18 @@ section{
 
 /* FOOTER */
 footer{
+  background:#0B1623;
+  color:var(--gold-soft);
   text-align:center;
   padding:40px 20px;
-  color:var(--gold-soft);
 }
 
 /* LANG */
-[data-lang]{display:none;}
+[data-lang]{display:none}
 
+@media(max-width:900px){
+  .hero-box{padding:40px 30px}
+}
 </style>
 </head>
 
@@ -248,11 +283,17 @@ footer{
 <button class="menu-btn" onclick="openMenu()">☰</button>
 
 <div id="sideMenu" class="side-menu">
-  <a href="index.html">Home</a>
-  <a href="quem-somos.html">Quem somos</a>
-  <a href="avaliacoes.html">Avaliações</a>
-  <a href="destinos.html">Destinos</a>
-  <a href="servicos-extras.html">Serviços extras</a>
+  <div class="menu-header">
+    <span>Menu</span>
+    <button onclick="closeMenu()">✕</button>
+  </div>
+  <nav class="menu-links">
+    <a href="index.html">Home</a>
+    <a href="quem-somos.html">Quem somos</a>
+    <a href="avaliacoes.html">Avaliações</a>
+    <a href="destinos.html">Destinos</a>
+    <a href="servicos-extras.html">Serviços extras</a>
+  </nav>
 </div>
 
 <div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div>
@@ -265,41 +306,49 @@ footer{
 </div>
 
 <header>
-  <div class="hero-title">
-    <h2 data-lang="es">Pasajes Aéreos Internacionales</h2>
-    <h2 data-lang="pt">Passagens Aéreas Internacionais</h2>
-    <h2 data-lang="en">International Air Tickets</h2>
-    <h2 data-lang="it">Biglietti Aerei Internazionali</h2>
-  </div>
+  <div class="hero">
 
-  <div class="hero-box">
-    <img src="logo-sinfondo.png" alt="Pietra Global Assist">
+    <div class="hero-title">
+      <h2 data-lang="es">Pasajes Aéreos Nacionales e Internacionales</h2>
+      <h2 data-lang="pt">Passagens Aéreas Nacionais e Internacionais</h2>
+      <h2 data-lang="en">National & International Air Tickets</h2>
+      <h2 data-lang="it">Biglietti Aerei Nazionali e Internazionali</h2>
 
-    <h1 data-lang="es">Cuido de tu viaje <span>como si fuera mío</span></h1>
-    <h1 data-lang="pt">Cuido da sua viagem <span>como se fosse minha</span></h1>
-    <h1 data-lang="en">I take care of your trip <span>as if it were my own</span></h1>
-    <h1 data-lang="it">Mi prendo cura del tuo viaggio <span>come se fosse il mio</span></h1>
+      <p data-lang="es">Atención humana, clara y responsable.</p>
+      <p data-lang="pt">Atendimento humano, claro e responsável.</p>
+      <p data-lang="en">Human, clear and responsible assistance.</p>
+      <p data-lang="it">Assistenza umana, chiara e responsabile.</p>
+    </div>
 
-    <p data-lang="es">Asesoría personalizada y acompañamiento real.</p>
-    <p data-lang="pt">Assessoria personalizada e acompanhamento real.</p>
-    <p data-lang="en">Personalized assistance and real support.</p>
-    <p data-lang="it">Assistenza personalizzata e supporto reale.</p>
+    <div class="hero-box">
+      <img src="logo-sinfondo.png" alt="Pietra Global Assist">
+
+      <h1 data-lang="es">Cuido de tu viaje <span style="color:var(--gold)">como si fuera mío</span></h1>
+      <h1 data-lang="pt">Cuido da sua viagem <span style="color:var(--gold)">como se fosse minha</span></h1>
+      <h1 data-lang="en">I take care of your trip <span style="color:var(--gold)">as if it were my own</span></h1>
+      <h1 data-lang="it">Mi prendo cura del tuo viaggio <span style="color:var(--gold)">come se fosse il mio</span></h1>
+
+      <p data-lang="es">Asesoría personalizada para viajes seguros y tranquilos.</p>
+      <p data-lang="pt">Assessoria personalizada para viagens seguras e tranquilas.</p>
+      <p data-lang="en">Personalized assistance for safe and smooth trips.</p>
+      <p data-lang="it">Assistenza personalizzata per viaggi sicuri e tranquilli.</p>
+
+      <ul data-lang="es"><li>✔ Atención humana</li><li>✔ Soporte completo</li><li>✔ Gestión con aerolíneas</li></ul>
+      <ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão com companhias aéreas</li></ul>
+      <ul data-lang="en"><li>✔ Human support</li><li>✔ Full assistance</li><li>✔ Airline management</li></ul>
+      <ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione compagnie aeree</li></ul>
+    </div>
+
   </div>
 </header>
 
 <footer>
-  📲 +34 744 768 034 · 📧 pietraglobalassist@gmail.com · 📸 @pietraglobalassist
+<p>📲 +34 744 768 034</p>
+<p>📧 pietraglobalassist@gmail.com</p>
+<p>📸 @pietraglobalassist</p>
 </footer>
 
 <script>
-function openMenu(){
-  document.getElementById('sideMenu').classList.add('open');
-  document.getElementById('menuOverlay').classList.add('show');
-}
-function closeMenu(){
-  document.getElementById('sideMenu').classList.remove('open');
-  document.getElementById('menuOverlay').classList.remove('show');
-}
 function setLang(lang){
   localStorage.setItem('lang',lang);
   document.querySelectorAll('[data-lang]').forEach(el=>{
@@ -307,12 +356,19 @@ function setLang(lang){
   });
 }
 setLang(localStorage.getItem('lang')||'es');
+
+function openMenu(){
+  sideMenu.classList.add('open');
+  menuOverlay.classList.add('show');
+}
+function closeMenu(){
+  sideMenu.classList.remove('open');
+  menuOverlay.classList.remove('show');
+}
 </script>
 
 </body>
 </html>
-
-
 
 
 
