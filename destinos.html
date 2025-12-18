@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Destinos | Pietra Global Assist</title>
-
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +25,7 @@ body{
   color:#fff;
 }
 
-/* MAPA MUNDI FUNDO */
+/* MAPA FUNDO */
 body::before{
   content:'';
   position:fixed;
@@ -38,7 +37,7 @@ body::before{
   z-index:-1;
 }
 
-/* BOTÃO MENU */
+/* MENU */
 .menu-btn{
   position:fixed;
   top:25px;
@@ -53,17 +52,8 @@ body::before{
   font-size:20px;
   cursor:pointer;
   z-index:3000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.3s;
-}
-.menu-btn:hover{
-  background:var(--gold);
-  color:var(--blue);
 }
 
-/* MENU LATERAL */
 .side-menu{
   position:fixed;
   top:0;
@@ -90,8 +80,8 @@ body::before{
   border:none;
   color:var(--gold);
   font-size:22px;
-  cursor:pointer;
 }
+
 .menu-links{
   display:flex;
   flex-direction:column;
@@ -102,12 +92,7 @@ body::before{
   text-decoration:none;
   font-weight:600;
 }
-.menu-links a:hover{
-  color:#fff;
-  transform:translateX(6px);
-}
 
-/* OVERLAY */
 .menu-overlay{
   position:fixed;
   inset:0;
@@ -117,7 +102,6 @@ body::before{
 }
 .menu-overlay.show{display:block;}
 
-/* IDIOMAS */
 .lang-switch{
   position:fixed;
   top:25px;
@@ -142,45 +126,30 @@ body::before{
   padding:120px 20px 80px;
 }
 .hero-box{
-  background:linear-gradient(
-    135deg,
-    rgba(255,255,255,0.96),
-    rgba(248,246,240,0.98)
-  );
+  background:linear-gradient(135deg,rgba(255,255,255,0.96),rgba(248,246,240,0.98));
   border-radius:28px;
   padding:80px 90px;
   max-width:1100px;
   width:100%;
   text-align:center;
   color:var(--blue);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.45),
-    0 0 60px rgba(212,175,55,0.45);
+  box-shadow:0 30px 80px rgba(0,0,0,0.45),0 0 60px rgba(212,175,55,0.45);
 }
-.hero-box img{
-  height:120px;
-  margin-bottom:35px;
-}
+.hero-box img{height:120px;margin-bottom:35px;}
 .hero-box h1{
   font-family:'Playfair Display',serif;
   font-size:44px;
-  margin-bottom:18px;
 }
 .hero-box h1 span{color:var(--gold);}
 .hero-box p{
   font-size:18px;
-  max-width:700px;
+  max-width:760px;
   margin:0 auto;
 }
 
 /* SEÇÃO */
-.section{
-  max-width:1200px;
-  margin:0 auto;
-  padding:80px 20px;
-}
+.section{max-width:1200px;margin:0 auto;padding:90px 20px;}
 
-/* GRID DESTINOS */
 .destinos-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -196,19 +165,19 @@ body::before{
 }
 .destino img{
   width:100%;
-  height:220px;
+  height:230px;
   object-fit:cover;
 }
 .destino-content{
-  padding:28px;
+  padding:30px;
 }
 .destino-content h3{
   font-family:'Playfair Display',serif;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 .destino-content p{
   font-size:16px;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 /* CTA */
@@ -240,13 +209,7 @@ footer{
   color:var(--gold-soft);
 }
 
-/* LANG */
 [data-lang]{display:none;}
-
-@media(max-width:768px){
-  .hero-box{padding:50px 30px;}
-  .hero-box h1{font-size:32px;}
-}
 </style>
 </head>
 
@@ -279,70 +242,96 @@ footer{
 
 <section class="hero">
   <div class="hero-box">
-    <img src="logo-sinfondo.png" alt="Pietra Global Assist">
-
+    <img src="logo-sinfondo.png">
     <h1 data-lang="pt">Destinos <span>mais procurados</span></h1>
     <h1 data-lang="es">Destinos <span>más buscados</span></h1>
     <h1 data-lang="en">Most <span>popular destinations</span></h1>
     <h1 data-lang="it">Destinazioni <span>più richieste</span></h1>
 
-    <p data-lang="pt">Organizo viagens para os destinos mais desejados do mundo, com suporte completo e humano.</p>
-    <p data-lang="es">Organizo viajes a los destinos más deseados del mundo.</p>
-    <p data-lang="en">I organize trips to the most desired destinations worldwide.</p>
-    <p data-lang="it">Organizzo viaggi verso le destinazioni più desiderate.</p>
+    <p data-lang="pt">Esses são alguns dos destinos mais escolhidos por quem busca experiências únicas, segurança e boa organização.</p>
+    <p data-lang="es">Estos son algunos de los destinos más elegidos por quienes buscan experiencias únicas.</p>
+    <p data-lang="en">These are some of the most chosen destinations for unique experiences.</p>
+    <p data-lang="it">Queste sono alcune delle destinazioni più scelte.</p>
   </div>
 </section>
 
 <section class="section">
-  <div class="destinos-grid">
+<div class="destinos-grid">
 
-    <div class="destino">
-      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
-      <div class="destino-content">
-        <h3>Europa</h3>
-        <p data-lang="pt">França, Itália, Espanha, Portugal e muito mais.</p>
-        <p data-lang="es">Francia, Italia, España, Portugal y más.</p>
-        <p data-lang="en">France, Italy, Spain, Portugal and more.</p>
-        <p data-lang="it">Francia, Italia, Spagna, Portogallo e altro.</p>
-      </div>
-    </div>
+<!-- EUROPA -->
+<div class="destino">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+<div class="destino-content">
+<h3>Europa</h3>
+<p data-lang="pt">Cultura, história, gastronomia e facilidade de deslocamento entre países fazem da Europa um dos destinos mais desejados.</p>
+<p data-lang="es">Cultura, historia y facilidad de transporte hacen de Europa un destino muy buscado.</p>
+<p data-lang="en">Culture, history and easy transportation make Europe a top destination.</p>
+<p data-lang="it">Cultura, storia e facilità di spostamento rendono l’Europa molto richiesta.</p>
+</div>
+</div>
 
-    <div class="destino">
-      <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74">
-      <div class="destino-content">
-        <h3>Estados Unidos</h3>
-        <p data-lang="pt">Nova York, Miami, Orlando, Califórnia.</p>
-        <p data-lang="es">Nueva York, Miami, Orlando.</p>
-        <p data-lang="en">New York, Miami, Orlando.</p>
-        <p data-lang="it">New York, Miami, Orlando.</p>
-      </div>
-    </div>
+<!-- EUA -->
+<div class="destino">
+<img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74">
+<div class="destino-content">
+<h3>Estados Unidos</h3>
+<p data-lang="pt">Ideal para turismo, compras, estudos e trabalho, com cidades icônicas e ótima infraestrutura.</p>
+<p data-lang="es">Ideal para turismo, compras y estudios.</p>
+<p data-lang="en">Perfect for tourism, shopping, studies and business.</p>
+<p data-lang="it">Ideale per turismo, shopping e studio.</p>
+</div>
+</div>
 
-    <div class="destino">
-      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
-      <div class="destino-content">
-        <h3>Emirados Árabes</h3>
-        <p data-lang="pt">Dubai e Abu Dhabi.</p>
-        <p data-lang="es">Dubái y Abu Dhabi.</p>
-        <p data-lang="en">Dubai and Abu Dhabi.</p>
-        <p data-lang="it">Dubai e Abu Dhabi.</p>
-      </div>
-    </div>
+<!-- DUBAI -->
+<div class="destino">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+<div class="destino-content">
+<h3>Dubai</h3>
+<p data-lang="pt">Luxo, inovação e experiências únicas no deserto e na cidade mais futurista do mundo.</p>
+<p data-lang="es">Lujo, innovación y experiencias únicas.</p>
+<p data-lang="en">Luxury, innovation and unique experiences.</p>
+<p data-lang="it">Lusso, innovazione ed esperienze uniche.</p>
+</div>
+</div>
 
-  </div>
+<!-- JAPÃO -->
+<div class="destino">
+<img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c">
+<div class="destino-content">
+<h3>Japão</h3>
+<p data-lang="pt">Tradição, tecnologia e segurança, atraindo turistas que buscam cultura e organização.</p>
+<p data-lang="es">Tradición, tecnología y seguridad.</p>
+<p data-lang="en">Tradition, technology and safety.</p>
+<p data-lang="it">Tradizione, tecnologia e sicurezza.</p>
+</div>
+</div>
+
+<!-- CARIBE -->
+<div class="destino">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<div class="destino-content">
+<h3>Caribe</h3>
+<p data-lang="pt">Praias paradisíacas, resorts all inclusive e descanso total.</p>
+<p data-lang="es">Playas paradisíacas y resorts.</p>
+<p data-lang="en">Paradise beaches and all-inclusive resorts.</p>
+<p data-lang="it">Spiagge paradisiache e resort.</p>
+</div>
+</div>
+
+</div>
 </section>
 
 <section class="cta">
-  <h2 data-lang="pt">Quer planejar sua viagem agora?</h2>
-  <h2 data-lang="es">¿Quieres planear tu viaje ahora?</h2>
-  <h2 data-lang="en">Want to plan your trip now?</h2>
-  <h2 data-lang="it">Vuoi pianificare il tuo viaggio ora?</h2>
+<h2 data-lang="pt">Quer planejar sua viagem?</h2>
+<h2 data-lang="es">¿Quieres planear tu viaje?</h2>
+<h2 data-lang="en">Ready to plan your trip?</h2>
+<h2 data-lang="it">Vuoi pianificare il tuo viaggio?</h2>
 
-  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
+<a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
 </section>
 
 <footer>
-  Pietra Global Assist · Atendimento humano e profissional
+Pietra Global Assist · Atendimento humano e profissional
 </footer>
 
 <script>
