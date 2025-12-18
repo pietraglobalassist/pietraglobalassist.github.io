@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Destinos | Pietra Global Assist</title>
+
+<link rel="icon" type="image/png" href="favicon-32x32.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#0B1623;
+  --blue2:#0F2A3D;
+  --gold:#D4AF37;
+  --gold-soft:#E6C766;
+  --white:#F7F9FC;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  color:#fff;
+}
+
+/* MAPA MUNDI FUNDO */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')
+    center/contain no-repeat;
+  opacity:0.06;
+  filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
+  z-index:-1;
+}
+
+/* BOTÃO MENU */
+.menu-btn{
+  position:fixed;
+  top:25px;
+  left:25px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid var(--gold);
+  background:rgba(11,22,35,0.65);
+  backdrop-filter: blur(6px);
+  color:var(--gold);
+  font-size:20px;
+  cursor:pointer;
+  z-index:3000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+}
+.menu-btn:hover{
+  background:var(--gold);
+  color:var(--blue);
+}
+
+/* MENU LATERAL */
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-320px;
+  width:300px;
+  height:100vh;
+  background:linear-gradient(180deg,var(--blue),var(--blue2));
+  padding:25px;
+  transition:.35s ease;
+  z-index:4000;
+}
+.side-menu.open{left:0;}
+
+.menu-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--gold-soft);
+  font-weight:700;
+  margin-bottom:30px;
+}
+.menu-header button{
+  background:none;
+  border:none;
+  color:var(--gold);
+  font-size:22px;
+  cursor:pointer;
+}
+.menu-links{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.menu-links a{
+  color:var(--gold-soft);
+  text-decoration:none;
+  font-weight:600;
+}
+.menu-links a:hover{
+  color:#fff;
+  transform:translateX(6px);
+}
+
+/* OVERLAY */
+.menu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:none;
+  z-index:3500;
+}
+.menu-overlay.show{display:block;}
+
+/* IDIOMAS */
+.lang-switch{
+  position:fixed;
+  top:25px;
+  right:25px;
+}
+.lang-switch button{
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold-soft);
+  padding:6px 10px;
+  border-radius:18px;
+  cursor:pointer;
+  margin-left:6px;
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 20px 80px;
+}
+.hero-box{
+  background:linear-gradient(
+    135deg,
+    rgba(255,255,255,0.96),
+    rgba(248,246,240,0.98)
+  );
+  border-radius:28px;
+  padding:80px 90px;
+  max-width:1100px;
+  width:100%;
+  text-align:center;
+  color:var(--blue);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.45),
+    0 0 60px rgba(212,175,55,0.45);
+}
+.hero-box img{
+  height:120px;
+  margin-bottom:35px;
+}
+.hero-box h1{
+  font-family:'Playfair Display',serif;
+  font-size:44px;
+  margin-bottom:18px;
+}
+.hero-box h1 span{color:var(--gold);}
+.hero-box p{
+  font-size:18px;
+  max-width:700px;
+  margin:0 auto;
+}
+
+/* SEÇÃO */
+.section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:80px 20px;
+}
+
+/* GRID DESTINOS */
+.destinos-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.destino{
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+  color:var(--blue);
+}
+.destino img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.destino-content{
+  padding:28px;
+}
+.destino-content h3{
+  font-family:'Playfair Display',serif;
+  margin-bottom:10px;
+}
+.destino-content p{
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+  padding:80px 20px;
+  text-align:center;
+  color:var(--blue);
+}
+.cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  margin-bottom:25px;
+}
+.cta a{
+  background:var(--blue);
+  color:var(--gold-soft);
+  padding:16px 46px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  font-size:14px;
+  color:var(--gold-soft);
+}
+
+/* LANG */
+[data-lang]{display:none;}
+
+@media(max-width:768px){
+  .hero-box{padding:50px 30px;}
+  .hero-box h1{font-size:32px;}
+}
+</style>
+</head>
+
+<body>
+
+<button class="menu-btn" onclick="openMenu()">☰</button>
+
+<div id="sideMenu" class="side-menu">
+  <div class="menu-header">
+    <span>Menu</span>
+    <button onclick="closeMenu()">✕</button>
+  </div>
+  <nav class="menu-links">
+    <a href="index.html">Home</a>
+    <a href="quem-somos.html">Quem somos</a>
+    <a href="avaliacoes.html">Avaliações</a>
+    <a href="destinos.html">Destinos</a>
+    <a href="https://wa.me/34744768034" target="_blank">Contato</a>
+  </nav>
+</div>
+
+<div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div>
+
+<div class="lang-switch">
+  <button onclick="setLang('es')">ES</button>
+  <button onclick="setLang('pt')">PT</button>
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('it')">IT</button>
+</div>
+
+<section class="hero">
+  <div class="hero-box">
+    <img src="logo-sinfondo.png" alt="Pietra Global Assist">
+
+    <h1 data-lang="pt">Destinos <span>mais procurados</span></h1>
+    <h1 data-lang="es">Destinos <span>más buscados</span></h1>
+    <h1 data-lang="en">Most <span>popular destinations</span></h1>
+    <h1 data-lang="it">Destinazioni <span>più richieste</span></h1>
+
+    <p data-lang="pt">Organizo viagens para os destinos mais desejados do mundo, com suporte completo e humano.</p>
+    <p data-lang="es">Organizo viajes a los destinos más deseados del mundo.</p>
+    <p data-lang="en">I organize trips to the most desired destinations worldwide.</p>
+    <p data-lang="it">Organizzo viaggi verso le destinazioni più desiderate.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="destinos-grid">
+
+    <div class="destino">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+      <div class="destino-content">
+        <h3>Europa</h3>
+        <p data-lang="pt">França, Itália, Espanha, Portugal e muito mais.</p>
+        <p data-lang="es">Francia, Italia, España, Portugal y más.</p>
+        <p data-lang="en">France, Italy, Spain, Portugal and more.</p>
+        <p data-lang="it">Francia, Italia, Spagna, Portogallo e altro.</p>
+      </div>
+    </div>
+
+    <div class="destino">
+      <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74">
+      <div class="destino-content">
+        <h3>Estados Unidos</h3>
+        <p data-lang="pt">Nova York, Miami, Orlando, Califórnia.</p>
+        <p data-lang="es">Nueva York, Miami, Orlando.</p>
+        <p data-lang="en">New York, Miami, Orlando.</p>
+        <p data-lang="it">New York, Miami, Orlando.</p>
+      </div>
+    </div>
+
+    <div class="destino">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c">
+      <div class="destino-content">
+        <h3>Emirados Árabes</h3>
+        <p data-lang="pt">Dubai e Abu Dhabi.</p>
+        <p data-lang="es">Dubái y Abu Dhabi.</p>
+        <p data-lang="en">Dubai and Abu Dhabi.</p>
+        <p data-lang="it">Dubai e Abu Dhabi.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <h2 data-lang="pt">Quer planejar sua viagem agora?</h2>
+  <h2 data-lang="es">¿Quieres planear tu viaje ahora?</h2>
+  <h2 data-lang="en">Want to plan your trip now?</h2>
+  <h2 data-lang="it">Vuoi pianificare il tuo viaggio ora?</h2>
+
+  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
+</section>
+
+<footer>
+  Pietra Global Assist · Atendimento humano e profissional
+</footer>
+
+<script>
+function openMenu(){
+  document.getElementById('sideMenu').classList.add('open');
+  document.getElementById('menuOverlay').classList.add('show');
+}
+function closeMenu(){
+  document.getElementById('sideMenu').classList.remove('open');
+  document.getElementById('menuOverlay').classList.remove('show');
+}
+function setLang(lang){
+  localStorage.setItem('lang',lang);
+  document.querySelectorAll('[data-lang]').forEach(el=>{
+    el.style.display = el.getAttribute('data-lang')===lang ? 'block' : 'none';
+  });
+}
+setLang(localStorage.getItem('lang') || 'es');
+</script>
+
+</body>
+</html>
