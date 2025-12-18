@@ -6,13 +6,14 @@
 
 <title>Pietra Global Assist | Pasajes Aéreos Internacionales</title>
 
-<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
 <meta name="description" content="Pasajes aéreos nacionales e internacionales con asesoría personalizada. Atención humana, multilingüe y acompañamiento real.">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Libre+Franklin:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -22,8 +23,6 @@
   --gold-soft:#E6C766;
   --white:#F7F9FC;
 }
-
-*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -36,31 +35,32 @@ body{
 body::before{
   content:'';
   position:fixed;
-  inset:0;
+  inset:-20%;
   background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')
     center/contain no-repeat;
-  opacity:0.06;
+  opacity:0.08;
   filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
   z-index:-1;
 }
 
-/* MENU */
+/* BOTÃO MENU */
 .menu-btn{
   position:fixed;
   top:22px;
   left:22px;
-  width:44px;
-  height:44px;
+  width:46px;
+  height:46px;
   border-radius:50%;
   border:1px solid var(--gold);
-  background:rgba(11,22,35,0.6);
+  background:rgba(11,22,35,0.65);
+  backdrop-filter: blur(6px);
   color:var(--gold);
-  font-size:22px;
+  font-size:20px;
   cursor:pointer;
-  z-index:3000;
-  backdrop-filter:blur(6px);
+  z-index:5000;
 }
 
+/* MENU LATERAL */
 .side-menu{
   position:fixed;
   top:0;
@@ -68,12 +68,13 @@ body::before{
   width:300px;
   height:100vh;
   background:linear-gradient(180deg,#0B1623,#0F2A3D);
+  box-shadow:8px 0 40px rgba(0,0,0,.6);
   padding:30px;
   transition:.35s ease;
-  z-index:4000;
+  z-index:6000;
 }
 
-.side-menu.open{left:0;}
+.side-menu.open{ left:0; }
 
 .menu-header{
   display:flex;
@@ -102,6 +103,7 @@ body::before{
 .menu-links a{
   color:var(--gold-soft);
   text-decoration:none;
+  font-size:16px;
   font-weight:600;
   transition:.3s;
 }
@@ -111,78 +113,128 @@ body::before{
   transform:translateX(6px);
 }
 
+/* OVERLAY */
 .menu-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.45);
+  background:rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
   display:none;
-  z-index:3500;
+  z-index:5500;
 }
-.menu-overlay.show{display:block}
+.menu-overlay.show{ display:block; }
 
-/* LANG */
-.lang-switch{
-  position:fixed;
-  top:22px;
-  right:22px;
-  z-index:3000;
+/* HEADER */
+header{
+  padding:40px 20px 140px;
 }
+
+/* NAV TOPO */
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+.top-actions{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.btn{
+  background:var(--gold);
+  color:#0B1623;
+  padding:10px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
+}
+
 .lang-switch button{
   background:transparent;
   border:1px solid var(--gold);
   color:var(--gold-soft);
   padding:6px 10px;
-  border-radius:18px;
-  margin-left:6px;
+  border-radius:20px;
   cursor:pointer;
 }
 
-[data-lang]{display:none}
-
 /* HERO */
-header{
-  padding:120px 20px 160px;
+.hero{
+  max-width:1200px;
+  margin:90px auto 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
+  position:relative;
+}
+
+/* AVIÃO */
+.plane{
+  position:absolute;
+  bottom:-60px;
+  left:-120px;
+  width:90px;
+  opacity:.65;
+  animation:fly 42s linear infinite;
+}
+@keyframes fly{
+  0%{transform:translate(0,0) rotate(20deg);}
+  100%{transform:translate(120vw,-90vh) rotate(20deg);}
+}
+
+/* TÍTULO */
+.hero-title{
   text-align:center;
+  color:var(--gold-soft);
 }
 
 .hero-title h2{
   font-family:'Libre Franklin',sans-serif;
   font-size:34px;
-  letter-spacing:1px;
+  font-weight:700;
   text-transform:uppercase;
   color:var(--gold);
+  margin-bottom:14px;
 }
+
 .hero-title p{
   font-size:18px;
   opacity:.9;
 }
 
+/* CAIXA PRINCIPAL */
 .hero-box{
-  background:linear-gradient(135deg,#ffffff,#f6f4ee);
+  background:#fff;
+  padding:40px 80px;
   max-width:1000px;
-  margin:60px auto 0;
-  padding:60px 80px;
-  border-radius:28px;
+  width:100%;
+  border-left:6px solid var(--gold);
+  box-shadow:0 25px 70px rgba(0,0,0,.25);
+  text-align:center;
   color:#0B1623;
-  box-shadow:0 30px 80px rgba(0,0,0,.45);
 }
 
 .hero-box img{
-  height:160px;
-  margin-bottom:30px;
-  filter:drop-shadow(0 10px 25px rgba(212,175,55,.35));
+  height:120px;
+  margin-bottom:25px;
+  filter:drop-shadow(0 10px 25px rgba(212,175,55,0.25));
 }
 
 .hero-box h1{
   font-family:'Playfair Display',serif;
   font-size:42px;
+  margin-bottom:18px;
 }
-.hero-box h1 span{color:var(--gold)}
 
 .hero-box p{
   font-size:18px;
-  max-width:700px;
-  margin:20px auto;
+  line-height:1.7;
 }
 
 .hero-box ul{
@@ -192,35 +244,117 @@ header{
   font-size:16px;
   line-height:1.8;
 }
+
+/* SEÇÕES */
+section{
+  max-width:1100px;
+  margin:90px auto;
+  padding:0 20px;
+}
+
+.title{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:35px;
+  position:relative;
+  color:#0B1623;
+}
+
+.title:after{
+  content:'';
+  width:70px;
+  height:3px;
+  background:var(--gold);
+  position:absolute;
+  bottom:-10px;
+  left:0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#0F2A3D;
+  color:#fff;
+  padding:30px;
+  border-radius:10px;
+}
+
+.card h3{ color:var(--gold-soft); }
+
+.destinos img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.destinos h4{
+  text-align:center;
+  margin-top:12px;
+  color:#0B1623;
+}
+
+@media(max-width:900px){
+  .hero-box{padding:35px 30px;}
+  .plane{display:none;}
+}
+
+[data-lang]{display:none;}
 </style>
 </head>
 
 <body>
 
+<!-- MENU -->
 <button class="menu-btn" onclick="openMenu()">☰</button>
 
 <div id="sideMenu" class="side-menu">
   <div class="menu-header">
     <span>Menu</span>
-    <button onclick="closeMenu()">×</button>
+    <button onclick="closeMenu()">✕</button>
   </div>
   <nav class="menu-links">
+    <a href="index.html">Home</a>
     <a href="quem-somos.html">Quem somos</a>
     <a href="avaliacoes.html">Avaliações</a>
     <a href="destinos.html">Destinos</a>
     <a href="servicos-extras.html">Serviços extras</a>
+    <a href="https://wa.me/34744768034" target="_blank">Contato</a>
   </nav>
 </div>
+
 <div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div>
 
-<div class="lang-switch">
-  <button onclick="setLang('es')">ES</button>
-  <button onclick="setLang('pt')">PT</button>
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('it')">IT</button>
+<header>
+
+<div class="nav">
+  <div class="top-actions">
+    <a href="#formulario" class="btn" data-lang="es">Solicitar cotización</a>
+    <a href="#formulario" class="btn" data-lang="pt">Solicitar orçamento</a>
+    <a href="#formulario" class="btn" data-lang="en">Request a quote</a>
+    <a href="#formulario" class="btn" data-lang="it">Richiedi preventivo</a>
+
+    <div class="lang-switch">
+      <button onclick="setLang('es')">ES</button>
+      <button onclick="setLang('pt')">PT</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('it')">IT</button>
+    </div>
+  </div>
 </div>
 
-<header>
+<div class="hero">
+
+  <div class="plane">
+    <svg viewBox="0 0 512 512" fill="#D4AF37">
+      <path d="M476.864 3.072L302.08 157.888 70.656 112.64 8.192 173.568l178.176 96.768L302.08 471.04l-41.984-175.104 225.28-141.312z"/>
+    </svg>
+  </div>
+
   <div class="hero-title">
     <h2 data-lang="es">Pasajes Aéreos Nacionales e Internacionales</h2>
     <h2 data-lang="pt">Passagens Aéreas Nacionais e Internacionais</h2>
@@ -236,22 +370,25 @@ header{
   <div class="hero-box">
     <img src="logo-sinfondo.png" alt="Pietra Global Assist">
 
-    <h1 data-lang="es">Cuido de tu viaje <span>como si fuera mío.</span></h1>
-    <h1 data-lang="pt">Cuido da sua viagem <span>como se fosse minha.</span></h1>
-    <h1 data-lang="en">I take care of your trip <span>as if it were my own.</span></h1>
-    <h1 data-lang="it">Mi prendo cura del tuo viaggio <span>come se fosse il mio.</span></h1>
+    <h1 data-lang="es">Cuido de tu viaje<br><span style="color:#D4AF37;">como si fuera mío.</span></h1>
+    <h1 data-lang="pt">Cuido da sua viagem<br><span style="color:#D4AF37;">como se fosse minha.</span></h1>
+    <h1 data-lang="en">I take care of your trip<br><span style="color:#D4AF37;">as if it were my own.</span></h1>
+    <h1 data-lang="it">Mi prendo cura del tuo viaggio<br><span style="color:#D4AF37;">come se fosse il mio.</span></h1>
 
-    <p data-lang="es">Asesoría personalizada para viajes seguros.</p>
-    <p data-lang="pt">Assessoria personalizada para viagens seguras.</p>
-    <p data-lang="en">Personalized assistance for safe trips.</p>
-    <p data-lang="it">Assistenza personalizzata per viaggi sicuri.</p>
+    <p data-lang="es">Asesoría personalizada para viajes seguros, tranquilos y bien gestionados.</p>
+    <p data-lang="pt">Assessoria personalizada para viagens seguras, tranquilas e bem organizadas.</p>
+    <p data-lang="en">Personalized assistance for safe, smooth and well-organized trips.</p>
+    <p data-lang="it">Assistenza personalizzata per viaggi sicuri, tranquilli e ben organizzati.</p>
 
-    <ul data-lang="es"><li>✔ Atención humana</li><li>✔ Soporte completo</li><li>✔ Gestión aérea</li></ul>
-    <ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão aérea</li></ul>
+    <ul data-lang="es"><li>✔ Atención humana</li><li>✔ Soporte completo</li><li>✔ Gestión con aerolíneas</li></ul>
+    <ul data-lang="pt"><li>✔ Atendimento humano</li><li>✔ Suporte completo</li><li>✔ Gestão com companhias aéreas</li></ul>
     <ul data-lang="en"><li>✔ Human support</li><li>✔ Full assistance</li><li>✔ Airline management</li></ul>
-    <ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione aerea</li></ul>
+    <ul data-lang="it"><li>✔ Assistenza umana</li><li>✔ Supporto completo</li><li>✔ Gestione con compagnie aeree</li></ul>
+
   </div>
+</div>
 </header>
+<!-- SERVIÇOS -->
 <section>
   <h2 class="title" data-lang="es">Nuestros Servicios</h2>
   <h2 class="title" data-lang="pt">Nossos Serviços</h2>
@@ -290,6 +427,7 @@ header{
   </div>
 </section>
 
+<!-- DESTINOS -->
 <section>
   <h2 class="title" data-lang="es">Destinos más buscados</h2>
   <h2 class="title" data-lang="pt">Destinos mais procurados</h2>
@@ -316,6 +454,7 @@ header{
   </div>
 </section>
 
+<!-- POR QUE ESCOLHER -->
 <section>
   <h2 class="title" data-lang="es">¿Por qué elegirme?</h2>
   <h2 class="title" data-lang="pt">Por que me escolher?</h2>
@@ -345,33 +484,32 @@ header{
   </div>
 </section>
 
+<!-- FORMULÁRIO -->
 <section id="formulario">
   <form action="https://formspree.io/f/mqrryjjw" method="POST"
-    onsubmit="setTimeout(()=>{window.location.href='https://pietraglobalassist.github.io/obrigado.html';},500);">
+        onsubmit="setTimeout(()=>{window.location.href='https://pietraglobalassist.github.io/obrigado.html';},500);">
 
     <input type="hidden" name="_next" value="https://pietraglobalassist.github.io/obrigado.html">
 
-    <input type="text" name="nombre" data-lang="es" placeholder="Nombre completo" required>
-    <input type="text" name="nombre" data-lang="pt" placeholder="Nome completo" required>
-    <input type="text" name="nombre" data-lang="en" placeholder="Full name" required>
-    <input type="text" name="nombre" data-lang="it" placeholder="Nome completo" required>
+    <input type="text" data-lang="es" placeholder="Nombre completo" required>
+    <input type="text" data-lang="pt" placeholder="Nome completo" required>
+    <input type="text" data-lang="en" placeholder="Full name" required>
+    <input type="text" data-lang="it" placeholder="Nome completo" required>
 
-    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="email" placeholder="E-mail" required>
 
-    <input type="tel" name="telefono" placeholder="WhatsApp">
+    <input type="text" data-lang="es" placeholder="Ruta del viaje">
+    <input type="text" data-lang="pt" placeholder="Rota da viagem">
+    <input type="text" data-lang="en" placeholder="Travel route">
+    <input type="text" data-lang="it" placeholder="Rotta del viaggio">
 
-    <input type="text" name="ruta" data-lang="es" placeholder="Ruta del viaje">
-    <input type="text" name="ruta" data-lang="pt" placeholder="Rota da viagem">
-    <input type="text" name="ruta" data-lang="en" placeholder="Travel route">
-    <input type="text" name="ruta" data-lang="it" placeholder="Rotta del viaggio">
+    <input type="date">
+    <input type="date">
 
-    <input type="date" name="fecha_ida">
-    <input type="date" name="fecha_vuelta">
-
-    <textarea name="mensaje" data-lang="es" placeholder="Información adicional"></textarea>
-    <textarea name="mensaje" data-lang="pt" placeholder="Informações adicionais"></textarea>
-    <textarea name="mensaje" data-lang="en" placeholder="Additional information"></textarea>
-    <textarea name="mensaje" data-lang="it" placeholder="Informazioni aggiuntive"></textarea>
+    <textarea data-lang="es" placeholder="Información adicional"></textarea>
+    <textarea data-lang="pt" placeholder="Informações adicionais"></textarea>
+    <textarea data-lang="en" placeholder="Additional information"></textarea>
+    <textarea data-lang="it" placeholder="Informazioni aggiuntive"></textarea>
 
     <button type="submit" class="btn" data-lang="es">Enviar solicitud</button>
     <button type="submit" class="btn" data-lang="pt">Enviar solicitação</button>
@@ -380,18 +518,17 @@ header{
   </form>
 </section>
 
+<!-- CTA -->
 <section class="cta">
   <h2 data-lang="es">¿Prefieres hablar ahora?</h2>
   <h2 data-lang="pt">Prefere falar agora?</h2>
   <h2 data-lang="en">Would you like to talk now?</h2>
   <h2 data-lang="it">Preferisci parlare ora?</h2>
 
-  <a href="https://wa.me/34744768034" target="_blank" data-lang="es">Hablar por WhatsApp</a>
-  <a href="https://wa.me/34744768034" target="_blank" data-lang="pt">Falar pelo WhatsApp</a>
-  <a href="https://wa.me/34744768034" target="_blank" data-lang="en">Chat on WhatsApp</a>
-  <a href="https://wa.me/34744768034" target="_blank" data-lang="it">Chatta su WhatsApp</a>
+  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>📲 +34 744 768 034</p>
   <p>📧 pietraglobalassist@gmail.com</p>
@@ -402,7 +539,7 @@ header{
 function setLang(lang){
   localStorage.setItem('lang',lang);
   document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang')===lang?'block':'none';
+    el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
   });
 }
 setLang(localStorage.getItem('lang') || 'es');
@@ -419,7 +556,3 @@ function closeMenu(){
 
 </body>
 </html>
-
-
-
-
