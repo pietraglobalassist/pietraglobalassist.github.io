@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,172 +9,182 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --blue:#0B1623;
+  --blue2:#0F2A3D;
+  --gold:#D4AF37;
+  --gold-soft:#E6C766;
+  --white:#F7F9FC;
+}
+
 body{
   margin:0;
   font-family:'Inter',sans-serif;
-  background:#0B1623;
+  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  color:#fff;
 }
 
-/* MAPA MUNDI FUNDO */
+/* MAPA MUNDI */
 body::before{
   content:'';
   position:fixed;
   inset:0;
   background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')
-             center/contain no-repeat;
-  opacity:0.06;
+    center/contain no-repeat;
+  opacity:0.07;
   filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
   z-index:-1;
 }
 
-.container{
-  max-width:1200px;
-  margin:auto;
-}
-
-/* MENU BUTTON */
+/* MENU */
 .menu-btn{
   position:fixed;
-  top:28px;
-  left:28px;
-  z-index:2000;
-  background:transparent;
-  border:1px solid #D4AF37;
-  color:#E6C766;
-  padding:10px 14px;
+  top:25px;
+  left:25px;
+  width:44px;
+  height:44px;
   border-radius:50%;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
   font-size:20px;
   cursor:pointer;
 }
 
-/* SIDEBAR */
-.sidebar{
-  position:fixed;
-  top:0;
-  left:-320px;
-  width:300px;
-  height:100%;
-  background:linear-gradient(135deg,#0B1623,#0F2A3D);
-  padding:40px 30px;
-  transition:.4s;
-  z-index:3000;
-}
-
-.sidebar.open{left:0;}
-
-.sidebar a{
-  display:block;
-  color:#E6C766;
-  text-decoration:none;
-  font-size:18px;
-  margin-bottom:18px;
-  font-weight:500;
-}
-
-.sidebar a:hover{color:#ffffff;}
-
+/* LANG */
 .lang-switch{
   position:fixed;
-  top:30px;
-  right:30px;
-  z-index:2000;
+  top:25px;
+  right:25px;
 }
-
 .lang-switch button{
   background:transparent;
-  border:1px solid #D4AF37;
-  color:#E6C766;
+  border:1px solid var(--gold);
+  color:var(--gold-soft);
   padding:6px 10px;
-  border-radius:20px;
-  margin-left:6px;
+  border-radius:18px;
   cursor:pointer;
+  margin-left:6px;
 }
 
 /* HERO */
 .hero{
-  padding:100px 20px 140px;
-  text-align:center;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 20px 80px;
 }
 
-.hero-card{
-  max-width:900px;
-  margin:auto;
-  background:linear-gradient(135deg,#ffffff,#faf7f0);
+.hero-box{
+  background:linear-gradient(
+    135deg,
+    rgba(255,255,255,0.96),
+    rgba(248,246,240,0.98)
+  );
   border-radius:26px;
-  padding:70px 40px;
+  padding:70px 90px;
+  max-width:950px;
+  width:100%;
+  text-align:center;
+  color:#0B1623;
   box-shadow:
-    0 30px 80px rgba(0,0,0,.35),
-    0 0 45px rgba(212,175,55,.4);
+    0 30px 80px rgba(0,0,0,0.45),
+    0 0 60px rgba(212,175,55,0.45);
 }
 
-.hero-card img{
+.hero-box img{
   height:120px;
   margin-bottom:35px;
 }
 
-.hero-card h1{
+.hero-box h1{
   font-family:'Playfair Display',serif;
   font-size:42px;
-  margin-bottom:12px;
+  margin-bottom:18px;
 }
+.hero-box h1 span{color:var(--gold);}
 
-.hero-card h1 span{color:#D4AF37;}
-
-.hero-card p{
+.hero-box p{
   font-size:18px;
-  max-width:600px;
-  margin:auto;
+  max-width:640px;
+  margin:0 auto;
 }
 
-/* SECTION */
+/* SEÇÃO */
 .section{
-  background:#F7F9FC;
-  padding:90px 20px;
+  max-width:1200px;
+  margin:0 auto;
+  padding:80px 20px;
 }
 
-.section h2{
+/* MÉDIA */
+.rating-summary{
   text-align:center;
+  margin-bottom:60px;
+}
+.rating-summary h2{
   font-family:'Playfair Display',serif;
   font-size:34px;
-  margin-bottom:14px;
+  color:var(--gold);
+}
+.stars-big{
+  font-size:32px;
+  color:var(--gold);
+  margin:10px 0;
+}
+.rating-note{
+  font-size:18px;
+  opacity:0.9;
 }
 
-.section p.subtitle{
-  text-align:center;
-  max-width:700px;
-  margin:0 auto 60px;
-}
-
-/* REVIEWS */
+/* GRID */
 .reviews{
-  max-width:1100px;
-  margin:auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;
 }
 
 .review{
-  background:#fff;
-  padding:30px;
-  border-radius:16px;
-  box-shadow:0 15px 40px rgba(0,0,0,.12);
-  border-top:4px solid #D4AF37;
+  background:rgba(255,255,255,0.96);
+  color:#0B1623;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
 }
 
-.stars{color:#D4AF37;font-size:18px;margin-bottom:12px;}
+.review .stars{
+  color:var(--gold);
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.review p{
+  font-size:16px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.review strong{
+  font-weight:700;
+}
 
 /* CTA */
 .cta{
-  background:linear-gradient(135deg,#D4AF37,#E6C766);
+  background:linear-gradient(135deg,var(--gold),var(--gold-soft));
   padding:80px 20px;
   text-align:center;
+  color:#0B1623;
 }
-
+.cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  margin-bottom:25px;
+}
 .cta a{
   background:#0B1623;
-  color:#E6C766;
-  padding:16px 45px;
+  color:var(--gold-soft);
+  padding:16px 46px;
   border-radius:40px;
   text-decoration:none;
   font-weight:700;
@@ -182,72 +192,126 @@ body::before{
 
 /* FOOTER */
 footer{
-  background:#0B1623;
-  color:#E6C766;
   text-align:center;
-  padding:35px 20px;
+  padding:40px 20px;
   font-size:14px;
+  color:var(--gold-soft);
 }
 
 /* LANG */
 [data-lang]{display:none;}
+
+@media(max-width:768px){
+  .hero-box{padding:50px 30px;}
+  .hero-box h1{font-size:32px;}
+}
 </style>
 </head>
 
 <body>
 
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<div class="sidebar" id="menu">
-  <a href="index.html">Home</a>
-  <a href="quem-somos.html">Quem somos</a>
-  <a href="avaliacoes.html">Avaliações</a>
-  <a href="destinos.html">Destinos</a>
-  <a href="servicos.html">Serviços extras</a>
-  <a href="contato.html">Contato</a>
-</div>
+<button class="menu-btn">☰</button>
 
 <div class="lang-switch">
-  <button onclick="setLang('es')">ES</button>
   <button onclick="setLang('pt')">PT</button>
+  <button onclick="setLang('es')">ES</button>
   <button onclick="setLang('en')">EN</button>
   <button onclick="setLang('it')">IT</button>
 </div>
 
-<div class="container">
-
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-card">
+  <div class="hero-box">
     <img src="logo-sinfondo.png" alt="Pietra Global Assist">
 
-    <h1 data-lang="es">Avaliações <span>reais</span></h1>
     <h1 data-lang="pt">Avaliações <span>reais</span></h1>
+    <h1 data-lang="es">Reseñas <span>reales</span></h1>
     <h1 data-lang="en">Real <span>reviews</span></h1>
     <h1 data-lang="it">Recensioni <span>reali</span></h1>
 
-    <p data-lang="es">Experiencias auténticas de clientes que confiaron sus viajes a mí.</p>
-    <p data-lang="pt">Experiências reais de clientes que confiaram suas viagens a mim.</p>
+    <p data-lang="pt">Experiências verdadeiras de clientes que confiaram suas viagens a mim.</p>
+    <p data-lang="es">Experiencias reales de clientes que confiaron sus viajes en mí.</p>
     <p data-lang="en">Authentic experiences from clients who trusted me.</p>
-    <p data-lang="it">Esperienze reali di clienti che si sono affidati a me.</p>
+    <p data-lang="it">Esperienze autentiche di clienti che si sono affidati a me.</p>
   </div>
 </section>
 
-<!-- mantém reviews + CTA + footer iguais ao anterior -->
+<!-- MÉDIA -->
+<section class="section">
+  <div class="rating-summary">
+    <h2 data-lang="pt">Avaliação média</h2>
+    <h2 data-lang="es">Valoración media</h2>
+    <h2 data-lang="en">Average rating</h2>
+    <h2 data-lang="it">Valutazione media</h2>
 
-</div>
+    <div class="stars-big">★★★★★</div>
+    <div class="rating-note">5.0 / 5.0</div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="reviews">
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="pt">Atendimento impecável do início ao fim. Me senti segura durante toda a viagem.</p>
+      <p data-lang="es">Atención impecable de principio a fin. Me sentí segura todo el viaje.</p>
+      <p data-lang="en">Flawless service from start to finish. I felt safe throughout the trip.</p>
+      <p data-lang="it">Servizio impeccabile dall'inizio alla fine.</p>
+      <strong>Jineide Costa</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="pt">Organização perfeita e suporte real. Recomendo de olhos fechados.</p>
+      <p data-lang="es">Organización perfecta y soporte real.</p>
+      <p data-lang="en">Perfect organization and real support.</p>
+      <p data-lang="it">Organizzazione perfetta e supporto reale.</p>
+      <strong>Mateus Garcia</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="pt">Muito profissional, humana e atenciosa. Minha viagem foi tranquila.</p>
+      <p data-lang="es">Muy profesional y atenta.</p>
+      <p data-lang="en">Very professional and attentive.</p>
+      <p data-lang="it">Molto professionale e attenta.</p>
+      <strong>Ana Carolina</strong>
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p data-lang="pt">Confiança total. Cuidou de tudo como se fosse para ela mesma.</p>
+      <p data-lang="es">Confianza total.</p>
+      <p data-lang="en">Total trust.</p>
+      <p data-lang="it">Massima fiducia.</p>
+      <strong>Priscila Vieira</strong>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2 data-lang="pt">Quer viver essa experiência também?</h2>
+  <h2 data-lang="es">¿Quieres vivir esta experiencia?</h2>
+  <h2 data-lang="en">Want to experience this too?</h2>
+  <h2 data-lang="it">Vuoi vivere questa esperienza?</h2>
+
+  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
+</section>
+
+<footer>
+  Pietra Global Assist · Atendimento humano e profissional
+</footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById('menu').classList.toggle('open');
-}
-
 function setLang(lang){
   localStorage.setItem('lang',lang);
   document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang')===lang ? 'block':'none';
+    el.style.display = el.getAttribute('data-lang')===lang ? 'block' : 'none';
   });
 }
-setLang(localStorage.getItem('lang')||'es');
+setLang(localStorage.getItem('lang') || 'pt');
 </script>
 
 </body>
