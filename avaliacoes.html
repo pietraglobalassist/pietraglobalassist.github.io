@@ -49,6 +49,39 @@ body::before{
   color:var(--gold);
   font-size:20px;
   cursor:pointer;
+  z-index:1000;
+}
+
+/* MENU LATERAL */
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-280px;
+  width:260px;
+  height:100%;
+  background:linear-gradient(180deg,var(--blue),var(--blue2));
+  padding:90px 25px;
+  box-shadow:10px 0 40px rgba(0,0,0,.5);
+  transition:.4s;
+  z-index:999;
+}
+.side-menu a{
+  display:block;
+  color:var(--gold-soft);
+  text-decoration:none;
+  font-weight:600;
+  margin:18px 0;
+  font-size:16px;
+}
+.close-menu{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:none;
+  border:none;
+  color:var(--gold-soft);
+  font-size:26px;
+  cursor:pointer;
 }
 
 /* LANG */
@@ -56,6 +89,7 @@ body::before{
   position:fixed;
   top:25px;
   right:25px;
+  z-index:1000;
 }
 .lang-switch button{
   background:transparent;
@@ -73,7 +107,7 @@ body::before{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:120px 20px 80px;
+  padding:120px 20px 40px;
 }
 
 .hero-box{
@@ -111,17 +145,31 @@ body::before{
   margin:0 auto;
 }
 
+/* SELO */
+.selo{
+  margin:40px auto 20px;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 28px;
+  border-radius:40px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+  color:#0B1623;
+  font-weight:700;
+  box-shadow:0 0 25px rgba(212,175,55,.55);
+}
+
 /* SEÇÃO */
 .section{
   max-width:1200px;
   margin:0 auto;
-  padding:80px 20px;
+  padding:40px 20px 80px;
 }
 
 /* MÉDIA */
 .rating-summary{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:50px;
 }
 .rating-summary h2{
   font-family:'Playfair Display',serif;
@@ -210,7 +258,17 @@ footer{
 
 <body>
 
-<button class="menu-btn">☰</button>
+<!-- MENU LATERAL -->
+<div id="sideMenu" class="side-menu">
+  <button class="close-menu" onclick="toggleMenu()">×</button>
+  <a href="index.html">Home</a>
+  <a href="quem-somos.html">Quem somos</a>
+  <a href="avaliacoes.html">Avaliações</a>
+  <a href="destinos.html">Destinos</a>
+  <a href="https://wa.me/34744768034" target="_blank">Contato</a>
+</div>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
 <div class="lang-switch">
   <button onclick="setLang('pt')">PT</button>
@@ -219,7 +277,6 @@ footer{
   <button onclick="setLang('it')">IT</button>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-box">
     <img src="logo-sinfondo.png" alt="Pietra Global Assist">
@@ -233,10 +290,11 @@ footer{
     <p data-lang="es">Experiencias reales de clientes que confiaron sus viajes en mí.</p>
     <p data-lang="en">Authentic experiences from clients who trusted me.</p>
     <p data-lang="it">Esperienze autentiche di clienti che si sono affidati a me.</p>
+
+    <div class="selo">⭐ 100% clientes satisfeitos</div>
   </div>
 </section>
 
-<!-- MÉDIA -->
 <section class="section">
   <div class="rating-summary">
     <h2 data-lang="pt">Avaliação média</h2>
@@ -248,14 +306,13 @@ footer{
     <div class="rating-note">5.0 / 5.0</div>
   </div>
 
-  <!-- REVIEWS -->
   <div class="reviews">
 
     <div class="review">
       <div class="stars">★★★★★</div>
       <p data-lang="pt">Atendimento impecável do início ao fim. Me senti segura durante toda a viagem.</p>
-      <p data-lang="es">Atención impecable de principio a fin. Me sentí segura todo el viaje.</p>
-      <p data-lang="en">Flawless service from start to finish. I felt safe throughout the trip.</p>
+      <p data-lang="es">Atención impecable de principio a fin.</p>
+      <p data-lang="en">Flawless service from start to finish.</p>
       <p data-lang="it">Servizio impeccabile dall'inizio alla fine.</p>
       <strong>Jineide Costa</strong>
     </div>
@@ -271,7 +328,7 @@ footer{
 
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p data-lang="pt">Muito profissional, humana e atenciosa. Minha viagem foi tranquila.</p>
+      <p data-lang="pt">Muito profissional, humana e atenciosa.</p>
       <p data-lang="es">Muy profesional y atenta.</p>
       <p data-lang="en">Very professional and attentive.</p>
       <p data-lang="it">Molto professionale e attenta.</p>
@@ -290,7 +347,6 @@ footer{
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <h2 data-lang="pt">Quer viver essa experiência também?</h2>
   <h2 data-lang="es">¿Quieres vivir esta experiencia?</h2>
@@ -305,6 +361,11 @@ footer{
 </footer>
 
 <script>
+function toggleMenu(){
+  const menu = document.getElementById('sideMenu');
+  menu.style.left = menu.style.left === '0px' ? '-280px' : '0px';
+}
+
 function setLang(lang){
   localStorage.setItem('lang',lang);
   document.querySelectorAll('[data-lang]').forEach(el=>{
