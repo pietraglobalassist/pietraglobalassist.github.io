@@ -6,7 +6,7 @@
 
 <title>Avaliações | Pietra Global Assist</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -17,148 +17,125 @@ body{
 }
 
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
-  background:#F7F9FC;
-  min-height:100vh;
-}
-
-/* HEADER */
-header{
-  background:linear-gradient(135deg,#0B1623,#0F2A3D);
-  padding:40px 20px 120px;
-  color:#fff;
-  position:relative;
 }
 
 /* NAV */
 .nav{
   max-width:1100px;
-  margin:0 auto 50px;
+  margin:0 auto;
+  padding:30px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
+
 .home-btn{
   color:#E6C766;
   text-decoration:none;
-  font-weight:700;
-  font-size:14px;
   border:1px solid #D4AF37;
   padding:6px 16px;
   border-radius:20px;
-  transition:.3s;
-}
-.home-btn:hover{
-  background:#D4AF37;
-  color:#0B1623;
+  font-weight:600;
 }
 
 .lang-switch button{
   background:transparent;
   border:1px solid #D4AF37;
   color:#E6C766;
-  padding:6px 12px;
+  padding:6px 10px;
   border-radius:20px;
-  cursor:pointer;
-  font-weight:600;
   margin-left:6px;
+  cursor:pointer;
 }
 
 /* HERO */
 .hero{
+  padding:40px 20px 120px;
+  background:linear-gradient(135deg,#0B1623,#0F2A3D);
   text-align:center;
-  max-width:800px;
-  margin:auto;
+  position:relative;
 }
 
-.logo-wrapper{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  padding:26px 54px;
-  border-radius:22px;
-  background:linear-gradient(135deg,rgba(255,255,255,0.95),rgba(250,247,240,0.95));
-  border:1px solid rgba(212,175,55,0.6);
-  box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 35px rgba(212,175,55,.45);
-  margin-bottom:40px;
+.hero-card{
+  max-width:900px;
+  margin:0 auto;
+  background:linear-gradient(135deg,#ffffff,#faf7f0);
+  border-radius:24px;
+  padding:60px 40px;
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.35),
+    0 0 40px rgba(212,175,55,.35);
 }
-.logo-wrapper img{
+
+.hero-card img{
   height:120px;
+  margin-bottom:30px;
 }
 
-.hero h1{
-  font-family:'Libre Franklin',sans-serif;
-  font-size:36px;
-  font-weight:800;
-  color:#D4AF37;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-.hero p{
-  font-size:18px;
-  opacity:.9;
-  margin-top:20px;
-}
-
-/* MINI HERO */
-.mini-hero{
-  text-align:center;
-  padding:90px 20px 40px;
-}
-.mini-hero h2{
-  font-family:'Libre Franklin',sans-serif;
-  font-size:30px;
+.hero-card h1{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
   color:#0B1623;
+  margin-bottom:10px;
+}
+
+.hero-card h1 span{
+  color:#D4AF37;
+}
+
+.hero-card p{
+  font-size:18px;
+  max-width:600px;
+  margin:15px auto 0;
+}
+
+/* SECTION */
+.section{
+  background:#F7F9FC;
+  padding:90px 20px;
+}
+
+.section h2{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:34px;
   margin-bottom:15px;
 }
-.mini-hero p{
-  font-size:18px;
+
+.section p.subtitle{
+  text-align:center;
   max-width:700px;
-  margin:auto;
-  color:#333;
+  margin:0 auto 60px;
+  font-size:17px;
 }
 
-/* AVALIAÇÕES */
+/* REVIEWS */
 .reviews{
-  padding:60px 20px 90px;
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:35px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
-.review-card{
+.review{
   background:#ffffff;
-  padding:35px;
+  padding:30px;
   border-radius:16px;
-  box-shadow:0 18px 45px rgba(0,0,0,.12);
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
   border-top:4px solid #D4AF37;
-  position:relative;
+}
+
+.review h3{
+  margin-bottom:6px;
 }
 
 .stars{
   color:#D4AF37;
   font-size:18px;
-  margin-bottom:12px;
-}
-
-.review-card h3{
-  font-family:'Libre Franklin',sans-serif;
-  margin-bottom:8px;
-}
-
-.review-card span{
-  font-size:14px;
-  color:#777;
-}
-
-.review-card p{
-  margin-top:15px;
-  line-height:1.7;
-  color:#333;
+  margin-bottom:15px;
 }
 
 /* CTA */
@@ -169,15 +146,15 @@ header{
 }
 
 .cta h2{
-  font-family:'Libre Franklin',sans-serif;
-  font-size:30px;
+  font-family:'Playfair Display',serif;
+  font-size:32px;
   margin-bottom:20px;
 }
 
 .cta a{
   background:#0B1623;
   color:#E6C766;
-  padding:16px 48px;
+  padding:16px 45px;
   border-radius:40px;
   text-decoration:none;
   font-weight:700;
@@ -201,84 +178,100 @@ footer{
 
 <div class="container">
 
-<header>
-
-  <div class="nav">
-    <a href="index.html" class="home-btn">← Home</a>
-    <div class="lang-switch">
-      <button onclick="setLang('es')">ES</button>
-      <button onclick="setLang('pt')">PT</button>
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('it')">IT</button>
-    </div>
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html" class="home-btn">← Home</a>
+  <div class="lang-switch">
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('pt')">PT</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('it')">IT</button>
   </div>
+</div>
 
-  <div class="hero">
-    <div class="logo-wrapper">
-      <img src="logo-sinfondo.png" alt="Pietra Global Assist">
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-card">
+    <img src="logo-sinfondo.png" alt="Pietra Global Assist">
 
-    <h1 data-lang="es">Opiniones reales</h1>
-    <h1 data-lang="pt">Avaliações reais</h1>
-    <h1 data-lang="en">Real reviews</h1>
-    <h1 data-lang="it">Recensioni reali</h1>
+    <h1 data-lang="es">Avaliações <span>reais</span></h1>
+    <h1 data-lang="pt">Avaliações <span>reais</span></h1>
+    <h1 data-lang="en">Real <span>reviews</span></h1>
+    <h1 data-lang="it">Recensioni <span>reali</span></h1>
 
-    <p data-lang="es">Experiencias de clientes que confiaron sus viajes a mí.</p>
-    <p data-lang="pt">Experiências de clientes que confiaram suas viagens a mim.</p>
-    <p data-lang="en">Experiences from clients who trusted me with their trips.</p>
-    <p data-lang="it">Esperienze di clienti che mi hanno affidato i loro viaggi.</p>
+    <p data-lang="es">Experiencias auténticas de clientes que confiaron sus viajes a mí.</p>
+    <p data-lang="pt">Experiências reais de clientes que confiaram suas viagens a mim.</p>
+    <p data-lang="en">Authentic experiences from clients who trusted me with their trips.</p>
+    <p data-lang="it">Esperienze reali di clienti che hanno affidato a me i loro viaggi.</p>
   </div>
-
-</header>
-
-<section class="mini-hero">
-  <h2>Confianza construida viaje a viaje</h2>
-  <p>Cada evaluación representa una historia real, un viaje cuidado con atención humana y compromiso total.</p>
 </section>
 
-<section class="reviews">
+<!-- REVIEWS -->
+<section class="section">
 
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <h3>Jineide Costa</h3>
-    <span>Viaje internacional</span>
-    <p>Desde el primer contacto sentí seguridad. Todo fue organizado con mucho cuidado y claridad. Recomiendo de ojos cerrados.</p>
-  </div>
+<h2 data-lang="es">Confianza construida viaje a viaje</h2>
+<h2 data-lang="pt">Confiança construída viagem a viagem</h2>
+<h2 data-lang="en">Trust built trip by trip</h2>
+<h2 data-lang="it">Fiducia costruita viaggio dopo viaggio</h2>
 
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <h3>Mateus Garcia</h3>
-    <span>Viaje profesional</span>
-    <p>Atención impecable, rápida y muy humana. Me acompañó en todo momento, incluso con cambios de última hora.</p>
-  </div>
+<p class="subtitle" data-lang="es">Cada evaluación refleja atención humana, compromiso y cuidado real.</p>
+<p class="subtitle" data-lang="pt">Cada avaliação representa atenção humana e compromisso total.</p>
+<p class="subtitle" data-lang="en">Each review reflects human care and full commitment.</p>
+<p class="subtitle" data-lang="it">Ogni recensione riflette attenzione umana e impegno totale.</p>
 
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <h3>Ana Carolina</h3>
-    <span>Vacaciones en familia</span>
-    <p>Fue un alivio tener a alguien tan comprometida organizando nuestro viaje. Todo salió perfecto y sin estrés.</p>
-  </div>
+<div class="reviews">
 
-  <div class="review-card">
-    <div class="stars">★★★★★</div>
-    <h3>Priscila Vieira</h3>
-    <span>Europa</span>
-    <p>Servicio de altísimo nivel. Comunicación clara, apoyo real y mucha dedicación. Sin duda volvería a contratar.</p>
-  </div>
+<div class="review">
+  <h3>Jineide Costa</h3>
+  <div class="stars">★★★★★</div>
+  <p data-lang="es">Atención impecable desde el primer contacto. Me sentí segura en todo momento.</p>
+  <p data-lang="pt">Atendimento impecável desde o primeiro contato. Me senti segura o tempo todo.</p>
+  <p data-lang="en">Impeccable service from the first contact. I felt safe the entire time.</p>
+  <p data-lang="it">Servizio impeccabile dal primo contatto. Mi sono sentita al sicuro.</p>
+</div>
 
+<div class="review">
+  <h3>Mateus Garcia</h3>
+  <div class="stars">★★★★★</div>
+  <p data-lang="es">Organización perfecta y soporte real antes y durante el viaje.</p>
+  <p data-lang="pt">Organização perfeita e suporte real antes e durante a viagem.</p>
+  <p data-lang="en">Perfect organization and real support before and during the trip.</p>
+  <p data-lang="it">Organizzazione perfetta e supporto reale prima e durante il viaggio.</p>
+</div>
+
+<div class="review">
+  <h3>Ana Carolina</h3>
+  <div class="stars">★★★★★</div>
+  <p data-lang="es">Viajar con tranquilidad no tiene precio. Recomiendo totalmente.</p>
+  <p data-lang="pt">Viajar com tranquilidade não tem preço. Recomendo totalmente.</p>
+  <p data-lang="en">Traveling with peace of mind is priceless. Highly recommended.</p>
+  <p data-lang="it">Viaggiare con tranquillità non ha prezzo. Consigliatissimo.</p>
+</div>
+
+<div class="review">
+  <h3>Priscila Vieira</h3>
+  <div class="stars">★★★★★</div>
+  <p data-lang="es">Atención humana de verdad. Todo fue claro, rápido y seguro.</p>
+  <p data-lang="pt">Atendimento humano de verdade. Tudo claro, rápido e seguro.</p>
+  <p data-lang="en">Truly human service. Everything was clear, fast and safe.</p>
+  <p data-lang="it">Servizio umano autentico. Tutto chiaro, veloce e sicuro.</p>
+</div>
+
+</div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
   <h2 data-lang="es">¿Quieres vivir esta experiencia?</h2>
   <h2 data-lang="pt">Quer viver essa experiência?</h2>
-  <h2 data-lang="en">Want to experience this service?</h2>
+  <h2 data-lang="en">Want to live this experience?</h2>
   <h2 data-lang="it">Vuoi vivere questa esperienza?</h2>
 
-  <a href="index.html#formulario">Solicitar presupuesto</a>
+  <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
 </section>
 
 <footer>
-  Pietra Global Assist · Atención humana y viajes bien cuidados
+  Pietra Global Assist · Atención humana y profesional
 </footer>
 
 </div>
