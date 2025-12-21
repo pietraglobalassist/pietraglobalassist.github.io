@@ -31,8 +31,8 @@ body::before{
   inset:0;
   background:url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')
     center/contain no-repeat;
-  opacity:0.08;
-  filter:invert(70%) sepia(40%) saturate(300%) hue-rotate(5deg);
+  opacity:0.07;
+  filter:invert(60%) sepia(40%) saturate(300%) hue-rotate(5deg);
   z-index:-1;
 }
 
@@ -90,9 +90,7 @@ body::before{
   text-decoration:none;
   font-weight:600;
 }
-.menu-links a:hover{
-  color:#fff;
-}
+.menu-links a:hover{color:#fff;}
 
 .menu-overlay{
   position:fixed;
@@ -103,6 +101,7 @@ body::before{
 }
 .menu-overlay.show{display:block;}
 
+/* LANG */
 .lang-switch{
   position:fixed;
   top:25px;
@@ -120,77 +119,73 @@ body::before{
 
 /* HERO */
 .hero{
-  min-height:90vh;
+  min-height:85vh;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:120px 20px 80px;
 }
+
 .hero-box{
-  background:linear-gradient(135deg,rgba(255,255,255,0.96),rgba(248,246,240,0.98));
-  border-radius:28px;
-  padding:80px 90px;
   max-width:1100px;
   width:100%;
   text-align:center;
-  color:var(--blue);
-  box-shadow:0 30px 80px rgba(0,0,0,0.45),0 0 60px rgba(212,175,55,0.45);
-}
-.hero-box img{height:120px;margin-bottom:35px;}
-.hero-box h1{
-  font-family:'Playfair Display',serif;
-  font-size:44px;
-}
-.hero-box h1 span{color:var(--gold);}
-.hero-box p{
-  font-size:18px;
-  max-width:760px;
-  margin:0 auto;
+  color:#fff;
 }
 
-/* SEÇÕES */
+.hero-box h1{
+  font-family:'Playfair Display',serif;
+  font-size:46px;
+  color:var(--gold-soft);
+  margin-bottom:18px;
+}
+
+.hero-box p{
+  font-size:18px;
+  max-width:820px;
+  margin:0 auto;
+  opacity:.92;
+}
+
+/* SECTION */
 .section{
-  max-width:1200px;
+  max-width:1100px;
   margin:0 auto;
   padding:80px 20px;
 }
 
-.section h2{
+.title-center{
   text-align:center;
   font-family:'Playfair Display',serif;
+  font-size:38px;
   color:var(--gold);
-  font-size:32px;
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:40px;
+.block{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.08);
+  border-left:6px solid var(--gold);
+  border-radius:18px;
+  padding:40px 35px;
+  margin-bottom:50px;
+  backdrop-filter: blur(5px);
 }
 
-.card{
-  background:#ffffff;
-  color:var(--blue);
-  border-radius:22px;
-  box-shadow:0 25px 60px rgba(0,0,0,.25);
-  overflow:hidden;
-}
-
-.card img{
-  width:100%;
-  height:230px;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:28px;
-}
-.card-content h3{
+.block h2{
   font-family:'Playfair Display',serif;
+  color:var(--gold);
   margin-bottom:12px;
+  font-size:30px;
 }
+
+.block p{
+  font-size:17px;
+  line-height:1.9;
+  opacity:.95;
+}
+
+.highlight{color:var(--gold-soft);font-weight:700;}
 
 /* CTA */
 .cta{
@@ -211,6 +206,8 @@ body::before{
   border-radius:40px;
   text-decoration:none;
   font-weight:700;
+  margin:10px;
+  display:inline-block;
 }
 
 /* FOOTER */
@@ -254,86 +251,162 @@ footer{
   <button onclick="setLang('it')">IT</button>
 </div>
 
-<!-- HERO -->
+
 <section class="hero">
   <div class="hero-box">
-    <img src="logo-sinfondo.png">
 
-    <h1 data-lang="pt">Serviços <span>extras e premium</span></h1>
-    <h1 data-lang="es">Servicios <span>extras y premium</span></h1>
-    <h1 data-lang="en">Premium <span>extra services</span></h1>
-    <h1 data-lang="it">Servizi extra <span>premium</span></h1>
+    <h1 data-lang="pt">Uma agência diferente do comum</h1>
+    <h1 data-lang="es">Una agencia diferente de lo común</h1>
+    <h1 data-lang="en">A travel agency different from the ordinary</h1>
+    <h1 data-lang="it">Un'agenzia diversa dal solito</h1>
 
-    <p data-lang="pt">Muito além da passagem aérea. Cuidamos de cada detalhe para que sua viagem seja completa, segura e inesquecível.</p>
-    <p data-lang="es">Mucho más que solo pasajes. Cuidamos cada detalle para que tu viaje sea perfecto.</p>
-    <p data-lang="en">More than tickets — we take care of every detail.</p>
-    <p data-lang="it">Molto più dei biglietti — ci prendiamo cura di ogni dettaglio.</p>
+    <p data-lang="pt">
+      Muito além de emitir passagens aéreas, oferecemos cuidado humano, orientação verdadeira, 
+      suporte real e soluções completas para tornar sua experiência de viagem mais segura, organizada e especial.
+    </p>
+
+    <p data-lang="es">
+      Mucho más que emitir billetes, ofrecemos acompañamiento humano, orientación real, 
+      soporte auténtico y soluciones completas para que tu viaje sea más seguro y bien organizado.
+    </p>
+
+    <p data-lang="en">
+      More than issuing flight tickets, we provide human support, real guidance, 
+      care and complete solutions so your trip is safe, organized and truly enjoyable.
+    </p>
+
+    <p data-lang="it">
+      Molto più che emettere biglietti, offriamo supporto umano, orientamento reale,
+      cura e soluzioni complete per rendere il tuo viaggio sicuro e ben organizzato.
+    </p>
+
   </div>
 </section>
 
-<!-- SERVIÇOS -->
 <section class="section">
-<h2 data-lang="pt">Nossos serviços extras</h2>
-<h2 data-lang="es">Nuestros servicios extra</h2>
-<h2 data-lang="en">Our extra services</h2>
-<h2 data-lang="it">I nostri servizi extra</h2>
 
-<div class="cards">
+<h2 class="title-center" data-lang="pt">Serviços Extras</h2>
+<h2 class="title-center" data-lang="es">Servicios Extra</h2>
+<h2 class="title-center" data-lang="en">Extra Services</h2>
+<h2 class="title-center" data-lang="it">Servizi Extra</h2>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
-<div class="card-content">
-<h3>Seguro Viagem</h3>
-<p data-lang="pt">Seguros para todas as idades, destinos e tipos de viagem. Saúde, bagagem, cancelamento e muito mais.</p>
-<p data-lang="es">Seguro para todas las edades y destinos.</p>
-<p data-lang="en">Travel insurance for all destinations.</p>
-<p data-lang="it">Assicurazione viaggio per tutte le destinazioni.</p>
-</div>
-</div>
+<div class="block">
+<h2 data-lang="pt">Seguro viagem para todas as idades e tipos de viagem</h2>
+<h2 data-lang="es">Seguro de viaje para todas las edades y tipos de viaje</h2>
+<h2 data-lang="en">Travel insurance for all ages and travel types</h2>
+<h2 data-lang="it">Assicurazione viaggio per tutte le età e tipologie</h2>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439">
-<div class="card-content">
-<h3>Transfers & Transporte</h3>
-<p data-lang="pt">Transfer do aeroporto à acomodação na região da Orihuela Costa e parcerias internacionais para transfers e guias.</p>
-<p data-lang="es">Transfers locales e internacionales.</p>
-<p data-lang="en">Local and international transfers.</p>
-<p data-lang="it">Transfer locali e internazionali.</p>
-</div>
-</div>
+<p data-lang="pt">
+Somos especializadas em <span class="highlight">seguro viagem</span> para crianças, adultos, idosos
+e pessoas com necessidades específicas. Atendemos turismo, estudo, trabalho, mudança definitiva e muito mais.
+</p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1502920917128-1aa500764b5d">
-<div class="card-content">
-<h3>Hospedagem Personalizada</h3>
-<p data-lang="pt">Não trabalhamos com pacotes prontos. Criamos a experiência perfeita para cada pedido.</p>
-<p data-lang="es">Alojamientos personalizados.</p>
-<p data-lang="en">Personalized accommodations.</p>
-<p data-lang="it">Alloggi personalizzati.</p>
-</div>
+<p data-lang="es">
+Somos especialistas en <span class="highlight">seguro de viaje</span> para niños, adultos, mayores 
+y diferentes necesidades. Cubrimos turismo, estudios, trabajo, mudanza y más.
+</p>
+
+<p data-lang="en">
+We are specialists in <span class="highlight">travel insurance</span> for children, adults, seniors 
+and special conditions. We support tourism, study, work, relocation and more.
+</p>
+
+<p data-lang="it">
+Siamo specializzate in <span class="highlight">assicurazione viaggio</span> per bambini, adulti e anziani.
+Copriamo turismo, studio, lavoro, trasferimenti e molto altro.
+</p>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6">
-<div class="card-content">
-<h3>Experiências & Benefícios</h3>
-<p data-lang="pt">Parcerias com descontos na Costa Blanca: fotógrafos, neve, campos de golfe e experiências exclusivas.</p>
-<p data-lang="es">Experiencias únicas con socios.</p>
-<p data-lang="en">Exclusive local partner benefits.</p>
-<p data-lang="it">Esperienze esclusive con partner.</p>
-</div>
+<div class="block">
+<h2 data-lang="pt">Transfer e transporte – Orihuela Costa e outros destinos</h2>
+<h2 data-lang="es">Transfer y transporte – Orihuela Costa y más destinos</h2>
+<h2 data-lang="en">Transfer & transportation – Orihuela Costa and beyond</h2>
+<h2 data-lang="it">Transfer e trasporto – Orihuela Costa e oltre</h2>
+
+<p data-lang="pt">
+Oferecemos transfer aeroporto ↔ acomodação na Orihuela Costa e organizamos serviços em outros países com parceiros de confiança.
+</p>
+<p data-lang="es">
+Ofrecemos transfer aeropuerto ↔ alojamiento en Orihuela Costa y organizamos servicios en otros países con socios confiables.
+</p>
+<p data-lang="en">
+We provide airport ↔ accommodation transfers in Orihuela Costa and arrange services in other countries as well.
+</p>
+<p data-lang="it">
+Offriamo transfer aeroporto ↔ alloggio a Orihuela Costa e organizziamo servizi anche in altri paesi.
+</p>
 </div>
 
+<div class="block">
+<h2 data-lang="pt">Hospedagem personalizada</h2>
+<h2 data-lang="es">Alojamiento personalizado</h2>
+<h2 data-lang="en">Personalized accommodation search</h2>
+<h2 data-lang="it">Alloggio personalizzato</h2>
+
+<p data-lang="pt">
+Sem pacotes prontos. Cada hospedagem é buscada de forma cuidadosa conforme perfil, orçamento e necessidade.
+</p>
+<p data-lang="es">
+Sin paquetes cerrados. Buscamos alojamiento según tu perfil y necesidades.
+</p>
+<p data-lang="en">
+No standard packages. We search accommodations based on your real needs and profile.
+</p>
+<p data-lang="it">
+Nessun pacchetto fisso. Cerchiamo alloggi in base alle tue esigenze reali.
+</p>
 </div>
+
+<div class="block">
+<h2 data-lang="pt">Parcerias e experiências exclusivas</h2>
+<h2 data-lang="es">Alianzas y experiencias exclusivas</h2>
+<h2 data-lang="en">Exclusive partners & experiences</h2>
+<h2 data-lang="it">Partner ed esperienze esclusive</h2>
+
+<p data-lang="pt">
+Costa Blanca, neve, golfe, fotógrafos, experiências especiais e benefícios com parceiros selecionados.
+</p>
+<p data-lang="es">
+Costa Blanca, nieve, golf, fotógrafos y experiencias especiales con beneficios exclusivos.
+</p>
+<p data-lang="en">
+Costa Blanca, snow trips, golf, photography and exclusive partnerships.
+</p>
+<p data-lang="it">
+Costa Blanca, neve, golf, fotografi ed esperienze speciali.
+</p>
+</div>
+
+<div class="block">
+<h2 data-lang="pt">Quer saber valores?</h2>
+<h2 data-lang="es">¿Quieres saber precios?</h2>
+<h2 data-lang="en">Want to know prices?</h2>
+<h2 data-lang="it">Vuoi conoscere i prezzi?</h2>
+
+<p data-lang="pt">
+Orçamentos personalizados pelo WhatsApp ou formulário do site.
+</p>
+<p data-lang="es">
+Presupuestos personalizados por WhatsApp o formulario.
+</p>
+<p data-lang="en">
+Personalized quotes via WhatsApp or form.
+</p>
+<p data-lang="it">
+Preventivi personalizzati via WhatsApp o modulo.
+</p>
+</div>
+
 </section>
 
 <section class="cta">
-<h2 data-lang="pt">Quer montar algo especial?</h2>
-<h2 data-lang="es">¿Quieres algo especial?</h2>
-<h2 data-lang="en">Want something special?</h2>
-<h2 data-lang="it">Vuoi qualcosa di speciale?</h2>
+<h2 data-lang="pt">Quer conversar agora?</h2>
+<h2 data-lang="es">¿Quieres hablar ahora?</h2>
+<h2 data-lang="en">Want to talk now?</h2>
+<h2 data-lang="it">Vuoi parlare ora?</h2>
 
 <a href="https://wa.me/34744768034" target="_blank">WhatsApp</a>
+<a href="index.html#formulario">Solicitar orçamento</a>
 </section>
 
 <footer>
